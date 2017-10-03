@@ -90,6 +90,7 @@ SWEP.Purpose		= ""
 SWEP.Instructions	= ""
 
 SWEP.ViewModelFOV	= 70
+SWEP.AimViewModelFOV	= 74
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_webley.mdl"
 SWEP.WorldModel		= "models/weapons/w_webley.mdl"
@@ -119,7 +120,7 @@ SWEP.MaxSpreadInc = 0.06
 SWEP.SpreadPerShot = 0.02
 SWEP.SpreadCooldown = 0.25
 SWEP.Shots = 1
-SWEP.Damage = 28
+SWEP.Damage = 70
 
 SWEP.FirstDeployTime = 1.7
 SWEP.DeployTime = 0.4

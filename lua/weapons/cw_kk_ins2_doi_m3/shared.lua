@@ -87,7 +87,8 @@ SWEP.Contact		= ""
 SWEP.Purpose		= ""
 SWEP.Instructions	= ""
 
-SWEP.ViewModelFOV	= 70
+SWEP.ViewModelFOV	= 60
+SWEP.AimViewModelFOV	= 71
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_m3greasegun.mdl"
 SWEP.WorldModel		= "models/weapons/w_m3greasegun.mdl"
@@ -117,7 +118,7 @@ SWEP.MaxSpreadInc = 0.035
 SWEP.SpreadPerShot = 0.006
 SWEP.SpreadCooldown = 0.15
 SWEP.Shots = 1
-SWEP.Damage = 35
+SWEP.Damage = 60
 
 SWEP.FirstDeployTime = 2.5
 SWEP.DeployTime = 0.8

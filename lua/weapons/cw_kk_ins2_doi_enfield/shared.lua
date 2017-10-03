@@ -215,7 +215,8 @@ SWEP.Contact		= ""
 SWEP.Purpose		= ""
 SWEP.Instructions	= ""
 
-SWEP.ViewModelFOV	= 70
+SWEP.ViewModelFOV	= 65
+SWEP.AimViewModelFOV	= 70
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_enfield_oldgl.mdl"
 SWEP.WorldModel		= "models/weapons/w_enfield.mdl"
@@ -246,7 +247,7 @@ SWEP.MaxSpreadInc = 0.2
 SWEP.SpreadPerShot = 0.01
 SWEP.SpreadCooldown = 1.6
 SWEP.Shots = 1
-SWEP.Damage = 61
+SWEP.Damage = 160
 
 SWEP.FirstDeployTime = 3.3
 SWEP.DeployTime = 0.7
