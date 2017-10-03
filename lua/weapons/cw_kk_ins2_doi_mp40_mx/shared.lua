@@ -133,7 +133,8 @@ SWEP.Contact		= ""
 SWEP.Purpose		= ""
 SWEP.Instructions	= ""
 
-SWEP.ViewModelFOV	= 70
+SWEP.ViewModelFOV	= 62
+SWEP.AimViewModelFOV	= 68
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_mp40.mdl"
 SWEP.WorldModel		= "models/weapons/w_cw_kk_doi_mp40.mdl"
@@ -168,7 +169,7 @@ SWEP.MaxSpreadInc = 0.03
 SWEP.SpreadPerShot = 0.005
 SWEP.SpreadCooldown = 0.13
 SWEP.Shots = 1
-SWEP.Damage = 25
+SWEP.Damage = 60
 
 SWEP.FirstDeployTime = 1.7
 SWEP.DeployTime = 0.7

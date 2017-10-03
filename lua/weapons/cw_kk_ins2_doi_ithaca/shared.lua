@@ -95,7 +95,8 @@ SWEP.Contact		= ""
 SWEP.Purpose		= ""
 SWEP.Instructions	= ""
 
-SWEP.ViewModelFOV	= 70
+SWEP.ViewModelFOV	= 64
+SWEP.AimViewModelFOV	= 84
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_ithaca.mdl"
 SWEP.WorldModel		= "models/weapons/w_ithaca.mdl"
@@ -126,7 +127,7 @@ SWEP.ClumpSpread = 0.02
 SWEP.SpreadPerShot = 0.007
 SWEP.SpreadCooldown = 0.85
 SWEP.Shots = 12
-SWEP.Damage = 11
+SWEP.Damage = 100
 
 SWEP.FirstDeployTime = 2.2
 SWEP.DeployTime = 0.8

@@ -137,7 +137,8 @@ SWEP.Contact		= ""
 SWEP.Purpose		= ""
 SWEP.Instructions	= ""
 
-SWEP.ViewModelFOV	= 70
+SWEP.ViewModelFOV	= 65
+SWEP.AimViewModelFOV	= 70
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_fg42.mdl"
 SWEP.WorldModel		= "models/weapons/w_fg42.mdl"
@@ -167,7 +168,7 @@ SWEP.MaxSpreadInc = 0.06
 SWEP.SpreadPerShot = 0.01
 SWEP.SpreadCooldown = 0.17
 SWEP.Shots = 1
-SWEP.Damage = 60
+SWEP.Damage = 100
 
 SWEP.BipodDeployTime = 1.7
 SWEP.BipodUndeployTime = 2
