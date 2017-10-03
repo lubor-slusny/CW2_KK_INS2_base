@@ -84,7 +84,8 @@ SWEP.Contact		= ""
 SWEP.Purpose		= ""
 SWEP.Instructions	= ""
 
-SWEP.ViewModelFOV	= 70
+SWEP.ViewModelFOV	= 74
+SWEP.AimViewModelFOV	= 74
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_welrod.mdl"
 SWEP.WorldModel		= "models/weapons/w_welrod.mdl"
@@ -119,7 +120,7 @@ SWEP.MaxSpreadInc = 0.04
 SWEP.SpreadPerShot = 0.01
 SWEP.SpreadCooldown = 0.17
 SWEP.Shots = 1
-SWEP.Damage = 26
+SWEP.Damage = 75
 
 -- SWEP.FireDelay = 2.2
 SWEP.FireDelay = 0.1

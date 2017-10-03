@@ -212,7 +212,8 @@ SWEP.Contact		= ""
 SWEP.Purpose		= ""
 SWEP.Instructions	= ""
 
-SWEP.ViewModelFOV	= 70
+SWEP.ViewModelFOV	= 65
+SWEP.AimViewModelFOV	= 68
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_kar98k_oldgl.mdl"
 SWEP.WorldModel		= "models/weapons/w_kar98k.mdl"
@@ -243,7 +244,7 @@ SWEP.MaxSpreadInc = 0.2
 SWEP.SpreadPerShot = 0.01
 SWEP.SpreadCooldown = 1.6
 SWEP.Shots = 1
-SWEP.Damage = 61
+SWEP.Damage = 160
 
 SWEP.FirstDeployTime = 3.7
 SWEP.DeployTime = 0.7
