@@ -1,46 +1,371 @@
 us
-	cw_kk_ins2_doi_bar				
-	cw_kk_ins2_doi_browning			
-	cw_kk_ins2_doi_garand			
-	cw_kk_ins2_doi_m1				
-	cw_kk_ins2_doi_m1a1				
-	cw_kk_ins2_doi_m3				
-	cw_kk_ins2_doi_m3a1				
-	cw_kk_ins2_doi_m1911			
-	cw_kk_ins2_doi_m1917			
-	cw_kk_ins2_doi_spring			
-	cw_kk_ins2_doi_thom_1928		
-	cw_kk_ins2_doi_thom_m1a1		
-
+	cw_kk_ins2_doi_bar				"762x51_box_20rnd"		160
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"72"
+				"fov_wpn_ironsight"			"79"
+				"fov_wpn_focus"				"71"
+			}
+			
+	cw_kk_ins2_doi_browning			"30-06_belt"			100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"73"
+				"fov_wpn_focus"				"68"
+			}
+			
+	cw_kk_ins2_doi_garand			"762x63_clip"			100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-10"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"73"
+				"fov_wpn_focus"				"66"
+			}
+			
+	cw_kk_ins2_doi_m1				"30_m1carbine_mag"		80
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"65"
+				"fov_wpn_ironsight"			"76"
+				"fov_wpn_focus"				"66"
+			}
+			
+	cw_kk_ins2_doi_m1a1				"30_m1carbine_mag"		80
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"65"
+				"fov_wpn_ironsight"			"76"
+				"fov_wpn_focus"				"66"
+			}
+			
+	cw_kk_ins2_doi_m3				"45acp_thompson"		60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"71"
+				"fov_wpn_focus"				"68"
+			}
+			
+	cw_kk_ins2_doi_m3a1				the same rly
+	
+	cw_kk_ins2_doi_m1911			"45acp_pistol"			76
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"74"
+				"fov_wpn_ironsight"			"82"
+				"fov_wpn_focus"				"77"
+			}
+			
+	cw_kk_ins2_doi_m1917			"45acp_r" 				76
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"74"
+				"fov_wpn_ironsight"			"82"
+				"fov_wpn_focus"				"77"
+			}
+			
+	cw_kk_ins2_doi_spring			"30-06"					160
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-10"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"70"
+				"fov_wpn_focus"				"66"
+			}
+			
+	cw_kk_ins2_doi_thom_m1a1		"45acp_thompson_m1a1"	76
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"55"
+				"fov_wpn_ironsight"			"67"
+				"fov_wpn_focus"				"63"
+			}
+			
+	cw_kk_ins2_doi_m1912			"buckshot"				100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"64"
+				"fov_wpn_ironsight"			"84"
+				"fov_wpn_focus"				"89"
+			}
+			
 gb
-	cw_kk_ins2_doi_bren
-	cw_kk_ins2_doi_browninghp
-	cw_kk_ins2_doi_enfield
-	cw_kk_ins2_doi_ithaca
-	cw_kk_ins2_doi_lewis
-	cw_kk_ins2_doi_m1912
-	cw_kk_ins2_doi_owen_mk1
-	cw_kk_ins2_doi_owen_mk2
-	cw_kk_ins2_doi_sten_mk2
-	cw_kk_ins2_doi_sten_mk5
-	cw_kk_ins2_doi_webley
-	cw_kk_ins2_doi_welrod
-	cw_kk_ins2_doi_wicked
+	cw_kk_ins2_doi_bren				"303_brit_box_30rnd"	100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-10"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"85"
+				"fov_wpn_focus"				"60"
+			}
+			
+	cw_kk_ins2_doi_browninghp		"9x19_hp"				60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"76"
+				"fov_wpn_ironsight"			"87"
+				"fov_wpn_focus"				"82"
+			}
+			
+	cw_kk_ins2_doi_enfield			"303_clip_enfield"		160
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-10"
+				"fov_wpn_default"			"65"
+				"fov_wpn_ironsight"			"70"
+				"fov_wpn_focus"				"67"
+			}
+			
+	cw_kk_ins2_doi_ithaca			"buckshot"				100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"64"
+				"fov_wpn_ironsight"			"84"
+				"fov_wpn_focus"				"89"
+			}
+			
+	cw_kk_ins2_doi_lewis			"303_brit_pan_47rnd"	100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-10"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"74"
+				"fov_wpn_focus"				"64"
+			}
+			
+	cw_kk_ins2_doi_owen_mk1			"9x19mm_sten"		60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"65"
+				"fov_wpn_ironsight"			"71"
+				"fov_wpn_focus"				"66"
+			}
+			
+	cw_kk_ins2_doi_owen_mk2			"9x19mm_sten"		60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"65"
+				"fov_wpn_ironsight"			"71"
+				"fov_wpn_focus"				"66"
+			}
+			
+	cw_kk_ins2_doi_sten_mk2			"9x19mm_sten"		60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"70"
+				"fov_wpn_ironsight"			"71"
+				"fov_wpn_focus"				"66"
+			}
+			
+	cw_kk_ins2_doi_sten_mk5			"9x19mm_sten"		60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"70"
+				"fov_wpn_ironsight"			"71"
+				"fov_wpn_focus"				"66"
+			}
+			
+	cw_kk_ins2_doi_thom_1928		"45acp_thompson"		60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"67"
+				"fov_wpn_focus"				"63"
+			}
+			
+	cw_kk_ins2_doi_webley			"9x19_r"				70
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"70"
+				"fov_wpn_ironsight"			"74"
+				"fov_wpn_focus"				"74"
+			}
+			
+	cw_kk_ins2_doi_welrod			"9x19mm_w"				75
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"74"
+				"fov_wpn_ironsight"			"74"
+				"fov_wpn_focus"				"79"
+			}
+			
+	cw_kk_ins2_doi_wicked			"303_brit_belt"			100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"65"
+				"fov_wpn_ironsight"			"73"
+				"fov_wpn_focus"				"68"
+			}
+			
 
 de
-	cw_kk_ins2_doi_c96
-	cw_kk_ins2_doi_c96_c
-	cw_kk_ins2_doi_fg42
-	cw_kk_ins2_doi_g43
-	cw_kk_ins2_doi_k98k
-	cw_kk_ins2_doi_luger
-	cw_kk_ins2_doi_mg34
-	cw_kk_ins2_doi_mg42
-	cw_kk_ins2_doi_mp40
-	cw_kk_ins2_doi_mp40_mx
-	cw_kk_ins2_doi_p38
-	cw_kk_ins2_doi_ppk
-	cw_kk_ins2_doi_stg44
+	cw_kk_ins2_doi_c96				"9x19mm_c96_clip"		60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"70"
+				"fov_wpn_ironsight"			"82"
+				"fov_wpn_focus"				"77"
+			}
+			
+	cw_kk_ins2_doi_c96_c			"9x19mm_c96"			60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"70"
+				"fov_wpn_ironsight"			"82"
+				"fov_wpn_focus"				"77"
+			}
+			
+	cw_kk_ins2_doi_fg42				"762x38mm_clip"			100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"65"
+				"fov_wpn_ironsight"			"70"
+				"fov_wpn_focus"				"65"
+			}
+			
+	cw_kk_ins2_doi_g43				"792x57_clip"			100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-10"
+				"fov_wpn_default"			"58"
+				"fov_wpn_ironsight"			"67"
+				"fov_wpn_focus"				"65"
+			}
+			
+	cw_kk_ins2_doi_k98k				"792x57mm"				160
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-10"
+				"fov_wpn_default"			"65"
+				"fov_wpn_ironsight"			"68"
+				"fov_wpn_focus"				"65"
+			}
+			
+	cw_kk_ins2_doi_luger			"9x19mm_b"				60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"68"
+				"fov_wpn_ironsight"			"76"
+				"fov_wpn_focus"				"73"
+			}
+			
+	cw_kk_ins2_doi_mg34				"792x57_drum"			75
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"70"
+				"fov_wpn_ironsight"			"74"
+				"fov_wpn_focus"				"70"
+			}
+			
+	cw_kk_ins2_doi_mg42				"792x57_belt"			100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"64"
+				"fov_wpn_focus"				"58"
+			}
+			
+	cw_kk_ins2_doi_mp40				"9x19mm_smg"			60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"62"
+				"fov_wpn_ironsight"			"68"
+				"fov_wpn_focus"				"64"
+			}
+			
+	cw_kk_ins2_doi_mp40_mx			the same rly
+	
+	cw_kk_ins2_doi_p38				"9x19mm_b"				60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"76"
+				"fov_wpn_ironsight"			"87"
+				"fov_wpn_focus"				"82"
+			}
+			
+	cw_kk_ins2_doi_ppk				"32_acp"				60
+			"fov"
+			{
+				"fov_plr_ironsight"			"-15"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"74"
+				"fov_wpn_ironsight"			"80"
+				"fov_wpn_focus"				"76"
+			}
+			
+	cw_kk_ins2_doi_stg44			"762x33"				100
+			"fov"
+			{
+				"fov_plr_ironsight"			"-20"
+				"fov_plr_focus"				"-7"
+				"fov_wpn_default"			"60"
+				"fov_wpn_ironsight"			"70"
+				"fov_wpn_focus"				"65"
+			}
+			
 
 other
 	cw_kk_ins2_doi_bino_de
