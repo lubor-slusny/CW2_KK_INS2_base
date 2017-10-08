@@ -11,13 +11,9 @@ SWEP.magType = "lmgBox"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M1919A6 Browning"
-	SWEP.CSMuzzleFlashes = true
-	
 	SWEP.ViewModelMovementScale = 1.15
 	
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m1919")
-	
-	SWEP.MuzzleAttachmentName = "muzzle"
 	
 	SWEP.NoShells = true
 	
