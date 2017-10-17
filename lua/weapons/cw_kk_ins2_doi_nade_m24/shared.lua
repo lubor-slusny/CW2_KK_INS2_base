@@ -108,6 +108,8 @@ if CLIENT then
 	local att = CustomizableWeaponry.registeredAttachmentsSKey["kk_ins2_ww2_nade_jackit"]
 	
 	CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_doi_nade_m24", function(wep, welement)
+		welement:SetBodygroup(1, wep.dt.PinPulled and 0 or 1)
+		
 		if wep.ActiveAttachments[att.name] then
 			if welement:GetModel() != att.activeWM then
 				welement:SetModel(att.activeWM)
