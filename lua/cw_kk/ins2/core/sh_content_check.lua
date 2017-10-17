@@ -92,32 +92,32 @@ local sub = string.sub
 local starts = string.StartWith
 
 function CustomizableWeaponry_KK.ins2:isContentMounted4()
-	subs = subs or {
-		["cw_kk_ins2_doi"] = function() return (doiGameContentOK and (CustomizableWeaponry_KK.ins2.ws == WS_PACK_REVISION)) end,
-		["cw_kk_ins2_cstm"] = function() return (baseGameContentOK and (CustomizableWeaponry_KK.ins2.ws == WS_PACK_REVISION)) end,
-		["cw_kk_ins2_nam"] = function() return (doiGameContentOK and namModContentOK) end,
-		["cw_kk_ins2_ao5"] = function() return (baseGameContentOK and ao5ModContentOK) end,
-		["cw_kk_ins2_arse"] = function() return (baseGameContentOK and arseModContentOK and CustomizableWeaponry_KK.HOME) end,
+	-- subs = subs or {
+		-- ["cw_kk_ins2_doi"] = function() return (doiGameContentOK and (CustomizableWeaponry_KK.ins2.ws == WS_PACK_REVISION)) end,
+		-- ["cw_kk_ins2_cstm"] = function() return (baseGameContentOK and (CustomizableWeaponry_KK.ins2.ws == WS_PACK_REVISION)) end,
+		-- ["cw_kk_ins2_nam"] = function() return (doiGameContentOK and namModContentOK) end,
+		-- ["cw_kk_ins2_ao5"] = function() return (baseGameContentOK and ao5ModContentOK) end,
+		-- ["cw_kk_ins2_arse"] = function() return (baseGameContentOK and arseModContentOK and CustomizableWeaponry_KK.HOME) end,
 		
-		["baseGameContentOK"] = function() return baseGameContentOK end,
-		["extPackContentOK"] = function() return CustomizableWeaponry_KK.ins2.ws == WS_PACK_REVISION end,
-		["doiGameContentOK"] = function() return doiGameContentOK end,
-		["ao5ModContentOK"] = function() return ao5ModContentOK end,
-		["arseModContentOK"] = function() return arseModContentOK end,
-		["namModContentOK"] = function() return namModContentOK end,
-		["doiNamModContentOK"] = function() return doiNamModContentOK end,
-	}
+		-- ["baseGameContentOK"] = function() return baseGameContentOK end,
+		-- ["extPackContentOK"] = function() return CustomizableWeaponry_KK.ins2.ws == WS_PACK_REVISION end,
+		-- ["doiGameContentOK"] = function() return doiGameContentOK end,
+		-- ["ao5ModContentOK"] = function() return ao5ModContentOK end,
+		-- ["arseModContentOK"] = function() return arseModContentOK end,
+		-- ["namModContentOK"] = function() return namModContentOK end,
+		-- ["doiNamModContentOK"] = function() return doiNamModContentOK end,
+	-- }
 	
-	-- local class = self.ClassName // only exists in instances
-	local class = sub(self.Folder, 9)
+	local class = self.ClassName // only exists in instances
+	-- local class = sub(self.Folder, 9)
 	
-	for k,f in pairs(subs) do
-		if starts(class, k) then
-			return f()
-		end
-	end
+	-- for k,f in pairs(subs) do
+		-- if starts(class, k) then
+			-- return f()
+		-- end
+	-- end
 	
-	return baseGameContentOK
+	return true
 end
 
 if CLIENT then
