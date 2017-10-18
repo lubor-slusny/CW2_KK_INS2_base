@@ -13,49 +13,49 @@ if CLIENT then
 	SWEP.PrintName = "M1A1 Carbine"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/cosmetic_m1carbine_para")
-	
+
 	SWEP.Shell = "KK_INS2_762x33"
 	SWEP.ShellDelay = 0.06
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
-		["kk_ins2_mag_m1a1_15"] = {model = "models/weapons/attachments/a_doimag_m1c_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/attachments/a_doimag_m1c_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
+		["kk_ins2_mag_m1a1_15"] = {model = "models/weapons/attachments/a_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/attachments/a_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_m1a1_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_m1a1para.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_m1a1para.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_m1a1para.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
-	SWEP.AttachmentModelsWM = {		
+
+	SWEP.AttachmentModelsWM = {
 		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/w_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/w_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_mag_m1a1_15"] = {model = "models/weapons/upgrades/w_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/upgrades/w_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/w_bayonet_m1a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	-- SWEP.ForegripOverridePos = {
 		-- none = {
 			-- ["FoldingStock"] = {pos = Vector(), angle = Angle()},
 		-- },
-		
+
 		-- stoq = {
 			-- ["FoldingStock"] = {pos = Vector(), angle = Angle(0, 180, 0)},
 		-- }
 	-- }
-	
+
 	-- SWEP.ForegripParent = "stoq"
 	-- SWEP.ForegripOverride = true
-	
+
 	SWEP.IronsightPos = Vector(-2.4773, -3, 1.2686)
 	SWEP.IronsightAng = Vector(0, 0.0355, 0)
 
@@ -96,7 +96,7 @@ SWEP.Animations = {
 	base_crawl = "base_crawl",
 	base_melee = "base_melee_bash",
 	base_stab = "base_melee_end",
-	
+
 }
 
 SWEP.SpeedDec = 40
@@ -165,11 +165,11 @@ SWEP.ReloadTimes = {
 	base_reloadempty = {78/35, 5.4},
 	base_reload_ext = {71/35, 3.9},
 	base_reloadempty_ext = {78/35, 5.4},
-	
+
 	base_melee_bash = {0.3, 1},
 }
 
-if CLIENT then 
+if CLIENT then
 	function SWEP:updateStandardParts()
 		self:setElementActive("kk_ins2_mag_m1a1_15", !self.ActiveAttachments.kk_ins2_mag_m1a1_30)
 	end
