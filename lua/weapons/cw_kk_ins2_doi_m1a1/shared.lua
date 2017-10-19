@@ -20,27 +20,27 @@ if CLIENT then
 	SWEP.ShellDelay = 0.06
 
 	SWEP.AttachmentModelsVM = {
-		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_optic_iron"] = {model = "models/cwkkdoi/upgrades/a_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_optic_rail"] = {model = "models/cwkkdoi/upgrades/a_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_mag_m1a1_15"] = {model = "models/weapons/attachments/a_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/attachments/a_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_mag_m1a1_15"] = {model = "models/cwkkdoi/upgrades/a_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_mag_m1a1_30"] = {model = "models/cwkkdoi/upgrades/a_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_m1a1_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_ww2_knife"] = {model = "models/cwkkdoi/upgrades/a_m1a1_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
 		-- ["ani_body"] = {model = "models/weapons/v_m1a1para.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_m1a1para.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
-		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_m1a1para.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_ww2_sling"] = {model = "models/cwkkdoi/upgrades/a_sling_m1a1para.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
 
 	SWEP.AttachmentModelsWM = {
-		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/w_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/w_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_optic_iron"] = {model = "models/cwkkdoi/upgrades/w_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_optic_rail"] = {model = "models/cwkkdoi/upgrades/w_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_mag_m1a1_15"] = {model = "models/weapons/upgrades/w_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/upgrades/w_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_mag_m1a1_15"] = {model = "models/cwkkdoi/upgrades/w_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_mag_m1a1_30"] = {model = "models/cwkkdoi/upgrades/w_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/w_bayonet_m1a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_ww2_knife"] = {model = "models/cwkkdoi/upgrades/w_bayonet_m1a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
 
 	-- SWEP.ForegripOverridePos = {
@@ -117,7 +117,7 @@ SWEP.Instructions	= ""
 SWEP.ViewModelFOV	= 70
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_m1a1para.mdl"
-SWEP.WorldModel		= "models/weapons/w_m1a1para.mdl"
+SWEP.WorldModel		= "models/cwkkdoi/w_m1a1para.mdl"
 
 SWEP.WMPos = Vector(5, 0.5, -0.538)
 SWEP.WMAng = Vector(-5, 0, 180)

@@ -20,25 +20,25 @@ if CLIENT then
 	SWEP.ShellDelay = 0.06
 
 	SWEP.AttachmentModelsVM = {
-		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_optic_iron"] = {model = "models/cwkkdoi/upgrades/a_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_optic_rail"] = {model = "models/cwkkdoi/upgrades/a_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_mag_m1a1_15"] = {model = "models/weapons/attachments/a_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/attachments/a_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_mag_m1a1_15"] = {model = "models/cwkkdoi/upgrades/a_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_mag_m1a1_30"] = {model = "models/cwkkdoi/upgrades/a_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_m1a1_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_ww2_knife"] = {model = "models/cwkkdoi/upgrades/a_m1a1_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_m1carbine.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_ww2_sling"] = {model = "models/cwkkdoi/upgrades/a_sling_m1carbine.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
 
 	SWEP.AttachmentModelsWM = {
-		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/w_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/w_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_optic_iron"] = {model = "models/cwkkdoi/upgrades/w_iron_m1a1_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_optic_rail"] = {model = "models/cwkkdoi/upgrades/w_iron_m1a1_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_mag_m1a1_15"] = {model = "models/weapons/upgrades/w_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/upgrades/w_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_mag_m1a1_15"] = {model = "models/cwkkdoi/upgrades/w_magazine_m1a1_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_mag_m1a1_30"] = {model = "models/cwkkdoi/upgrades/w_magazine_m1a1_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/w_bayonet_m1a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+		["kk_ins2_ww2_knife"] = {model = "models/cwkkdoi/upgrades/w_bayonet_m1a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
 
 	SWEP.IronsightPos = Vector(-2.4773, -3, 1.2686)
@@ -101,7 +101,7 @@ SWEP.Instructions	= ""
 SWEP.ViewModelFOV	= 70
 SWEP.ViewModelFlip	= false
 SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_m1a1.mdl"
-SWEP.WorldModel		= "models/weapons/w_cw_kk_doi_m1.mdl"
+SWEP.WorldModel		= "models/cwkkdoi/w_cw_kk_doi_m1.mdl"
 
 SWEP.WMPos = Vector(5.986, 0.921, -0.038)
 SWEP.WMAng = Vector(-10, 0, 180)
