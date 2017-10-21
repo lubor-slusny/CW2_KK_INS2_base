@@ -15,12 +15,12 @@ if CLIENT then
 	SWEP.PrintName = "SKS"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_sks")
-	
+
 	SWEP.Shell = "KK_INS2_762x39"
 	SWEP.ShellDelay = 0.03
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -35,7 +35,7 @@ if CLIENT then
 
 		["kk_ins2_scope_mosin"] = {model = "models/weapons/upgrades/w_optic_pu_sks.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-1.3824, -2, 0.9608)
 	SWEP.IronsightAng = Vector(0.1564, 0.0462, 0)
 
@@ -50,9 +50,17 @@ SWEP.MuzzleEffectWorld = "muzzleflash_sks_3rd"
 
 SWEP.Attachments = {
 	{header = "Sight", offset = {400, -500}, atts = {"kk_ins2_scope_mosin"}},
-	{header = "Lasers", offset = {125, 300}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_anpeq15"}},
 	["+reload"] = {header = "Ammo", offset = {900, 500}, atts = {"am_magnum", "am_matchgrade"}}
 }
+
+local hasBase = CustomizableWeaponry_KK.ins2.isContentMounted4({Folder = "weapons/cw_kk_ins2_base"})
+if hasBase then
+	SWEP.Attachments = {
+		{header = "Sight", offset = {400, -500}, atts = {"kk_ins2_scope_mosin"}},
+		{header = "Lasers", offset = {125, 300}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_anpeq15"}},
+		["+reload"] = {header = "Ammo", offset = {900, 500}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+end
 
 SWEP.Animations = {
 	base_pickup = "base_ready",

@@ -15,37 +15,37 @@ if CLIENT then
 	SWEP.PrintName = "SVD"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_svd")
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	-- SWEP.NoShells = true
 	SWEP.ShellDelay = 0
-	
+
 	SWEP.BackupSights = {
 		["kk_ins2_elcan"] = {
 			Vector(-2.8208, -12, -1.1186),
 			Vector(-0.4986, 0, 0)
 		},
 	}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/a_bipod_sks.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/a_foregrip_ins.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), attachment = "Foregrip"},
-		
+
 		["kk_ins2_scope_nam_pso"] = {model = "models/weapons/upgrades/a_pso1.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
 
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/w_bipod_mosin.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/w_ins_foregrip.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_nam_pso"] = {model = "models/weapons/upgrades/w_pso1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.0166, -2, 0.5294)
 	SWEP.IronsightAng = Vector(0.0934, -0.0015, 0)
-	
+
 	SWEP.KKINS2NAMPSOPos = Vector(-1.9652, -1, -0.0041)
 	SWEP.KKINS2NAMPSOAng = Vector(0, 0, 0)
 
@@ -57,9 +57,17 @@ SWEP.MuzzleEffectWorld = "muzzleflash_sks_3rd"
 
 SWEP.Attachments = {
 	{header = "Sight", offset = {500, -450}, atts = {"kk_ins2_scope_nam_pso"}},
-	{header = "Under", offset = {-500, 0}, atts = {"kk_ins2_bipod", "kk_ins2_vertgrip"}},
 	["+reload"] = {header = "Ammo", offset = {1100, 500}, atts = {"am_magnum", "am_matchgrade"}}
 }
+
+local hasBase = CustomizableWeaponry_KK.ins2.isContentMounted4({Folder = "weapons/cw_kk_ins2_base"})
+if hasBase then
+	SWEP.Attachments = {
+		{header = "Sight", offset = {500, -450}, atts = {"kk_ins2_scope_nam_pso"}},
+		{header = "Under", offset = {-500, 0}, atts = {"kk_ins2_bipod", "kk_ins2_vertgrip"}},
+		["+reload"] = {header = "Ammo", offset = {1100, 500}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+end
 
 SWEP.Animations = {
 	base_pickup = "base_ready",
@@ -87,7 +95,7 @@ SWEP.Animations = {
 	base_safe_empty_aim = "iron_empty_down",
 	base_crawl = "base_crawl",
 	base_crawl_empty = "empty_crawl",
-	
+
 	foregrip_pickup = "foregrip_ready",
 	foregrip_draw = "foregrip_draw",
 	foregrip_draw_empty = "foregrip_empty_draw",
@@ -111,7 +119,7 @@ SWEP.Animations = {
 	foregrip_safe_empty_aim = "foregrip_empty_iron_down",
 	foregrip_crawl = "foregrip_crawl",
 	foregrip_crawl_empty = "foregrip_empty_crawl",
-	
+
 	bipod_in = "deployed_in",
 	bipod_in_empty = "deployed_empty_in",
 	bipod_fire = "deployed_fire",
@@ -198,10 +206,10 @@ SWEP.MuzzleVelocity = 830
 SWEP.ReloadTimes = {
 	base_reload = {2.55, 3.2},
 	base_reloadempty = {2.85, 4.5},
-	
+
 	foregrip_reload = {2.55, 3.2},
 	foregrip_reloadempty = {2.85, 4.5},
-	
+
 	deployed_reload = {2.55, 3.2},
 	deployed_reloadempty = {2.85, 4.5},
 }

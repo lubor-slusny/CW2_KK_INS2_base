@@ -165,7 +165,7 @@ function CustomizableWeaponry_KK.ins2:isContentMounted4()
 		end
 	end
 
-	return true
+	return baseGameContentOK
 end
 
 if CLIENT then
@@ -218,7 +218,7 @@ if CLIENT then
 			return
 		end
 
-		if doiGameContentOK and (ins.ws == nil or ins.ws < WS_PACK_REVISION) then
+		if doiGameContentOK and (ins.ws == nil or ins.ws < WS_PACK_REVISION) and not (ins.REPACK_DOI == REPACK_COUNT_DOI) then
 			chat.AddText(
 				Color(200, 157, 96),
 				"[KK INS2 SWEPS] ",
