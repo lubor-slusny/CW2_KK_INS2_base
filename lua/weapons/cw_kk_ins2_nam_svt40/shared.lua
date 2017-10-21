@@ -13,29 +13,29 @@ if CLIENT then
 	SWEP.PrintName = "SVT-40"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_svt40")
-	
+
 	SWEP.Shell = "KK_INS2_762x39"
 	SWEP.ShellDelay = 0.03
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/a_bipod_sks.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/a_foregrip_ins.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), attachment = "Foregrip"},
-		
+
 		["kk_ins2_scope_mosin"] = {model = "models/weapons/upgrades/a_optic_svt40_m.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
 
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/w_bipod_mosin.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/w_ins_foregrip.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-	
+
 		["kk_ins2_scope_mosin"] = {model = "models/weapons/upgrades/w_scope_svt.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.2386, -2, 1.6034)
 	SWEP.IronsightAng = Vector(0.0305, 0.003, 0)
-	
+
 	SWEP.KKINS2ScopeMosinPos = Vector(-2.2171, 0, 0.8822)
 	SWEP.KKINS2ScopeMosinAng = Vector(0, 0, 0)
 
@@ -47,13 +47,21 @@ SWEP.MuzzleEffectWorld = "muzzleflash_sks_3rd"
 
 SWEP.Attachments = {
 	{header = "Sight", offset = {400, -500}, atts = {"kk_ins2_scope_mosin"}},
-	-- {header = "Barrel", offset = {-200, -500}, atts = {"kk_ins2_pbs1"}},
-	{header = "Under", offset = {-500, 0}, atts = {"kk_ins2_bipod", "kk_ins2_vertgrip"}},
-	-- {header = "Lasers", offset = {125, 300}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_anpeq15"}},
-	-- {header = "More Sight", offset = {1000, -50}, atts = {"kk_ins2_magnifier"}, dependencies = CustomizableWeaponry_KK.ins2.magnifierDependencies},
-	-- ["+use"] = {header = "Sight Contract", offset = {400, -50}, atts = {"kk_ins2_sights_cstm"}},
 	["+reload"] = {header = "Ammo", offset = {900, 500}, atts = {"am_magnum", "am_matchgrade"}}
 }
+
+local hasBase = CustomizableWeaponry_KK.ins2.isContentMounted4({Folder = "weapons/cw_kk_ins2_base"})
+if hasBase then
+	SWEP.Attachments = {
+		{header = "Sight", offset = {400, -500}, atts = {"kk_ins2_scope_mosin"}},
+		-- {header = "Barrel", offset = {-200, -500}, atts = {"kk_ins2_pbs1"}},
+		{header = "Under", offset = {-500, 0}, atts = {"kk_ins2_bipod", "kk_ins2_vertgrip"}},
+		-- {header = "Lasers", offset = {125, 300}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_anpeq15"}},
+		-- {header = "More Sight", offset = {1000, -50}, atts = {"kk_ins2_magnifier"}, dependencies = CustomizableWeaponry_KK.ins2.magnifierDependencies},
+		-- ["+use"] = {header = "Sight Contract", offset = {400, -50}, atts = {"kk_ins2_sights_cstm"}},
+		["+reload"] = {header = "Ammo", offset = {900, 500}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+end
 
 SWEP.Animations = {
 	base_pickup = "base_ready",
@@ -79,7 +87,7 @@ SWEP.Animations = {
 	base_safe_empty_aim = "iron_empty_down",
 	base_crawl = "base_crawl",
 	base_crawl_empty = "empty_crawl",
-	
+
 	foregrip_pickup = "foregrip_ready",
 	foregrip_draw = "foregrip_draw",
 	foregrip_draw_empty = "foregrip_empty_draw",
@@ -103,7 +111,7 @@ SWEP.Animations = {
 	foregrip_safe_empty_aim = "foregrip_empty_iron_down",
 	foregrip_crawl = "foregrip_crawl",
 	foregrip_crawl_empty = "foregrip_empty_crawl",
-	
+
 	bipod_in = "deployed_in",
 	bipod_in_empty = "deployed_empty_in",
 	bipod_fire = "deployed_fire",
@@ -116,7 +124,7 @@ SWEP.Animations = {
 	bipod_reload_empty = "deployed_reloadempty",
 	bipod_out = "deployed_out",
 	bipod_out_empty = "deployed_empty_out",
-	
+
 }
 
 SWEP.SpeedDec = 40
@@ -188,10 +196,10 @@ SWEP.MuzzleVelocity = 840
 SWEP.ReloadTimes = {
 	base_reload = {2.3, 3.3},
 	base_reloadempty = {2.3, 4.6},
-	
+
 	foregrip_reload = {2.3, 3.3},
 	foregrip_reloadempty = {2.3, 4.6},
-	
+
 	deployed_reload = {2.3, 3.3},
 	deployed_reloadempty = {2.3, 4.6},
 }

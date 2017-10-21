@@ -15,25 +15,25 @@ if CLIENT then
 	SWEP.PrintName = "M60"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_m60")
-	
+
 	SWEP.NoShells = true
-	
+
 	SWEP.Shell = "KK_INS2_556x45"
 	SWEP.ShellEjectVelocity = 50
-	
-	SWEP.Shell2 = "KK_INS2_556x45_link"
+
+	SWEP.Shell2 = "KK_INS2_30-06_link"
 	SWEP.Shell2Scale = 0.7
 	SWEP.Shell2EjectVelocity = 50
 	SWEP.Shell2ViewAttachmentID = 3
 	SWEP.Shell2ViewAngleAlign = {Forward = 0, Right = 0, Up = -90}
 	SWEP.Shell2WorldAngleAlign = {Forward = 0, Right = 0, Up = -90}
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-1.7534, -3, 0.6472)
 	SWEP.IronsightAng = Vector(-0.1947, 0.0136, 0)
 
@@ -68,7 +68,7 @@ SWEP.Animations = {
 	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
 	base_melee = "base_melee_bash",
-	
+
 	bipod_in = "deployed_in",
 	bipod_fire = {"deployed_fire_1","deployed_fire_2"},
 	bipod_fire_aim = {"deployed_iron_fire_1","deployed_iron_fire_2"},
@@ -147,9 +147,9 @@ SWEP.ReloadTimes = {
 	base_reload = {9, 10.4},
 	base_reload_half = {10, 11.4},
 	base_reload_empty = {10.9, 12.3},
-	
+
 	base_melee_bash = {0.6, 1.7},
-	
+
 	deployed_reload = {8.3, 9.5},
 	deployed_reload_half = {9.2, 10.5},
 	deployed_reload_empty = {10, 11.3},
@@ -167,12 +167,12 @@ SWEP.reticleInactivityCallbacksRaw = {
 
 function SWEP:overrideReloadAnim(prefix, suffix)
 	local clip = self:Clip1()
-	
+
 	if clip > 15 then
 		return prefix .. "reload" .. suffix
 	elseif clip > 0 then
 		return prefix .. "reload_close" .. suffix
 	end
-	
+
 	return prefix .. "reload_empty" .. suffix
 end
