@@ -6,7 +6,7 @@ ENT.PrintName = "Planted IED"
 ENT.Author = "Spy"
 ENT.Information = "Planted IED"
 ENT.Spawnable = false
-ENT.AdminSpawnable = false 
+ENT.AdminSpawnable = false
 
 -- ENT.BlastDamage = 100
 -- ENT.BlastRadius = 434

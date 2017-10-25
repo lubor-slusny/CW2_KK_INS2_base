@@ -27,7 +27,7 @@ local function resetGL(self)
 		end
 		self.M203Chamber = false
 	end
-	
+
 	self.dt.INS2GLActive = false
 end
 

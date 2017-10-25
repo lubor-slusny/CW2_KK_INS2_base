@@ -20,5 +20,5 @@ end
 
 -- function att:detachFunc()
 -- end
-	
+
 CustomizableWeaponry:registerAttachment(att)

@@ -6,10 +6,10 @@ local ent, pos, dl, tweakData
 
 function EFFECT:Init(fx)
 	ent = fx:GetEntity()
-	
+
 	dl = DynamicLight(ent:EntIndex())
-	
-	dl.r = 255 
+
+	dl.r = 255
 	dl.g = 255
 	dl.b = 255
 	dl.Brightness = 4
@@ -17,11 +17,11 @@ function EFFECT:Init(fx)
 	dl.Size = 256
 	dl.Decay = 128
 	dl.DieTime = CurTime() + 0.1
-	
+
 	pos = ent:GetPos()
-	
+
 	tweakData = ent:getTweakData()
-	
+
 	if ent:WaterLevel() == 0 then
 		for _,p in pairs(tweakData.explosionParticles) do
 			ParticleEffect(p, pos, ang0)

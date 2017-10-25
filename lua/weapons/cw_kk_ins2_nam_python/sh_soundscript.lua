@@ -1,12 +1,12 @@
 
 local function spawnShells(self)
 	if SERVER then return end
-	
+
 	local vm = self.CW_VM
 	local b = vm:GetBodygroup(self._beltBGID)
 	local s = vm:GetBodygroup(self._shellsBGID)
-	
-	for _ = 1, (s - b) do 
+
+	for _ = 1, (s - b) do
 		self:shellEventRev()
 	end
 end

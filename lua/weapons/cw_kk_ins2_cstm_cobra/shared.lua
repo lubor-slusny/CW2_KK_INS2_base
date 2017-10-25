@@ -10,26 +10,26 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "King Cobra"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/cw_kk_ins2_cstm_cobra")
-	
+
 	SWEP.Shell = "KK_INS2_762x33"
 	SWEP.NoShells = true
 	SWEP.ShellScale = 2
 	SWEP.Shell2 = "KK_INS2_REVOLVER"
-		
+
 	SWEP.AttachmentModelsVM = {
 		-- ["kk_ins2_optic_rail"] = {model = "models/v_fas2_leupold_mounts.mdl", bone = "Weapon", pos = Vector(0, -1.895, 3.381), angle = Angle(0, -90, 0), size = Vector(1.8, 1.8, 1.8), bodygroups = {6},
 			-- material = "models/weapons/view/pistols/ragingbull/ragingbullmount",
 		-- },
-	
+
 		["kk_ins2_revolver_mag"] = {model = "models/weapons/upgrades/a_cobraloader_rev.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
-		["kk_counter"] = {model = "models/weapons/stattrack_cut.mdl", bone = "Weapon", pos = Vector(0.31, -0.57, 0.347), angle = Angle(0, -90, 0), size = Vector(0.4, 0.449, 0.449)}, 
-		
+		["kk_counter"] = {model = "models/weapons/stattrack_cut.mdl", bone = "Weapon", pos = Vector(0.31, -0.57, 0.347), angle = Angle(0, -90, 0), size = Vector(0.4, 0.449, 0.449)},
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_mak.mdl", bone = "Weapon", pos = Vector(0, 2.588, -0.066), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_mak.mdl", bone = "Weapon", pos = Vector(0, 2.588, -0.066), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
-		
+
 		-- ["kk_holosight"] = {model = "models/weapons/attachments/c_cw_kk_holosight.mdl", bone = "Weapon", pos = Vector(0.028, -1.219, -1.505), angle = Angle(0, -90, 0), size = Vector(0.75, 0.75, 0.75)},
 	}
 
@@ -37,7 +37,7 @@ if CLIENT then
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_mak.mdl", pos = Vector(10.3093, -1.804, 1.3029), angle = Angle(-2.9683, 6.6904, 0), size = Vector(1, 1, 1), bone = "R Hand"},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_mak.mdl", pos = Vector(10.3093, -1.804, 1.3029), angle = Angle(-2.9683, 6.6904, 0), size = Vector(1, 1, 1), bone = "R Hand"},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-1.8503, 0, -0.1013)
 	SWEP.IronsightAng = Vector(0, 0.0104, 0)
 
@@ -69,7 +69,7 @@ else
 		-- {header = "CSGO", offset = {1000, 150}, atts = {"kk_counter"}},
 		-- ["+reload"] = {header = "Ammo", offset = {500, 150}, atts = {"am_magnum", "am_matchgrade"}}
 	-- }
-	
+
 	SWEP.Attachments = {
 		{header = "Lasers", offset = {-400, -400}, atts = {"kk_ins2_lam", "kk_ins2_flashlight"}},
 		{header = "Reload Aid", offset = {500, -400}, atts = {"kk_ins2_revolver_mag"}},
@@ -84,7 +84,7 @@ SWEP.Animations = {
 	base_insert = "base_reload_insert",
 	base_reload_end = "base_reload_end",
 	base_reload_end_empty = "base_reload_end",
-	
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_fire = {"base_fire","base_fire2"},
@@ -166,8 +166,8 @@ SWEP.ReloadTimes = {
 function SWEP:IndividualInitialize()
 	self.magType = "NONE"
 	self.ShotgunReload = true
-	
-	if CLIENT then 
+
+	if CLIENT then
 		self:setBodygroup(1, self:Clip1())
 		self:setBodygroup(2, self:Clip1())
 	end

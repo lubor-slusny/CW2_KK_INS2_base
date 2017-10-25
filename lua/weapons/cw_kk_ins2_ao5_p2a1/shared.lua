@@ -9,14 +9,14 @@ if CLIENT then
 	SWEP.PrintName = "HK P2A1: M84 Legend"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_flashgun")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_12guage"
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.4598, -2, 0.5881)
 	SWEP.IronsightAng = Vector()
 

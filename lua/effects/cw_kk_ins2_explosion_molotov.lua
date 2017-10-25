@@ -7,11 +7,11 @@ local ent, pos, tweakData
 function EFFECT:Init(fx)
 	ent = fx:GetEntity()
 	ent:SetAngles(ang0)
-	
+
 	pos = ent:GetPos()
-	
+
 	tweakData = ent:getTweakData()
-	
+
 	if ent:WaterLevel() == 0 then
 		for _,p in pairs(tweakData.explosionParticles) do
 			-- ParticleEffect(p, pos, ang0)
@@ -23,19 +23,19 @@ function EFFECT:Init(fx)
 			-- ParticleEffect(p, pos, ang, ent)
 			ParticleEffectAttach(p, PATTACH_ABSORIGIN_FOLLOW, ent, 0)
 		end
-		
+
 		sound.Play(tweakData.explosionSoundW0, pos, 180)
 	end
-	
+
 	self.ent = ent
 end
 
 function EFFECT:Think()
 	ent = self.ent
-	
+
 	if IsValid(ent) then
 		dlight = DynamicLight(ent:EntIndex())
-		
+
 		dlight.r = 255
 		dlight.g = 100
 		dlight.b = 50
@@ -45,10 +45,10 @@ function EFFECT:Think()
 		dlight.Size = 256
 		dlight.Decay = 256
 		dlight.DieTime = CurTime() + FrameTime()
-		
+
 		return true
 	end
-	
+
 	return false
 end
 

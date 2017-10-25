@@ -11,9 +11,9 @@ SWEP.magType = "smgMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "SUOMI?"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_suomi")
-	
+
 	SWEP.Shell = "KK_INS2_45apc"
 	SWEP.ShellDelay = 0.13
 
@@ -21,7 +21,7 @@ if CLIENT then
 		["kk_ins2_mag_thom_20"] = {model = "models/weapons/suomi/a_suomi_mag.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_thom_50"] = {model = "models/weapons/suomi/a_suomi_drum.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_mag_thom_20"] = {model = "models/weapons/suomi/w_suomi_mag.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_thom_50"] = {model = "models/weapons/suomi/w_suomi_drum.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -135,9 +135,8 @@ SWEP.ReloadTimes = {
 	base_reloadempty_extmag = {5.82, 6.92},
 }
 
-if CLIENT then 
+if CLIENT then
 	function SWEP:updateStandardParts()
 		self:setElementActive("kk_ins2_mag_thom_20", !(self.ActiveAttachments.kk_ins2_mag_thom_30 or self.ActiveAttachments.kk_ins2_mag_thom_50))
 	end
 end
-

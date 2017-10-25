@@ -12,19 +12,19 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Luger P08"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_luger")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.06
 	SWEP.ShellWorldAngleAlign = {Forward = 90, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_lugerp08.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-1.8026, 0, 0.893)
 	SWEP.IronsightAng = Vector(0.3143, 0.0047, 6.5882)
 
@@ -129,7 +129,7 @@ SWEP.MuzzleVelocity = 350
 SWEP.ReloadTimes = {
 	base_reload = {2.2, 3},
 	base_reloadempty = {2.2, 4.1},
-	
+
 	base_melee_bash = {0.3, 0.8},
 	empty_melee_bash = {0.3, 0.8},
 }

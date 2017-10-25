@@ -31,26 +31,26 @@ if CLIENT then
 		[1] = {t = "Changes skin and/or adds camo sleeve.", c = CustomizableWeaponry.textColors.NEUTRAL},
 		[2] = {t = "^^ Only where and when applicable.", c = CustomizableWeaponry.textColors.NEUTRAL},
 	}
-	
+
 	function att:setSleeve(val)
 		self:setElementActive("sleeve", val)
 	end
-	
+
 	local lastStyle
-	
+
 	function att:elementRender()
 		if not self.ActiveAttachments[att.name] then
 			return
 		end
-		
+
 		local style = self:getSightColor(att.name).kki
-		
+
 		if style == lastStyle then
 			return
 		end
-		
+
 		lastStyle = style
-		
+
 		if style == 1 then
 			self:setSkin(1)
 			att.setSleeve(self, false)
@@ -62,7 +62,7 @@ if CLIENT then
 			att.setSleeve(self, true)
 		end
 	end
-	
+
 	function att:detachFunc()
 		self:setSkin(0)
 		att.setSleeve(self, false)

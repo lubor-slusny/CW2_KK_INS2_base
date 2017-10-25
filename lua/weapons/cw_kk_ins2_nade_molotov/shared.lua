@@ -10,20 +10,20 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Molotov`s Drink"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_molotov")
-	
+
 	SWEP.AttachmentModelsVM = {
 		["fx_light"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(), angle = Angle(), size = Vector(0.01, 0.01, 0.01), attachment = "lighter", active = true, nodraw = true},
 		["fx_rag"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(-0.67614, 0.05519, -0.63427), angle = Angle(), size = Vector(0.01, 0.01, 0.01), attachment = "rag", active = true, nodraw = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 end
 
 SWEP.Attachments = CustomizableWeaponry_KK.ins2.slowGrenadeMenu
@@ -34,10 +34,10 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_molotov"
 SWEP.Animations = {
 	pullpin = "pullback_high",
 	throw = "throw",
-	
+
 	pull_short = "pullback_low",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",
@@ -90,7 +90,7 @@ SWEP.projectileTrailParticles = "molotov_trail"
 if CLIENT then
 	local m
 	local muz = {}
-	
+
 	function SWEP:getMuzzlePosition()
 		if self.Owner:ShouldDrawLocalPlayer() then
 			m = self.Owner:GetBoneMatrix(self.Owner:LookupBone("ValveBiped.Bip01_R_Hand"))
@@ -98,22 +98,22 @@ if CLIENT then
 			muz.Ang = m:GetAngles()
 			return muz
 		end
-		
+
 		m = self.CW_VM:GetAttachment(2)
-		
+
 		if self.CustomizeMenuAlpha > 0 then
 			offset = self.HUD_3D2DOffsetMenu
 		else
 			offset = self.HUD_3D2DOffset
 		end
-		
+
 		pos = m.Pos
 		ang = EyeAngles()
-		
+
 		pos = pos + ang:Right() * offset.x
 		pos = pos + ang:Up() * offset.y
 		pos = pos + ang:Forward() * offset.z
-		
+
 		muz.Pos = pos
 		muz.Ang = m.Ang
 		return muz

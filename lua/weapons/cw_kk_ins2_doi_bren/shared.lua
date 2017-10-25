@@ -11,23 +11,23 @@ SWEP.magType = "arMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Bren Mk2"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_bren_mk2")
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.ShellDelay = 0.1
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 90, Right = 0, Up = 0}
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_bren.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_bren.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_bren.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.0786, -3, 2.3467)
 	SWEP.IronsightAng = Vector(-0.053, 0.2252, 0)
 
@@ -58,7 +58,7 @@ SWEP.Animations = {
 	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
 	base_melee = "base_melee_bash",
-	
+
 	bipod_in = "deployed_in",
 	bipod_fire = {"deployed_fire_1", "deployed_fire_2"},
 	bipod_fire_aim = {"deployed_iron_fire_1","deployed_iron_fire_2"},
@@ -130,9 +130,9 @@ SWEP.MuzzleVelocity = 743.7
 SWEP.ReloadTimes = {
 	base_reload = {4, 5.79},
 	base_reload_empty = {5.8, 7.76},
-	
+
 	deployed_reload = {4, 5.71},
 	deployed_reload_empty = {5.8, 7.56},
-	
+
 	base_melee_bash = {0.5, 1.7},
 }

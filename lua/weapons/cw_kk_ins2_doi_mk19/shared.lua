@@ -12,30 +12,30 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Mk19"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_vickers")
-	
+
 	SWEP.MuzzleAttachmentName = "muzzle"
-	
+
 	-- SWEP.NoShells = true
-	
+
 	SWEP.Shell = "KK_INS2_40mm"
 	SWEP.ShellEjectVelocity = 50
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_sterling.mdl", pos = Vector(2.4741, -3.8255, 2.5795), angle = Angle(0, -90, 0), size = Vector(1.25, 1.25, 1.25), bone = "Weapon"},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_sterling.mdl", pos = Vector(2.4741, -3.8255, 2.5795), angle = Angle(0, -90, 0), size = Vector(1.25, 1.25, 1.25), bone = "Weapon"},
 		["kk_ins2_anpeq15"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_anpeq_ring.mdl", pos = Vector(2.4741, -3.8255, 2.5795), angle = Angle(0, -90, 0), size = Vector(1.25, 1.25, 1.25), bone = "Weapon"},
 		["kk_counter"] = {model = "models/weapons/stattrack.mdl", pos = Vector(0.1162, -2.9416, 2.5503), angle = Angle(0, 0, 0), size = Vector(0.319, 0.319, 0.319), bone = "Weapon"},
 	}
-	
+
 	-- SWEP.LaserAngAdjustBase = Angle(6,-4,0)
 	-- SWEP.LaserAngAdjustBipod = Angle(0,0,0)
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-0.0034, 0, -0.0059)
 	SWEP.IronsightAng = Vector(0, 0.0431, 0)
 
@@ -83,7 +83,7 @@ SWEP.Animations = {
 	base_crawl_empty = "base_crawl",
 	base_melee = "base_melee_bash",
 	base_melee_empty = "base_melee_bash",
-	
+
 	bipod_in = "deployed_in",
 	bipod_in_empty = "deployed_in",
 	bipod_fire = {"deployed_fire_1","deployed_fire_2"},
@@ -169,26 +169,26 @@ SWEP.hipBulletDelay = 0
 SWEP.ReloadTimes = {
 	base_reload = {7.3, 10},
 	base_reloadempty = {7.3, 10},
-	
+
 	deployed_reload = {5.8, 8.1},
 	deployed_reload_empty = {5.8, 8.1},
-	
+
 	base_melee_bash = {0.6, 2},
 }
 
 if CLIENT then
 	local pos = Vector(0,0,-2)
 	local ang = Vector(1,0,0)
-	
+
 	CustomizableWeaponry.callbacks:addNew("adjustViewmodelPosition", "KK_INS2_MK19", function(wep, TargetPos, TargetAng)
 		if wep:GetClass() != "cw_kk_ins2_doi_mk19" then return end
 		if wep.dt.BipodDeployed then
 			if wep:isAiming() then return end
-			
+
 			return pos, ang
 		else
 			if !wep:isAiming() then return end
-			
+
 			return wep.AlternativePos, wep.AlternativeAng
 		end
 	end)

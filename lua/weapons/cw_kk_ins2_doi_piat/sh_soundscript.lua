@@ -15,7 +15,7 @@ SWEP.Sounds = {
 	base_holster = {
 		{time = 0, sound = "CW_KK_INS2_UNIVERSAL_HOLSTER"},
 	},
-	
+
 	empty_holster = {
 		{time = 0, sound = "CW_KK_INS2_UNIVERSAL_HOLSTER"},
 	},
@@ -42,19 +42,19 @@ SWEP.Sounds = {
 		{time = 125/32.5, sound = "CW_KK_INS2_DOI_PIAT_SHOULDER"},
 		-- { event 46 87 ""},
 	},
-	
+
 	iron_dryfire = {
 		{time = 1/30, sound = "CW_KK_INS2_DOI_PIAT_EMPTY"},
 	},
-	
+
 	iron_dryfire_preblend = {
 		{time = 1/30, sound = "CW_KK_INS2_DOI_PIAT_EMPTY"},
 	},
-	
+
 	base_melee = {
 		{time = 5/31, sound = "CW_KK_INS2_DOI_MELEE"},
 	},
-	
+
 	empty_melee = {
 		{time = 5/31, sound = "CW_KK_INS2_DOI_MELEE"},
 	},

@@ -33,7 +33,7 @@ function att:detachFunc()
 			self.AttachmentModelsVM.std_mag.active = true
 		end
 	end
-	
+
 	self._KK_INS2_customReloadSuffix = ""
 	self:unloadWeapon()
 	self.Primary.ClipSize = self.Primary.ClipSize_ORIG_REAL

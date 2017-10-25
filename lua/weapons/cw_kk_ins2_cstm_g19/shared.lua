@@ -12,23 +12,23 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Glock 19"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/cw_kk_ins2_cstm_g19")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.06
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
-	SWEP.AttachmentModelsVM = {		
+
+	SWEP.AttachmentModelsVM = {
 		["kk_ins2_suppressor_pistol"] = {model = "models/weapons/upgrades/a_suppressor_pistol.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), merge = true},
 
 		["kk_ins2_mag_g19_15"] = {model = "models/weapons/upgrades/a_magazikk_makag19_8.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_g19_22"] = {model = "models/weapons/upgrades/a_magazikk_makag19_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_rail.mdl", pos = Vector(0, 3.3, -0.3336), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), bone = "Weapon"},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_rail.mdl", pos = Vector(0, 3.3, -0.3336), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), bone = "Weapon"},
 		["kk_ins2_m6x"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_m6x.mdl", pos = Vector(-0.1169, 1.5466, -1.0772), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), bone = "Weapon"},
-		
+
 		["kk_ins2_g19_skin"] = {model = "models/weapons/v_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/blacker/glock"},
 		["kk_ins2_g19_skin2"] = {model = "models/weapons/v_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/tt/glock"},
 		["kk_ins2_g19_skin3"] = {model = "models/weapons/v_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/ss/glock"},
@@ -36,19 +36,19 @@ if CLIENT then
 
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_suppressor_pistol"] = {model = "models/weapons/upgrades/w_sil_pistol.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_mag_g19_15"] = {model = "models/weapons/upgrades/w_magazikk_makag19_8.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_g19_22"] = {model = "models/weapons/upgrades/w_magazikk_makag19_15.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/w_laser_sec.mdl", pos = Vector(), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/w_laser_sec.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_m6x"] = {model = "models/weapons/upgrades/w_laser_sec.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_g19_skin"] = {model = "models/weapons/w_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/blacker/glock"},
 		["kk_ins2_g19_skin2"] = {model = "models/weapons/w_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/tt/glock"},
 		["kk_ins2_g19_skin3"] = {model = "models/weapons/w_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/ss/glock"},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-1.9772, 0, 0.3214)
 	SWEP.IronsightAng = Vector(0.4361, 0.0414, 0)
 
@@ -158,7 +158,7 @@ SWEP.ReloadTimes = {
 	base_reloadempty_extmag = {2, 2.65},
 }
 
-if CLIENT then 
+if CLIENT then
 	function SWEP:updateStandardParts()
 		self:setElementActive("kk_ins2_mag_g19_15", !self.ActiveAttachments.kk_ins2_mag_g19_22)
 	end

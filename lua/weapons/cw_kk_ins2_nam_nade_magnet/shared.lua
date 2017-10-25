@@ -10,22 +10,22 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "BZE39-fused AT 'nade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_hafthohlladung")
-	
+
 	SWEP.IconLetter = "O"
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.HUD_3D2DOffset = Vector(3, -5, 0)
 	SWEP.HUD_3D2DOffsetMenu = Vector(-1, -3, 0)
 	SWEP.CustomizationMenuScale = 0.006
-	
+
 	SWEP.HUD_3D2DBone = 53
 end
 
@@ -36,16 +36,16 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_ww2_c4_de"
 
 SWEP.Animations = {
 	plant = "base_plant",
-	
+
 	pullpin = "base_pullback",
 	throw = "base_throw",
-	
+
 	pull_cook = "secondary_pullback",
 	throw_cook = "secondary_throw",
-	
+
 	pull_short = "low_pullback",
 	throw_short = "low_throw",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",
@@ -54,7 +54,7 @@ SWEP.Animations = {
 	base_safe = "base_down",
 	base_crawl = "base_crawl",
 }
-	
+
 SWEP.SpeedDec = 5
 
 SWEP.Slot = 4

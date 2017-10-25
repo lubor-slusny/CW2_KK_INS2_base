@@ -6,9 +6,9 @@ if CLIENT then
 	SWEP.PrintName = "Enfield CW Base"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-		
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_enfield_bayonet")
-	
+
 	SWEP.AttachmentModelsVM = {
 		["ani_body"] = {model = "models/weapons/v_enfield_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
@@ -24,7 +24,7 @@ SWEP.Animations = {
 	base_holster = "holster",
 	base_sprint = "sprint",
 	base_crawl = "crawl",
-	
+
 	slash_primary = {"slash_1","slash_2"},
 	slash_secondary = {"slash_1","slash_2"},
 	draw = "draw",

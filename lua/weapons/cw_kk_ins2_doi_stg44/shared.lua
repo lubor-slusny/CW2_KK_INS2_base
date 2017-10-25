@@ -11,24 +11,24 @@ SWEP.magType = "arMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "STG-44"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_stg44")
-	
+
 	SWEP.Shell = "KK_INS2_762x33"
 	SWEP.ShellDelay = 0.06
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_scope_zf41"] = {model = "models/weapons/upgrades/a_optic_zf4.mdl", rLight = true, pos = Vector(0.0161, -4.2041, 5.964), angle = Angle(0, -90, 0), size = Vector(1.2, 1.2, 1.2), bone = "STG44"},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_stg44.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_stg44.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_stg44.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_scope_zf41"] = {model = "models/weapons/upgrades/w_scope_g43.mdl", pos = Vector(5.218, -1.0885, 7.1822), angle = Angle(3.6414, -3.9709, 0), size = Vector(1.1, 1.1, 1.1), bone = "R Hand"},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.316, -2, 0.5705)
 	SWEP.IronsightAng = Vector(0.2536, 0.0368, 0)
 
@@ -125,6 +125,6 @@ SWEP.MuzzleVelocity = 685
 SWEP.ReloadTimes = {
 	base_reload = {64/30, 3.3},
 	base_reloadempty = {76/31.8, 5},
-	
+
 	base_melee_bash = {0.3, 1},
 }

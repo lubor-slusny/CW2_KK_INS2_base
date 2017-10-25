@@ -20,31 +20,31 @@ if CLIENT then
 		[2] = {t = "Narrow scope reduces awareness.", c = CustomizableWeaponry.textColors.NEGATIVE},
 		[3] = {t = "Can be disorienting at close range.", c = CustomizableWeaponry.textColors.NEGATIVE}
 	}
-	
+
 	local path = "models/weapons/optics/mosin_crosshair"
-	
+
 	att.zoomTextures = {
 		{tex = surface.GetTextureID(path), offset = {0, 1}},
 	}
-	
+
 	att._rtFov = 6
 	att._rtReticle = surface.GetTextureID(path)
 	att._reticleMat = Material(path)
-	
+
 	att.zoomDesired = 7
-	
+
 	function att:drawRenderTarget()
 		local scopeEnt = self.AttachmentModelsVM[att.name].ent // to b tuned
-		if self:isAiming() then 
+		if self:isAiming() then
 			scopeEnt:SetSequence(2)
 		else
 			-- scopeEnt:SetSequence(1)
 			scopeEnt:SetSequence(2)
 		end
-		
+
 		CustomizableWeaponry_KK.ins2.rtSight:renderTarget(self, att)
 	end
-	
+
 	function att:elementRender()
 		CustomizableWeaponry_KK.ins2.rtSight:stencil(self, att)
 	end

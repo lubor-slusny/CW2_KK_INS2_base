@@ -1,8 +1,8 @@
 
-local function shell(wep) 
+local function shell(wep)
 	if SERVER then return end
-	
-	wep:shellEvent() 
+
+	wep:shellEvent()
 end
 
 -- {time = 21/30, sound = "", callback = shell},

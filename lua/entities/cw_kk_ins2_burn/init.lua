@@ -6,7 +6,7 @@ function ENT:processProjectile(ent)
 	if !IsValid(ent) then
 		return
 	end
-	
+
 	self._initPos = ent:GetPos()
 	self._initAng = ent:GetAngles()
 	self._initDuration = ent.BurnDuration
@@ -20,7 +20,7 @@ function ENT:Initialize()
 	self._initRange = self._initRange or 300
 
 	self:SetModel("models/weapons/flare.mdl")
-	
+
 	self:DrawShadow(false)
 	self:PhysicsInit(SOLID_NONE)
 	self:SetMoveType(MOVETYPE_NONE)
@@ -29,9 +29,9 @@ function ENT:Initialize()
 
 	self:SetPos(self._initPos)
 	self:SetAngles(self._initAng)
-	
+
 	self:Ignite(self._initDuration, self._initRange)
-	
+
 	SafeRemoveEntityDelayed(self, self._initDuration or 30)
 end
 

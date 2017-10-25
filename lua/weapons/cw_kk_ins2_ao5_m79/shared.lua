@@ -9,14 +9,14 @@ if CLIENT then
 	SWEP.PrintName = "M79"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m79")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_40mm"
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.3908, -2, 0.3153)
 	SWEP.IronsightAng = Vector(0.9848, 0, 0)
 
@@ -125,7 +125,7 @@ function SWEP:FireBullet(Damage, CurCone, ClumpSpread, Shots)
 		else
 			target.fireFunc(self)
 		end
-		
+
 		CustomizableWeaponry.grenadeTypes.selectFireSound(self, target)
 	else
 		weapons.GetStored("cw_base").FireBullet(self, Damage, CurCone, ClumpSpread, Shots)

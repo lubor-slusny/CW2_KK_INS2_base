@@ -9,28 +9,28 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M1A1 'zooka"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_bazooka")
-	
+
 	SWEP.RearEffectw = true
 	SWEP.NoShells = true
-	
+
 	SWEP.BackupSights = {
 		["nil"] = {
 			Vector(-1.4887, 0, -1.3139),
 			Vector(7.5622, -0.9048, 13.5897)
 		},
 	}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["ani_body"] = {model = "models/weapons/v_bazooka.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
-		
+
 		["h347"] = {model = "models/weapons/upgrades/a_warhead_bazooka_1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_ammo_m10"] = {model = "models/weapons/upgrades/a_warhead_bazooka_2.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	-- SWEP.IronsightPos = Vector(-1.7264, 0, -0.281)
 	-- SWEP.IronsightAng = Vector(7.5622, -0.9048, 13.5897)
 
@@ -46,7 +46,7 @@ if CLIENT then
 	SWEP.SprintAnimSpeed = 1
 	SWEP.ViewModelMovementScale_sprint = 0.6
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.CustomizationMenuScale = 0.02
 	SWEP.HUD_MagText = "TUBE: "
 end
@@ -66,7 +66,7 @@ SWEP.KK_INS2_EmptyIdle = true
 
 SWEP.Animations = {
 	base_insert = "base_reload",
-	
+
 	base_pickup = "base_ready",
 	base_pickup_mm = "base_ready_phosphorus",
 	base_draw = "base_draw",
@@ -161,7 +161,7 @@ SWEP.ReloadTimes = {
 	base_ready_phosphorus = {4.7, 6.87},
 	base_reload = {4.4, 6.43},
 	base_reload_phosphorus = {4.4, 6.43},
-	
+
 	base_melee = {0.3, 1.4},
 }
 

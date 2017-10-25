@@ -27,58 +27,58 @@ SWEP.Damage = 30
 if CLIENT then
 	function SWEP:postPrimaryAttack()
 		self:flamethrowerStartStuff()
-		
+
 		self.stopParticlesTime = CurTime() + 0.1
 	end
-	
+
 	function SWEP:flamethrowerStartStuff()
 		if not self.flamethrowerFXStuffStarted then
 			-- if not self.AttachmentModelsVM then return end
 			-- if not self.AttachmentModelsVM.muzzle then return end
-			
+
 			self.flamethrowerFXStuffStarted = true
-			
+
 			-- local vm = self.AttachmentModelsVM.muzzle.ent
 			-- ParticleEffectAttach(self.MuzzleEffectF, PATTACH_POINT_FOLLOW, vm, 0)
-			
+
 			local vm = self.CW_VM
 			ParticleEffectAttach(self.MuzzleEffectF, PATTACH_POINT_FOLLOW, vm, 1)
 		end
 	end
-	
+
 	function SWEP:flamethrowerStopStuff()
 		if self.flamethrowerFXStuffStarted then
 			-- if not self.AttachmentModelsVM then return end
 			-- if not self.AttachmentModelsVM.muzzle then return end
-			
+
 			self.flamethrowerFXStuffStarted = false
-			
+
 			-- self.AttachmentModelsVM.muzzle.ent:StopParticles()
-			
+
 			local vm = self.CW_VM:StopParticles()
 			self.flamethrowerFXPilotStarted = false
 			self:flamethrowerStartPilot()
 		end
 	end
-	
+
 	function SWEP:flamethrowerStartPilot()
-		if not self.flamethrowerFXPilotStarted then 
+		if not self.flamethrowerFXPilotStarted then
 			-- if not self.AttachmentModelsVM then return end
 			-- if not self.AttachmentModelsVM.pilot then return end
-			
+
 			self.flamethrowerFXPilotStarted = true
-			
+
 			-- local vm = self.AttachmentModelsVM.pilot.ent
 			-- ParticleEffectAttach("flamethrower_pilotLight", PATTACH_POINT_FOLLOW, vm, 0)
-			
+
 			local vm = self.CW_VM
 			ParticleEffectAttach("flamethrower_pilotLight", PATTACH_POINT_FOLLOW, vm, 2)
 		end
 	end
-	
+
 	function SWEP:IndividualThink_INS2()
 		self:flamethrowerStartPilot()
-		
+
 		if self.stopParticlesTime and CurTime() > self.stopParticlesTime then
 			self:flamethrowerStopStuff()
 		end
@@ -122,18 +122,18 @@ end
 
 function SWEP:canPenetrate(traceData, direction)
 	local dot = nil
-	
+
 	if not self.NoPenetration[traceData.MatType] then
 		dot = self:getSurfaceReflectionDotProduct(traceData, direction)
 		ent = traceData.Entity
-	
+
 		if not ent:IsNPC() and not ent:IsPlayer() then
 			if dot > 0.26 and self.CanPenetrate then
 				return true, dot
 			end
 		end
 	end
-	
+
 	return false, dot
 end
 
@@ -149,23 +149,23 @@ function SWEP:FireBullet(damage, cone, clumpSpread, bullets)
 	sp = GetShootPos(self.Owner)
 	local commandNumber = self.Owner:GetCurrentCommand():CommandNumber()
 	math.randomseed(commandNumber)
-	
+
 	if self.Owner:Crouching() then
 		cone = cone * 0.85
 	end
-	
+
 	Dir = (self.Owner:EyeAngles() + self.Owner:GetViewPunchAngles() + Angle(math.Rand(-cone, cone), math.Rand(-cone, cone), 0) * 25):Forward()
 	clumpSpread = clumpSpread or self.ClumpSpread
-	
+
 	CustomizableWeaponry.callbacks.processCategory(self, "adjustBulletStructure", bul)
-	
+
 	for i = 1, bullets do
 		Dir2 = Dir
-		
+
 		if clumpSpread and clumpSpread > 0 then
 			Dir2 = Dir + Vector(math.Rand(-1, 1), math.Rand(-1, 1), math.Rand(-1, 1)) * clumpSpread
 		end
-	
+
 		bul.Num = 1
 		bul.Src = sp
 		bul.Dir = Dir2
@@ -176,24 +176,24 @@ function SWEP:FireBullet(damage, cone, clumpSpread, bullets)
 		bul.Callback = self.bulletCallback
 		bul.Distance = self.FlamethrowerRange
 		bul.HullSize = 6
-		
+
 		self.Owner:FireBullets(bul)
-		
+
 		tr.start = sp
 		tr.endpos = tr.start + Dir2 * self.PenetrativeRange
 		tr.filter = self.Owner
 		tr.mask = self.NormalTraceMask
-		
+
 		trace = util.TraceLine(tr)
-		
+
 		if trace.Hit and not trace.HitSky then
 			local canPenetrate, dot = self:canPenetrate(trace, Dir2)
-		
+
 			if self:canRicochet(trace) then
 				dot = dot or self:getSurfaceReflectionDotProduct(trace, Dir2)
 				Dir2 = Dir2 + (trace.HitNormal * dot) * 3
 				math.randomizeVector(Dir2, 0.06)
-				
+
 				bul.Num = 1
 				bul.Src = trace.HitPos
 				bul.Dir = Dir2
@@ -203,11 +203,11 @@ function SWEP:FireBullet(damage, cone, clumpSpread, bullets)
 				bul.Damage = bul.Damage * 0.75
 				bul.Distance = self.FlamethrowerRicochetRange
 				bul.HullSize = 6
-				
+
 				self.Owner:FireBullets(bul)
 			end
 		end
 	end
-	
+
 	tr.mask = self.NormalTraceMask
 end

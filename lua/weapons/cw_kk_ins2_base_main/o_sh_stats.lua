@@ -18,13 +18,13 @@ function SWEP:recalculateStats()
 	self:recalculateDeployTime()
 	self:recalculateReloadSpeed()
 	self:recalculateClumpSpread()
-	
+
 	if CLIENT then
 		self:recalculateMouseSens()
 	end
-	
+
 	self:recalculateMaxSpreadInc()
-	
+
 	self:recalculateHolsterTime()
 	self:recalculateBoltActionSpeed()
 end

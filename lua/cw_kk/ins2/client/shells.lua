@@ -12,7 +12,7 @@ function CustomizableWeaponry_KK.ins2.shells:_rebuildCache()
 			i = i + 1
 		end
 	end
-	
+
 	self.cacheSize = #self._cache
 end
 
@@ -28,13 +28,13 @@ function shellMeta:PhysicsCollide()
 	if (self:WaterLevel() != 0) then
 		return
 	end
-	
+
 	local CT = CurTime()
-	
+
 	if self._nextSoundTime and CT < self._nextSoundTime then
 		return
 	end
-	
+
 	self._nextSoundTime = CT + 0.3
 	soundPlay(self._ss, self:GetPos())
 end
@@ -42,22 +42,22 @@ end
 function shellMeta:Think()
 	self._lastWL = self._lastWL or self:WaterLevel()
 	local newWl = self:WaterLevel()
-	
+
 	if (newWl == 3) and (newWl != self._lastWL) then
 		local pos = self:GetPos()
 		soundPlay("CW_KK_INS2_SHELL_SPLASH", pos)
-		
+
 		local e = EffectData()
 		e:SetOrigin(pos)
 		util.Effect("waterripple", e)
 	end
-	
+
 	self._lastWL = newWl
-	
+
 	if self._ttl > CurTime() then return end
-	
+
 	SafeRemoveEntity(self)
-	
+
 	CustomizableWeaponry_KK.ins2.shells:_rebuildCache()
 end
 
@@ -71,27 +71,27 @@ function CustomizableWeaponry_KK.ins2.shells:make(pos, ang, velocity, angleVeloc
 	angleVelocity = angleVelocity or Vector()
 	t = t or CustomizableWeaponry.shells:getShell("mainshell")
 	scale = scale or 1
-	
+
 	t.bbmin = t.bbmin or Vector(-0.5, -0.15, -0.5)
 	t.bbmax = t.bbmax or Vector(0.5, 0.15, 0.5)
-	
+
 	velocity.x = velocity.x + math.Rand(-5, 5)
 	velocity.y = velocity.y + math.Rand(-5, 5)
 	velocity.z = velocity.z + math.Rand(-5, 5)
-	
+
 	angleVelocity.x = angleVelocity.x + math.Rand(-5, 5)
 	angleVelocity.y = angleVelocity.y + math.Rand(-5, 5)
 	angleVelocity.z = angleVelocity.z + math.Rand(-5, 5)
-	
-	local ent = ClientsideModel(t.m, RENDERGROUP_BOTH) 
+
+	local ent = ClientsideModel(t.m, RENDERGROUP_BOTH)
 	ent:SetPos(pos)
 	ent:SetAngles(ang)
 	ent:SetModelScale(scale, 0)
 	ent:PhysicsInitBox(t.bbmin * scale, t.bbmax * scale)
-	ent:SetMoveType(MOVETYPE_VPHYSICS) 
-	ent:SetSolid(SOLID_VPHYSICS) 
+	ent:SetMoveType(MOVETYPE_VPHYSICS)
+	ent:SetSolid(SOLID_VPHYSICS)
 	ent:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-	
+
 	local phys = ent:GetPhysicsObject()
 
 	if cvarSSF:GetInt() == 1 then // no function lol
@@ -99,7 +99,7 @@ function CustomizableWeaponry_KK.ins2.shells:make(pos, ang, velocity, angleVeloc
 	else
 		phys:SetMaterial("gmod_silent")
 	end
-	
+
 	phys:SetMass(10)
 	phys:SetVelocity(velocity)
 	phys:AddAngleVelocity(angleVelocity)
@@ -111,7 +111,7 @@ function CustomizableWeaponry_KK.ins2.shells:make(pos, ang, velocity, angleVeloc
 			end
 		end)
 	end
-	
+
 	if cvarSSF:GetInt() == 3 then // recycled function
 		ent._ss = t.s
 		ent._ssp = false
@@ -124,10 +124,10 @@ function CustomizableWeaponry_KK.ins2.shells:make(pos, ang, velocity, angleVeloc
 
 	ent._ttl = CurTime() + (cvarSLT:GetFloat())
 	hook.Add("Think", ent, self.shellMeta.Think)
-	
+
 	table.insert(self._cache, ent)
 	self.cacheSize = #self._cache
-	
+
 	return ent
 end
 
@@ -135,6 +135,6 @@ function CustomizableWeaponry_KK.ins2.shells:cleanUpShells()
 	for _,v in pairs(self._cache) do
 		SafeRemoveEntity(v)
 	end
-	
+
 	self:_rebuildCache()
 end

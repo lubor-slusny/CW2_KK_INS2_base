@@ -5,11 +5,11 @@ if CLIENT then
 	SWEP.PrintName = "Kar-98k Bayonet"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_k98bayonet")
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.HUD_3D2DBone = 58
 end
 
@@ -74,6 +74,6 @@ SWEP.Sounds = {
 
 	crawl = {
 		{time = 10/30, sound = "CW_KK_INS2_UNIVERSAL_RIGHTCRAWL"},
-		{time = 20/30, sound = "CW_KK_INS2_UNIVERSAL_LEFTCRAWL"},		
+		{time = 20/30, sound = "CW_KK_INS2_UNIVERSAL_LEFTCRAWL"},
 	},
 }

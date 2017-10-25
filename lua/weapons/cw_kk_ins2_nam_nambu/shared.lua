@@ -12,19 +12,19 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Nambu"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nambu")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.06
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_mag_makarov_8"] = {model = "models/weapons/upgrades/a_magazine_makarov_8.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 	}
 
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-1.9122, 0, 0.5199)
 	SWEP.IronsightAng = Vector(0.0411, 0, 0)
 
@@ -136,10 +136,10 @@ SWEP.ReloadTimes = {
 	base_reloadempty_extmag = {2, 2.65},
 }
 
-if CLIENT then 
+if CLIENT then
 	function SWEP:updateOtherParts()
 		local active = self.ActiveAttachments
-	
+
 		-- self.AttachmentModelsVM.kk_ins2_mag_makarov_8.active = !active.kk_ins2_mag_makarov_15
 	end
 end

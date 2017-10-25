@@ -6,7 +6,7 @@ if CLIENT then
 	SWEP.PrintName = "Gurkha Knife"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.AttachmentModelsVM = {}
 end
 
@@ -52,7 +52,7 @@ SWEP.Sounds = {
 	holster = {
 		{time = 0, sound = "CW_KK_INS2_UNIVERSAL_HOLSTER"},
 	},
-	
+
 	crawl = {
 		{time = 10/25, sound = "CW_KK_INS2_UNIVERSAL_RIGHTCRAWL"},
 		{time = 20/25, sound = "CW_KK_INS2_UNIVERSAL_LEFTCRAWL"},

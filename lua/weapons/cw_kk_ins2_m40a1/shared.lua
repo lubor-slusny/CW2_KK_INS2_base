@@ -11,45 +11,45 @@ if CLIENT then
 	SWEP.PrintName = "M40A1"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m40a1")
-	
+
 	SWEP.Shell = "KK_INS2_762x51"
 	-- SWEP.ShellDelay = 0.9
 	SWEP.NoShells = true
-	
+
 	SWEP.BackupSights = {
 		["kk_ins2_elcan"] = {
 			Vector(-2.8091, -3, -0.673),
 			Vector(-0.4423, 0.0292, 0)
 		},
 	}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_standard_m40.mdl", pos = Vector(), angle = Angle(90, 90, 0), size = Vector(1, 1, 1), merge = true, active = true},
 
 		["kk_counter"] = {model = "models/weapons/stattrack.mdl", bone = "Weapon", rel = "", pos = Vector(1.236, -7.261, 1.273), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
 		["kk_textbox"] = {model = "models/weapons/uid.mdl", bone = "Weapon", rel = "", pos = Vector(1.4, -6, 2.15), angle = Angle(0, -90, 0), size = Vector(1.5, 1.5, 1.5)},
-		
+
 		["kk_ins2_suppressor_sec"] = {model = "models/weapons/upgrades/a_suppressor_sec.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/a_bipod_m40.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_sec_shotgun.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_sec_shotgun.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_anpeq15"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_anpeq_shotgun.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-	
+
 		["kk_ins2_magnifier"] = {model = "models/weapons/upgrades/a_optic_aimp2x.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_aimpoint"] = {model = "models/weapons/upgrades/a_optic_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_elcan"] = {model = "models/weapons/upgrades/a_optic_elcan_m.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, retSizeMult = 0.85},
 		["kk_ins2_eotech"] = {model = "models/weapons/upgrades/a_optic_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_kobra"] = {model = "models/weapons/upgrades/a_optic_kobra_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, retSizeMult = 1.2},
 		["kk_ins2_po4"] = {model = "models/weapons/upgrades/a_optic_po4x24.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_scope_m40"] = {model = "models/weapons/upgrades/a_optic_m40.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_mosin"] = {model = "models/weapons/upgrades/a_optic_mosin_l.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_cstm_cmore"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_cmore.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_compm4s"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_compm4s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_microt1"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_microt1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -60,25 +60,25 @@ if CLIENT then
 
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/w_flipup_m40.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		
+
 		["kk_ins2_suppressor_sec"] = {model = "models/weapons/upgrades/w_sil_sec1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/w_bipod_m40.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/w_laser_sec.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/w_laser_sec.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
 		["kk_ins2_magnifier"] = {model = "models/weapons/upgrades/w_magaim.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-	
+
 		["kk_ins2_aimpoint"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_elcan"] = {model = "models/weapons/upgrades/w_elcan.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_eotech"] = {model = "models/weapons/upgrades/w_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_kobra"] = {model = "models/weapons/upgrades/w_kobra.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_po4"] = {model = "models/weapons/upgrades/w_po.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_scope_m40"] = {model = "models/weapons/upgrades/w_scope_m40.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_mosin"] = {model = "models/weapons/upgrades/w_scope_mosin.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_cstm_cmore"] = {model = "models/weapons/attachments/w_cw_kk_ins2_cstm_cmore.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_compm4s"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_microt1"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -86,12 +86,12 @@ if CLIENT then
 		["kk_ins2_cstm_barska"] = {model = "models/weapons/upgrades/w_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_eotechxps"] = {model = "models/weapons/attachments/w_cw_kk_ins2_cstm_eotechxps.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	-- SWEP.WElements = {
 		-- ["scout"] = { type = "Model", model = "models/weapons/w_m40.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(5.021, 0.694, -1.369), angle = Angle(-10, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 		-- ["awp"] = { type = "Model", model = "models/weapons/w_m40.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(4.919, 0.822, -1.236), angle = Angle(-10, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 	-- }
-	
+
 	SWEP.KKINS2ScopeMosinPos = Vector(-2.791, -2, 0.479)
 	SWEP.KKINS2ScopeMosinAng = Vector()
 
@@ -162,7 +162,7 @@ SWEP.Animations = {
 	base_safe = "base_down",
 	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
-	
+
 	bipod_in = "deploy_in",
 	bipod_fire = "deployed_fire_start",
 	bipod_fire_aim = "deployed_iron_fire_start",
@@ -245,15 +245,15 @@ SWEP.MuzzleVelocity = 777
 SWEP.ReloadTimes = {
 	base_fire_end = {15/30, 1.6},
 	iron_fire_end = {17/28.5, 1.75},
-	
+
 	base_reload_start = {15/30, 0.9, KK_INS2_SHOTGUN_UNLOAD_ONE},
 	base_reload_insert = {12/32, 0.825},
 	base_reload_end = {1.1, 1.1},
 	base_reload_end_empty = {1.1, 1.1},
-	
+
 	deployed_fire_end = {18/30, 1.7},
 	deployed_iron_fire_end = {16/34, 1.5},
-	
+
 	deployed_reload_start = {15/30, 0.9, KK_INS2_SHOTGUN_UNLOAD_ONE},
 	deployed_reload_insert = {12/30, 0.825},
 	deployed_reload_end = {1.1, 1.1},
@@ -264,30 +264,30 @@ if CLIENT then
 		local vm = self.CW_VM
 		local cycle = vm:GetCycle()
 		local activity = self.Sequence
-		
+
 		if activity:find("reload_start") then
 			self.shotgunReloading = true
 		end
-		
+
 		if activity:find("reload_end") then
 			self.shotgunReloading = false
 		end
-	end	
+	end
 
 	function SWEP:playSwitchBipod()
 		local isBipod = self.dt.BipodDeployed
 		local vm = self.CW_VM
 		local cycle = vm:GetCycle()
 		local activity = self.Sequence
-		
+
 		local canPlay = !(((activity:find("reload") or activity:find("fire_end")) and cycle < 1) or self.shotgunReloading)
-		
+
 		if isBipod != self._KK_INS2_wasBipod and self._KK_INS2_wasBipod != nil then
 			if canPlay then
 				if isBipod then
-					self:playAnim("bipod_in") 
-				else 
-					self:playAnim("bipod_out") 
+					self:playAnim("bipod_in")
+				else
+					self:playAnim("bipod_out")
 				end
 			else
 				self.KKINS_postReloadBipodSwitch = true
@@ -295,13 +295,13 @@ if CLIENT then
 		end
 		if self.KKINS_postReloadBipodSwitch and canPlay then
 			if isBipod then
-				self:playAnim("bipod_in") 
-			else 
-				self:playAnim("bipod_out") 
+				self:playAnim("bipod_in")
+			else
+				self:playAnim("bipod_out")
 			end
 			self.KKINS_postReloadBipodSwitch = false
 		end
-		
+
 		self._KK_INS2_wasBipod = isBipod
 	end
 end
@@ -309,15 +309,15 @@ end
 if CLIENT then
 	function SWEP:nametagElementRender()
 		local ent = self.AttachmentModelsVM.kk_textbox.ent
-		
+
 		local osd = os.date("*t")
-		
+
 		ent._KKCSGOOFFSET = 0
 		ent._KKCSGOTXT = string.format(
-			"T: %02d:%02d:%02d R: %d/%03d", 
-			osd.hour, 
-			osd.min, 
-			osd.sec, 
+			"T: %02d:%02d:%02d R: %d/%03d",
+			osd.hour,
+			osd.min,
+			osd.sec,
 			self:Clip1(),
 			self.Owner:GetAmmoCount(self.Primary.Ammo)
 		)

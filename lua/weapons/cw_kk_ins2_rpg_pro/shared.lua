@@ -1,6 +1,6 @@
 if not CustomizableWeaponry then return end
 
-if CustomizableWeaponry_KK.HOME then 
+if CustomizableWeaponry_KK.HOME then
 	AddCSLuaFile("weapons/cw_kk_ins2_nade_m67/_gitign_go.lua")
 	include("weapons/cw_kk_ins2_nade_m67/_gitign_go.lua")
 end
@@ -12,25 +12,25 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Professional Russian"
-	
+
 	-- SWEP.IconLetter = "C"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_rpg7")
-	
+
 	SWEP.SelectFont = "CW_SelectIcons2"
 	SWEP.IconLetter = "x"
-	
+
 	SWEP.AttachmentModelsVM = {
 		["nade"] = {model = "models/weapons/w_at4_projectile.mdl", bone = "Weapon", pos = Vector(0.028, 0.087, 18.68), angle = Angle(-90, 90, 0), size = Vector(0.75, 0.75, 0.75), active = true},
 		["fx_light"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(), angle = Angle(), size = Vector(0.01, 0.01, 0.01), attachment = "lighter", active = true, nodraw = true},
 		["fx_rag"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(-0.6761, 0.0552, -0.6343), angle = Angle(0, 180, 0), size = Vector(0.01, 0.01, 0.01), attachment = "rag", nodraw = true, active = true},
 		["kk_counter"] = {model = "models/weapons/stattrack_cut.mdl", pos = Vector(0.3411, 0.4916, 4.6496), angle = Angle(90, 180, 27.2942), size = Vector(1, 1, 1), bone = "Weapon"},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_rpg_pro_trail"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(-1, 0, 0), angle = Angle(180, 0, 0), size = Vector(0.075, 0.075, 0.075), attachment = "rear", nodraw = true, active = true},
 	}
-	
+
 	SWEP.HUD_MagText = "0 > "
 end
 
@@ -41,13 +41,13 @@ SWEP.CanRestOnObjects = false
 SWEP.Animations = {
 	pullpin = "pullback_high",
 	throw = "throw",
-	
+
 	pull_cook = "pullback_highbake",
 	throw_cook = "throw_bake",
-	
+
 	pull_short = "pullback_low",
 	throw_short = "throw_low",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",
@@ -109,27 +109,27 @@ end
 
 if CLIENT then
 	local oldIni = SWEP.IndividualInitialize
-	
+
 	function SWEP:IndividualInitialize()
 		if oldIni then
 			oldIni(self)
 		end
-		
+
 		local boneIds = {}
 		local vm = self.CW_VM
-		
-		for _,v in pairs({"Rag_God", "Weapon", "Liq_top", "Bone01", "Bone02", "Bone03", "Bone04", "Bone06", "Bone07"}) do 
+
+		for _,v in pairs({"Rag_God", "Weapon", "Liq_top", "Bone01", "Bone02", "Bone03", "Bone04", "Bone06", "Bone07"}) do
 			boneIds[v] = vm:LookupBone(v)
 		end
-		
-		for _,v in pairs(boneIds) do 
+
+		for _,v in pairs(boneIds) do
 			vm:ManipulateBoneScale(v, Vector(0.01,0.01,0.01))
 		end
 	end
-	
+
 	local m
 	local muz = {}
-	
+
 	function SWEP:getMuzzlePosition()
 		if self.Owner:ShouldDrawLocalPlayer() then
 			m = self.Owner:GetBoneMatrix(self.Owner:LookupBone("ValveBiped.Bip01_R_Hand"))
@@ -137,22 +137,22 @@ if CLIENT then
 			muz.Ang = m:GetAngles()
 			return muz
 		end
-		
+
 		m = self.CW_VM:GetAttachment(2)
-		
+
 		if self.CustomizeMenuAlpha > 0 then
 			offset = self.HUD_3D2DOffsetMenu
 		else
 			offset = self.HUD_3D2DOffset
 		end
-		
+
 		pos = m.Pos
 		ang = EyeAngles()
-		
+
 		pos = pos + ang:Right() * offset.x
 		pos = pos + ang:Up() * offset.y
 		pos = pos + ang:Forward() * offset.z
-		
+
 		muz.Pos = pos
 		muz.Ang = m.Ang
 		return muz
@@ -165,6 +165,6 @@ if CLIENT then
 	CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_rpg_pro", function(wep, welement)
 		welement:SetBodygroup(0, wep.dt.PinPulled and 1 or 0)
 	end)
-	
+
 	CustomizableWeaponry_KK.ins2.welementThink:add("kk_ins2_rpg_pro_trail", "grenadewtrail")
 end

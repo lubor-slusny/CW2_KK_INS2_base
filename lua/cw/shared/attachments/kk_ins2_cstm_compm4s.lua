@@ -19,14 +19,14 @@ if CLIENT then
 		[1] = {t = "Provides a bright reticle to ease aiming.", c = CustomizableWeaponry.textColors.POSITIVE},
 		[2] = {t = "Narrow scope may decrease awareness.", c = CustomizableWeaponry.textColors.NEGATIVE}
 	}
-	
+
 	att.reticle = "models/weapons/optics/aimpoint_reticule_holo"
 	att._reticleSize = 6
-	
+
 	function att:elementRender()
 		CustomizableWeaponry_KK.ins2.stencilSight:elementRender(self, att)
 	end
-	
+
 end
 
 CustomizableWeaponry:registerAttachment(att)

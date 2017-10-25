@@ -12,22 +12,22 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Mauser C96"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_c96")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.06
 	SWEP.ShellWorldAngleAlign = {Forward = 90, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_c96_barrel_std"] = {model = "models/weapons/upgrades/a_barrel_c96_short.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_c96_barrel_lng"] = {model = "models/weapons/upgrades/a_barrel_c96_long.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), merge = true},
-		
+
 		["bg_ar15sturdystock"] = {model = "models/weapons/upgrades/a_stock_c96.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_c96.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
 
 	-- // long B
@@ -40,7 +40,7 @@ if CLIENT then
 	SWEP.CustomizationMenuScale = 0.010
 	SWEP.ReloadViewBobEnabled = false
 	SWEP.DisableSprintViewSimulation = true
-	
+
 end
 
 SWEP.MuzzleEffect = "muzzleflash_luger_1p"
@@ -145,7 +145,7 @@ SWEP.MuzzleVelocity = 425
 SWEP.ReloadTimes = {
 	base_reload_clip = {3.4, 6.23, KK_INS2_REVOLVER_SPEED_UNLOAD, 1.1},
 	base_reload_empty_clip = {2.4, 4.37},
-	
+
 	base_melee_bash = {0.3, 0.8},
 	base_melee_bash_empty = {0.3, 0.8},
 }

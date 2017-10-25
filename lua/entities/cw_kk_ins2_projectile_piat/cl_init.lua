@@ -8,7 +8,7 @@ function ENT:Think()
 	if CurTime() - self.LunchTime < 10 then
 		self:DrawTrailParticle()
 	end
-end 
+end
 
 function ENT:Draw()
 	self:DrawModel()
@@ -21,7 +21,7 @@ local ten = 5
 
 function ENT:kkTime()
 	self.LunchTime = self.LunchTime or CurTime()
-	
+
 	return ten - math.Clamp(CurTime() - self.LunchTime, 0, ten)
 end
 

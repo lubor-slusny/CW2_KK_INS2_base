@@ -5,11 +5,11 @@ if CLIENT then
 	SWEP.PrintName = "KA-BAR Fighting Utility"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/default_bayonet")
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.HUD_3D2DBone = 58
 end
 

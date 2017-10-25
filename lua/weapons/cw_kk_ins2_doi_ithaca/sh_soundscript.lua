@@ -1,8 +1,8 @@
 
-local function shell(wep) 
+local function shell(wep)
 	if SERVER then return end
-	
-	wep:shellEvent() 
+
+	wep:shellEvent()
 end
 
 SWEP.Sounds = {
@@ -83,15 +83,15 @@ SWEP.Sounds = {
 	iron_dryfire = {
 		{time = 0, sound = "CW_KK_INS2_DOI_ITHC_EMPTY"},
 	},
-	
+
 	base_melee_bash = {
 		{time = 6/31, sound = "CW_KK_INS2_DOI_MELEE"},
 	},
-	
+
 	base_melee = {
 		{time = 1/30, sound = "CW_KK_INS2_DOI_MELEE"},
 	},
-	
+
 	base_melee_end = {
 		{time = 1/35, sound = "CW_KK_INS2_DOI_MELEE"},
 	},

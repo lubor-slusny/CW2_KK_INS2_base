@@ -27,7 +27,7 @@ pk_pills.register("kk_ins2_f1",{
 		fx:processProjectile(ent)
 		fx._initClass = "cw_kk_ins2_projectile_frag"
 		fx:Spawn()
-		
+
 		util.BlastDamage(ent, ply, ent:GetPos(), 384, 100)
 	end,
 })
@@ -57,7 +57,7 @@ pk_pills.register("kk_ins2_m67",{
 		fx:processProjectile(ent)
 		fx._initClass = "cw_kk_ins2_projectile_frag"
 		fx:Spawn()
-		
+
 		util.BlastDamage(ent, ply, ent:GetPos(), 384, 100)
 	end,
 })

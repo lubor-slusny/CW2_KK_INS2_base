@@ -9,12 +9,12 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "RPzB 54"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_panzerschreck")
-	
+
 	SWEP.RearEffectw = true
 	SWEP.NoShells = true
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_panzerschreck.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/v_panzerschreck.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true,
@@ -23,14 +23,14 @@ if CLIENT then
 				[2] = CustomizableWeaponry_KK.ins2.nodrawMatPath,
 			}
 		},
-		
+
 		["kk_ins2_fnfal_skin2"] = {model = "models/weapons/cw_kk_doi/v_panzerschreck.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, materials = {[1] = "models/cwkkdoi/shrek/clean.mdl"}},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_fnfal_skin2"] = {model = "models/weapons/w_panzerschreck.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, material = "models/cwkkdoi/shrek/clean_w.mdl"},
 	}
-	
+
 	-- SWEP.IronsightPos = Vector(-2.3552, 0, 0.7429)
 	-- SWEP.IronsightAng = Vector(8.4654, -5.1917, 20)
 
@@ -40,7 +40,7 @@ if CLIENT then
 	SWEP.SprintAnimSpeed = 1
 	SWEP.ViewModelMovementScale_sprint = 0.6
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.CustomizationMenuScale = 0.02
 	SWEP.HUD_MagText = "TUBE: "
 end
@@ -58,7 +58,7 @@ SWEP.Attachments = {
 
 SWEP.Animations = {
 	base_insert = "base_reload",
-	
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_fire = "base_fire",
@@ -137,6 +137,6 @@ SWEP.ironFireAnimStartCycle = 0.28
 
 SWEP.ReloadTimes = {
 	base_reload = {4.4, 6.43},
-	
+
 	base_melee = {0.3, 1.5},
 }

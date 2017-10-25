@@ -1,23 +1,23 @@
 
 local function pcf(wep)
 	if SERVER then return end
-	
+
 	if wep.Owner:ShouldDrawLocalPlayer() then return end
-	
+
 	local vm = wep.AttachmentModelsVM.fx_rag.ent
-	
+
 	ParticleEffectAttach("weapon_compB_fuse", PATTACH_POINT_FOLLOW, vm, 1)
-	
+
 	wep._pcfStop = wep.Sequence
-	
+
 	wep._soundStop = vm:StartLoopingSound("CW_KK_INS2_DOI_C4_DE_FUSELOOP")
 end
 
 local function soundLoop(wep)
 	if SERVER then return end
-	
+
 	if wep.soundLoop then wep.soundLoop:Stop() end
-	
+
 	-- sound.PlayFile("CW_KK_INS2_DOI_C4_DE_FUSELOOP", "3d", function(sound, ...)
 	sound.PlayFile("sound/weapons/compositonb/handling/compositonb_fuse_loop.wav", "", function(sound)
 		if IsValid(sound) then

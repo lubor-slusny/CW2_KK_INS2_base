@@ -1,6 +1,6 @@
 if not CustomizableWeaponry then return end
 
-if CustomizableWeaponry_KK.HOME then 
+if CustomizableWeaponry_KK.HOME then
 	AddCSLuaFile("_gitign_go.lua")
 	include("_gitign_go.lua")
 end
@@ -15,15 +15,15 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M67 Frag. Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m67")
-	
-	SWEP.AttachmentModelsVM = {		
+
+	SWEP.AttachmentModelsVM = {
 		["kk_counter"] = {model = "models/weapons/stattrack.mdl", bone = "Spoon", rel = "", pos = Vector(-1.209, 0.05, -0.149), angle = Angle(0, 90, 20), size = Vector(0.419, 0.419, 0.419)},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
@@ -37,13 +37,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_frag"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "draw",
 	base_draw = "draw",
 	base_idle = "idle",
@@ -96,7 +96,7 @@ function SWEP:fuseProjectile(grenade, overrideTime)end
 local v = Vector(0, 0, 150)
 function SWEP:applyThrowVelocity(grenade)
 	local forward, up = self:getThrowVelocityMods()
-	
+
 	local vel = CustomizableWeaponry.quickGrenade:getThrowVelocity(self.Owner, 800 * forward, v * up)
 	grenade:SetVelocity(vel)
 end

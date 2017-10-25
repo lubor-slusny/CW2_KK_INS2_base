@@ -13,11 +13,11 @@ SWEP.magType = "NONE"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Flame GB"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_flamethrower_british")
-	
+
 	SWEP.NoShells = true
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
 

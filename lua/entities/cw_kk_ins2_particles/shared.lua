@@ -122,7 +122,7 @@ ENT.db = {
 		explosionSoundW1 = "CW_KK_INS2_RPG_ENT_DETONATE_WATER_D1",
 		explosionParticles = {
 			-- "ins_rpg_explosion", // too much nearglow
-			
+
 			"ins_grenade_explosion_shockwave",
 			"ins_rpg_explosion_smoke_c",
 			"generic_crater_smoke",
@@ -146,7 +146,7 @@ ENT.db = {
 			"ins_Water_explosion"
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_c4 = {
 		effectClass = "cw_kk_ins2_explosion_c4",
 		explosionSound0 = "CW_KK_INS2_C4_ENT_DETONATE",
@@ -156,7 +156,7 @@ ENT.db = {
 		explosionSoundW1 = "CW_KK_INS2_C4_ENT_DETONATE_WATER_D1",
 		explosionParticles = {
 			-- "ins_c4_explosion", // too much generic_nearglow
-			
+
 			"generic_crater_smoke_big",
 			"ins_c4_explosion_shockwave",
 			"ins_grenade_explosion_smoke",
@@ -175,13 +175,13 @@ ENT.db = {
 			"ins_c4_explosion_flames",
 			"ins_c4_inner_explosion",
 			"ins_c4_explosion_sparks_b",
-			"ins_c4_explosion_sparks",	
+			"ins_c4_explosion_sparks",
 		},
 		explosionParticlesWater = {
 			"ins_Water_explosion"
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_frag = {
 		effectClass = "cw_kk_ins2_explosion_frag",
 		explosionSound0 = "CW_KK_INS2_FRAG_ENT_DETONATE",
@@ -191,7 +191,7 @@ ENT.db = {
 		explosionSoundW1 = "CW_KK_INS2_FRAG_ENT_DETONATE_WATER_D1",
 		explosionParticles = {
 			-- "ins_grenade_explosion", // consists of all below
-			
+
 			"generic_crater_smoke",
 			"ins_grenade_explosion_shockwave",
 			"ins_grenade_explosion_spikes_b",
@@ -213,7 +213,7 @@ ENT.db = {
 			"ins_water_explosion"
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_m84 = {
 		effectClass = "cw_kk_ins2_explosion_flash",
 		explosionSound0 = "CW_KK_INS2_M84_ENT_DETONATE",
@@ -223,7 +223,7 @@ ENT.db = {
 		explosionSoundW1 = "",
 		explosionParticles = {
 			-- "ins_flashbang_explosion", // too much nearglow
-			
+
 			"ins_flashbang_explosion_smoke",
 			"ins_flashbang_explosion_sparks",
 			"ins_flashbang_inner_explosion",
@@ -236,7 +236,7 @@ ENT.db = {
 			"ins_water_explosion",
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_molotov = {
 		followProjectile = true,
 		effectClass = "cw_kk_ins2_explosion_molotov",
@@ -249,7 +249,7 @@ ENT.db = {
 			-- "doi_wpgrenade_explosion",
 			-- "doi_smoke_artillery",
 			-- "ins_molotov_explosion",
-			
+
 			"ins_molotov_smoke",
 			"ins_molotov_flame_b",
 			"ins_molotov_flamewave",
@@ -266,7 +266,7 @@ ENT.db = {
 			"ins_molotov_explosion",
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_anm14 = {
 		followProjectile = true,
 		effectClass = "cw_kk_ins2_explosion_molotov",
@@ -275,9 +275,9 @@ ENT.db = {
 		explosionSound2 = "",
 		explosionSoundW0 = "",
 		explosionSoundW1 = "",
-		explosionParticles = {			
+		explosionParticles = {
 			-- "ins_thermite_explosion", // too pink
-			
+
 			"ins_thermite_smoke_c",
 			"ins_thermite_smoke_b",
 			"ins_thermite_smoke",
@@ -286,7 +286,7 @@ ENT.db = {
 			"ins_thermite_burst",
 			// "ins_thermite_glow",
 			"ins_thermite_flame_sparks",
-			
+
 		},
 		explosionParticlesWater = {
 			"ins_thermite_smoke_c",
@@ -299,7 +299,7 @@ ENT.db = {
 			"ins_thermite_flame_sparks",
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_m18 = {
 		followProjectile = true,
 		effectClass = "cw_kk_ins2_explosion_smoke",
@@ -313,9 +313,9 @@ ENT.db = {
 		},
 		explosionParticlesWater = {}
 	},
-	
+
 	// DOI
-	
+
 	cw_kk_ins2_projectile_m6a1 = {
 		effectClass = "cw_kk_ins2_explosion_rpg",
 		explosionSound0 = "CW_KK_INS2_DOI_M6A1_ENT_DETONATE",
@@ -324,7 +324,7 @@ ENT.db = {
 		explosionSoundW0 = "CW_KK_INS2_DOI_M6A1_ENT_DETONATE_WATER",
 		explosionSoundW1 = "CW_KK_INS2_DOI_M6A1_ENT_DETONATE_WATER_D1",
 	},
-	
+
 	cw_kk_ins2_projectile_m10 = {
 		effectClass = "cw_kk_ins2_explosion_smoke",
 		explosionSound0 = "CW_KK_INS2_DOI_M10A1_ENT_DETONATE",
@@ -337,7 +337,7 @@ ENT.db = {
 		},
 		explosionParticlesWater = {}
 	},
-	
+
 	cw_kk_ins2_projectile_piat = {
 		effectClass = "cw_kk_ins2_explosion_rpg",
 		explosionSound0 = "CW_KK_INS2_DOI_PIAT_ENT_DETONATE",
@@ -346,7 +346,7 @@ ENT.db = {
 		explosionSoundW0 = "CW_KK_INS2_DOI_PIAT_ENT_DETONATE_WATER",
 		explosionSoundW1 = "CW_KK_INS2_DOI_PIAT_ENT_DETONATE_WATER_D1"
 	},
-	
+
 	cw_kk_ins2_projectile_pf60 = {
 		effectClass = "cw_kk_ins2_explosion_rpg",
 		explosionSound0 = "CW_KK_INS2_DOI_PANZERFAUST_ENT_DETONATE",
@@ -355,7 +355,7 @@ ENT.db = {
 		explosionSoundW0 = "CW_KK_INS2_DOI_PANZERFAUST_ENT_DETONATE_WATER",
 		explosionSoundW1 = "CW_KK_INS2_DOI_PANZERFAUST_ENT_DETONATE_WATER_D1"
 	},
-	
+
 	cw_kk_ins2_projectile_shrek = {
 		effectClass = "cw_kk_ins2_explosion_rpg",
 		explosionSound0 = "CW_KK_INS2_DOI_SHREK_ENT_DETONATE",
@@ -364,7 +364,7 @@ ENT.db = {
 		explosionSoundW0 = "CW_KK_INS2_DOI_SHREK_ENT_DETONATE_WATER",
 		explosionSoundW1 = "CW_KK_INS2_DOI_SHREK_ENT_DETONATE_WATER_D1"
 	},
-	
+
 	cw_kk_ins2_projectile_n69 = {
 		effectClass = "cw_kk_ins2_explosion_frag",
 		explosionSound0 = "CW_KK_INS2_DOI_N69_ENT_DETONATE",
@@ -381,7 +381,7 @@ ENT.db = {
 			"ins_water_explosion"
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_n76 = {
 		followProjectile = true,
 		effectClass = "cw_kk_ins2_explosion_smoke",
@@ -395,7 +395,7 @@ ENT.db = {
 		},
 		explosionParticlesWater = {}
 	},
-	
+
 	cw_kk_ins2_projectile_n77 = {
 		effectClass = "cw_kk_ins2_explosion_smoke",
 		explosionSound0 = "CW_KK_INS2_DOI_N77_ENT_DETONATE",
@@ -408,7 +408,7 @@ ENT.db = {
 		},
 		explosionParticlesWater = {}
 	},
-	
+
 	cw_kk_ins2_projectile_ied = {
 		effectClass = "cw_kk_ins2_explosion_c4",
 		explosionSound0 = "CW_KK_INS2_IED_ENT_DETONATE",
@@ -418,7 +418,7 @@ ENT.db = {
 		explosionSoundW1 = "CW_KK_INS2_IED_ENT_DETONATE_WATER_D1",
 		explosionParticles = {
 			-- "ins_c4_explosion", // too much generic_nearglow
-			
+
 			"generic_crater_smoke_big",
 			"ins_c4_explosion_shockwave",
 			"ins_grenade_explosion_smoke",
@@ -437,13 +437,13 @@ ENT.db = {
 			"ins_c4_explosion_flames",
 			"ins_c4_inner_explosion",
 			"ins_c4_explosion_sparks_b",
-			"ins_c4_explosion_sparks",	
+			"ins_c4_explosion_sparks",
 		},
 		explosionParticlesWater = {
 			"ins_Water_explosion"
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_ww2_c4_de = {
 		effectClass = "cw_kk_ins2_explosion_c4",
 		explosionSound0 = "CW_KK_INS2_DOI_C4_DE_ENT_DETONATE",
@@ -458,7 +458,7 @@ ENT.db = {
 			"ins_Water_explosion"
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_ww2_c4_us = {
 		effectClass = "cw_kk_ins2_explosion_c4",
 		explosionSound0 = "CW_KK_INS2_DOI_C4_US_ENT_DETONATE",
@@ -473,7 +473,7 @@ ENT.db = {
 			"ins_Water_explosion"
 		}
 	},
-	
+
 	cw_kk_ins2_projectile_molotov_doi = {
 		followProjectile = true,
 		effectClass = "cw_kk_ins2_explosion_molotov",
@@ -486,7 +486,7 @@ ENT.db = {
 			-- "doi_wpgrenade_explosion",
 			-- "doi_smoke_artillery",
 			-- "ins_molotov_explosion",
-			
+
 			"ins_molotov_smoke",
 			"ins_molotov_flame_b",
 			"ins_molotov_flamewave",
@@ -533,7 +533,7 @@ for class,tweakData in pairs(ENT.db) do
 	ENT._dbInt2str[i] = class
 	ENT._dbStr2int[class] = i
 	i = i + 1
-	
+
 	for _,pcfs in pairs(pcft) do
 		for _,p in pairs(tweakData[pcfs]) do
 			PrecacheParticleSystem(p)
@@ -544,7 +544,7 @@ end
 function ENT:getTweakData()
 	local i = self:GetProjectileClass()
 	local class = self._dbInt2str[i]
-	
+
 	return self.db[class]
 end
 

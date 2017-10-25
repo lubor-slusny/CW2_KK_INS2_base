@@ -12,17 +12,17 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M1911"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m1911")
-	
+
 	SWEP.Shell = "KK_INS2_45apc"
 	SWEP.ShellDelay = 0.06
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 180, Right = 0, Up = -30}
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	-- SWEP.IronsightPos = Vector(-1.8248, 0, 0.3468)
 	-- SWEP.IronsightAng = Vector(0.7758, 0.0761, 6.2803)
 
@@ -139,12 +139,12 @@ SWEP.ReloadTimes = {
 	base_reload_extmag = {1.9, 2.6},
 	base_reloadempty_extmag = {1.9, 3.3},
 	base_reloadempty_null = {1.9, 3.4},
-	
+
 	base_melee_bash = {0.3, 0.8},
 	empty_melee_bash = {0.3, 0.8},
 }
 
-if CLIENT then 
+if CLIENT then
 	function SWEP:updateStandardParts()
 		self:setElementActive("kk_ins2_mag_m1911_8", !self.ActiveAttachments.kk_ins2_mag_m1911_15)
 	end
@@ -162,10 +162,10 @@ function SWEP:overrideReloadAnim(prefix, suffix)
 	if self:Clip1() > 0 then
 		return "base_reload"
 	end
-	
+
 	if math.random(100) == 82 then
 		return "base_reload_empty_lulz"
 	end
-	
+
 	return "base_reload_empty"
 end

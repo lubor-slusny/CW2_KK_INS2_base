@@ -23,15 +23,15 @@ function SWEP:Think()
 		self.dt.State = CW_ACTION
 		return
 	end
-	
+
 	CustomizableWeaponry.actionSequence.process(self)
-	
+
 	if self.dt.State == CW_HOLSTER_START then
 		return
 	end
-	
+
 	CT = CurTime()
-	
+
 	if CLIENT then
 		if self.SubCustomizationCycleTime then
 			if UnPredictedCurTime() > self.SubCustomizationCycleTime then
@@ -39,7 +39,7 @@ function SWEP:Think()
 			end
 		end
 	end
-	
+
 	if self.HoldToAim then
 		if (SP and SERVER) or not SP then
 			if self.dt.State == CW_AIMING then
@@ -52,22 +52,22 @@ function SWEP:Think()
 			end
 		end
 	end
-	
+
 	if self.IndividualThink then
 		self:IndividualThink()
-		
+
 		if not IsValid(self) or not IsValid(self.Owner) then
 			return
 		end
 	end
-	
+
 	vel = Length(GetVelocity(self.Owner))
 	IFTP = IsFirstTimePredicted()
-	
+
 	if (not SP and IFTP) or SP then
 		self:CalculateSpread(vel, FrameTime())
 	end
-	
+
 	if CT > self.GlobalDelay then
 		wl = self.Owner:WaterLevel()
 
@@ -76,12 +76,12 @@ function SWEP:Think()
 				if self.ShotgunReloadState == 1 then
 					self.ShotgunReloadState = 2
 				end
-				
+
 				self.dt.State = CW_ACTION
 				self.FromActionToNormalWait = CT + 0.3
 			else
 				ws = self.Owner:GetWalkSpeed()
-				
+
 				if ((vel > ws * self.RunStateVelocity and self.Owner:KeyDown(IN_SPEED)) or vel > ws * 3 or (self.ForceRunStateVelocity and vel > self.ForceRunStateVelocity)) and self.SprintingEnabled then
 					self.dt.State = CW_RUNNING
 				else
@@ -89,7 +89,7 @@ function SWEP:Think()
 						if CT > self.FromActionToNormalWait then
 							if self.dt.State != CW_IDLE then
 								self.dt.State = CW_IDLE
-								
+
 								if not self.ReloadDelay then
 									self:SetNextPrimaryFire(CT + 0.3)
 									self:SetNextSecondaryFire(CT + 0.3)
@@ -105,7 +105,7 @@ function SWEP:Think()
 				if self.ShotgunReloadState == 1 then
 					self.ShotgunReloadState = 2
 				end
-				
+
 				self.dt.State = CW_ACTION
 				self.FromActionToNormalWait = CT + 0.3
 			else
@@ -120,11 +120,11 @@ function SWEP:Think()
 			end
 		end
 	end
-	
+
 	if SERVER then
 		if self.CurSoundTable then
 			local t = self.CurSoundTable[self.CurSoundEntry]
-			
+
 			--[[if CLIENT then
 				if CT >= self.SoundTime + t.time / self.SoundSpeed then
 					self:EmitSound(t.sound, 70, 100)
@@ -139,7 +139,7 @@ function SWEP:Think()
 			else]]--
 			if CT >= self.SoundTime + t.time / self.SoundSpeed then
 				self:EmitSound(t.sound, 70, 100)
-				
+
 				if self.CurSoundTable[self.CurSoundEntry + 1] then
 					self.CurSoundEntry = self.CurSoundEntry + 1
 				else
@@ -151,7 +151,7 @@ function SWEP:Think()
 			--end
 		end
 	end
-	
+
 	if self.dt.Shots > 0 then
 		if not self.Owner:KeyDown(IN_ATTACK) then
 			if self.BurstAmount and self.BurstAmount > 0 then
@@ -161,13 +161,13 @@ function SWEP:Think()
 			end
 		end
 	end
-	
+
 	if not self.ShotgunReload then
 		if self.ReloadDelay and CT >= self.ReloadDelay then
 			self:finishReload() -- more like finnishReload ;0
 		end
 	end
-	
+
 	if IFTP then
 		self:finishReloadShotgun()
 	end
@@ -192,12 +192,12 @@ function SWEP:Think()
 			end
 		end
 	end
-	
+
 	if (SP and SERVER) or not SP then -- if it's SP, then we run it only on the server (otherwise shit gets fucked); if it's MP we predict it
 		-- if the bipod DT var is true, or if we have a bipod deploy angle
 		if self.dt.BipodDeployed or self.DeployAngle then
 			-- check whether the bipod can be placed on the current surface (so we don't end up placing on nothing)
-			
+
 			if not self:CanRestWeapon(self.BipodDeployHeightRequirement) then
 				self.dt.BipodDeployed = false
 				self.DeployAngle = nil
@@ -213,7 +213,7 @@ function SWEP:Think()
 				end
 			end
 		end
-			
+
 		if not self.ReloadDelay then
 			if self.BipodUnDeployPost then
 				if CT > self.BipodDelay then
@@ -222,13 +222,13 @@ function SWEP:Think()
 						self.BipodUnDeployPost = false
 					else
 						self.dt.BipodDeployed = true
-						
+
 						self:setupBipodVars()
 						self.BipodUnDeployPost = false
 					end
 				end
 			end
-			
+
 			if self.Owner:KeyPressed(IN_USE) then
 				if CT > self.BipodDelay and CT > self.ReloadWait then
 					if self.BipodInstalled then
@@ -239,7 +239,7 @@ function SWEP:Think()
 							self:performBipodDelay(self.BipodUndeployTime)
 						else
 							self.dt.BipodDeployed = self:CanRestWeapon(self.BipodDeployHeightRequirement)
-							
+
 							if self.dt.BipodDeployed then
 								self:performBipodDelay(self.BipodDeployTime)
 								self:setupBipodVars()
@@ -250,7 +250,7 @@ function SWEP:Think()
 			end
 		end
 	end
-	
+
 	if self.forcedState then
 		if CT < self.ForcedStateTime then
 			self.dt.State = self.forcedState

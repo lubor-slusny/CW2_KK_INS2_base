@@ -1,12 +1,12 @@
 
 local lastValidResetTime
 
-local function meleeShellCorection(self)	
+local function meleeShellCorection(self)
 	self.reticleInactivity = UnPredictedCurTime() + 0.8
-	
+
 	lastValidResetTime = CurTime()
 	local localValidResetTime = lastValidResetTime
-	
+
 	CustomizableWeaponry.actionSequence.new(self, 0.7, nil, function()
 		if lastValidResetTime == localValidResetTime then
 			self:idleAnimFunc()
@@ -138,16 +138,16 @@ SWEP.Sounds = {
 	iron_dryfire = {
 		{time = 0, sound = "CW_KK_INS2_DOI_M1911_EMPTY"},
 	},
-	
+
 	iron_dryfire_preblend = {
 		{time = 0, sound = "CW_KK_INS2_DOI_M1911_EMPTY"},
 	},
-	
+
 	base_melee_bash = {
 		{time = 0, sound = "", callback = meleeShellCorection},
 		{time = 9/33, sound = "CW_KK_INS2_DOI_MELEE"},
 	},
-	
+
 	empty_melee_bash = {
 		{time = 0, sound = "", callback = meleeShellCorection},
 		{time = 9/33, sound = "CW_KK_INS2_DOI_MELEE"},

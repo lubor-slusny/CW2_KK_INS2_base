@@ -13,19 +13,19 @@ if CLIENT then
 	SWEP.PrintName = "MAT-49"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_mat49")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.15
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = 180}
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.1187, -2, 0.4073)
 	SWEP.IronsightAng = Vector(0, 0.0282, 0)
 
@@ -133,15 +133,15 @@ if CLIENT then
 	local bone0 = 0
 	local position0 = Vector(-2, -6, 0)
 	local angle0 = Angle(0, 90, 0)
-	
+
 	local bone1 = 1
 	local position1 = Vector(5, -7, 0)
 	local angle1 = Angle(0, -90, 0)
-	
+
 	CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_nam_mat49", function(wep, welement)
 		welement:ManipulateBonePosition(bone0, position0)
 		welement:ManipulateBoneAngles(bone0, angle0)
-		
+
 		welement:ManipulateBonePosition(bone1, position1)
 		welement:ManipulateBoneAngles(bone1, angle1)
 	end)

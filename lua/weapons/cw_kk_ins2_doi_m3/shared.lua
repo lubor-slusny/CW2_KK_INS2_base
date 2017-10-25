@@ -11,23 +11,23 @@ SWEP.magType = "smgMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M3 Grease Gun"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m3greasegun")
-	
+
 	SWEP.Shell = "KK_INS2_45apc"
 	SWEP.ShellDelay = 0.13
 
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_hoovy"] = {model = "models/weapons/upgrades/a_flash_hider_m3.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), merge = true},
-		
+
 		["paypay2"] = {model = "models/weapons/upgrades/a_stock_extended_m3.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), merge = true, active = true},
 		-- ["paypay"] = {model = "models/weapons/upgrades/a_stock_collapsed_m3.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_m3greasegun.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_m3.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_m3.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
 
 	SWEP.IronsightPos = Vector(-2.5062, -2, 1.2973)
@@ -135,12 +135,12 @@ SWEP.MuzzleVelocity = 280
 SWEP.ReloadTimes = {
 	base_reload = {2.4, 3.35},
 	base_reloadempty = {2.4, 4.75},
-	
+
 	base_melee_bash = {0.3, 0.9},
 	empty_melee_bash = {0.3, 0.9},
 }
 
--- if CLIENT then 
+-- if CLIENT then
 	-- function SWEP:updateStandardParts()
 		-- self:setElementActive("paypay2", !self.ActiveAttachments.kk_ins2_ww2_sling)
 	-- end

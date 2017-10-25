@@ -10,14 +10,14 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Webley Mk4"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_webley")
-	
+
 	SWEP.Shell = "KK_INS2_762x33"
 	SWEP.NoShells = true
 	SWEP.ShellScale = 1
 	SWEP.ShellEjectVelocity = 50
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_revolver_mag"] = {model = "models/weapons/upgrades/a_speedloader_webley.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
@@ -48,14 +48,14 @@ SWEP.Attachments = {
 
 SWEP.Animations = {
 	draw = {"base_ready", "base_ready_rare"},
-	
+
 	base_reload_start = "base_reload_start",
 	base_reload_start_empty = "base_reload_start",
 	base_insert = "base_reload_insert",
 	base_reload_end = "base_reload_end",
 	base_reload_end_empty = "base_reload_end",
-	base_idle = "base_reload_end",	
-	
+	base_idle = "base_reload_end",
+
 	base_pickup = {"base_ready", "base_ready_rare"},
 	base_draw = "base_draw",
 	base_fire = {"base_fire", "base_fire2", "base_fire3"},
@@ -136,15 +136,15 @@ SWEP.ReloadTimes = {
 	base_reload_insert = {0.4, 1.02},
 	base_reload_end = {1.42, 1.42},
 	base_reload_speed = {1.8, 3.5, KK_INS2_REVOLVER_SPEED_UNLOAD, 22/33},
-	
+
 	base_melee_bash = {0.3, 0.8},
 }
 
 function SWEP:IndividualInitialize()
 	self.magType = "NONE"
 	self.ShotgunReload = true
-	
-	if CLIENT then 
+
+	if CLIENT then
 		self:setBodygroup(1, self:Clip1())
 		self:setBodygroup(2, self:Clip1())
 	end

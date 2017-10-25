@@ -7,7 +7,7 @@ ENT.PackageText = "Barrel and under"
 ENT.Category = "CW 2.0 Attachments"
 ENT.Author = "Spy"
 ENT.Spawnable = true
-ENT.AdminSpawnable = true 
+ENT.AdminSpawnable = true
 
 ENT.attachments = {
 	"kk_ins2_gp25_ammo",

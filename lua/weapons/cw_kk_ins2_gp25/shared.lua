@@ -6,17 +6,17 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "GP35"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/underbarrel_gp25_he")
-	
+
 	SWEP.MuzzleAttachmentName = "muzzle_gl"
 	SWEP.NoShells = true
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_gl_gp25"] = {model = "models/weapons/upgrades/a_gl_gp25.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		
+
 		["40mm_kk_1337"] = {model = "models/weapons/w_at4_projectile.mdl", bone = "GL_Round", pos = Vector(1.75,0,0), angle = Angle(0, 180, 0), size = Vector(0.85, 0.85, 0.85),
 			-- active = function(self)
 				-- local correctAmmo = CustomizableWeaponry.grenadeTypes.registered[self.Grenade40MM] and CustomizableWeaponry.grenadeTypes.registered[self.Grenade40MM].name == "40mm_kk_1337"
@@ -29,20 +29,20 @@ if CLIENT then
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_gl_gp25_merge"] = {model = "models/weapons/upgrades/w_gp25.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 	}
-	
+
 	SWEP.ForeGripOffsetCycle_Reload = 0
 	SWEP.ForeGripOffsetCycle_Reload_Empty = 0
 	SWEP.ForeGripOffsetCycle_Draw = 0
-	
+
 	SWEP.ForegripOverridePos = {
 		righthandfix = {
 			["R Clavicle"] = {pos = Vector(9.68, 0, -0.046), angle = Angle()}
 		}
 	}
-	
+
 	SWEP.ForegripParent = "righthandfix"
 	SWEP.ForegripOverride = true
-	
+
 	SWEP.IronsightPos = Vector(-0.539, -8, 1.0201)
 	SWEP.IronsightAng = Vector(5.3932, 0.0032, 0)
 
@@ -51,13 +51,13 @@ if CLIENT then
 
 	SWEP.CustomizePos = Vector(1, -8, 0)
 	SWEP.CustomizeAng = Vector()
-	
+
 	SWEP.SprintPos = Vector(1, -8, 0)
 	SWEP.SprintAng = Vector()
-	
+
 	SWEP.HUD_MagText = "BARREL: "
 	SWEP.CustomizationMenuScale = 0.01
-	
+
 	SWEP.LuaVMRecoilAxisMod = {vert = 1, hor = 1.5, roll = 3, forward = 1, pitch = 4}
 end
 
@@ -111,7 +111,7 @@ SWEP.Animations = {
 	gl_on_sprint = "glsetup_sprint",
 	gl_on_safe = "glsetup_down",
 	gl_on_safe_aim = "glsetup_iron_down",
-	
+
 	gl_turn_on = "glsetup_in",
 	gl_turn_off = "glsetup_out",
 }
@@ -362,22 +362,22 @@ if CLIENT then
 		self.CW_VM:SetupBones()
 		-- self.CW_VM:DrawModel()
 		RunConsoleCommand("cw_alternative_vm_pos", 1)
-		
+
 		if CurTime() > self.grenadeTime and CurTime() > self.knifeTime then
 			self.CW_KK_HANDS:SetPos(self.CW_VM:GetPos())
-			
+
 			self.CW_KK_HANDS:SetParent(self.CW_VM)
 			self.CW_KK_HANDS:AddEffects(EF_BONEMERGE)
 			self.CW_KK_HANDS:DrawModel()
 		end
-		
+
 		self:drawAttachments()
 		self:drawInteractionMenu()
-		
+
 		if self.reticleFunc then
 			self.reticleFunc(self)
 		end
-		
+
 		if GetConVarNumber("cw_customhud_ammo") >= 1 then
 			self:draw3D2DHUD()
 		end
@@ -399,7 +399,7 @@ function SWEP:FireBullet(Damage, CurCone, ClumpSpread, Shots)
 		else
 			target.fireFunc(self)
 		end
-		
+
 		CustomizableWeaponry.grenadeTypes.selectFireSound(self, target)
 	else
 		weapons.GetStored("cw_base").FireBullet(self, Damage, CurCone, ClumpSpread, Shots)
@@ -408,17 +408,17 @@ end
 
 function SWEP:reloadAnimFunc(lm)
 	self.dt.AT4ReloadEnd = CurTime() + self.ReloadHalt
-	
+
 	self:sendWeaponAnim("gl_turn_on",1,0.08)
-	
-	CustomizableWeaponry.actionSequence.new(self, 0.15, nil, function() 
+
+	CustomizableWeaponry.actionSequence.new(self, 0.15, nil, function()
 		self:sendWeaponAnim("gl_on_reload",1,0.08)
 	end)
-	
-	CustomizableWeaponry.actionSequence.new(self, 1.8, nil, function() 
+
+	CustomizableWeaponry.actionSequence.new(self, 1.8, nil, function()
 		self:sendWeaponAnim("gl_off_holster",-1,0)
 	end)
-	
+
 	return 1.7, 2
 end //*/
 
@@ -435,9 +435,9 @@ end
 
 function SWEP:getReloadProgress()
 	local CT = CurTime()
-	
+
 	if self.dt.AT4ReloadEnd < CT then return end
-	
+
 	return math.Round((CT - self.dt.AT4ReloadEnd + self.ReloadHalt) * 100 / self.ReloadHalt)
 end
 
@@ -446,8 +446,7 @@ function SWEP:unloadM203()
 end
 
 function SWEP:equipFunc()
-	if SERVER then	
+	if SERVER then
 		CustomizableWeaponry.giveAttachments(self.Owner, {"kk_ins2_gl_gp25", "kk_ins2_gp25_ammo"}, true)
 	end
 end
-	

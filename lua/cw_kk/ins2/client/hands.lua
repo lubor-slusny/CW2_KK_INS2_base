@@ -30,14 +30,14 @@ if CustomizableWeaponry_KK.ins2.isContentMounted4({Folder = "weapons/doiGameCont
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_brit_gloves.mdl", "[DOI] GB Gloved"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_short_brit_indian.mdl", "[DOI] GB India Short"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_brit_indian.mdl", "[DOI] GB India Sleeve"})
-	
+
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_short_us.mdl", "[DOI] US Short"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_us.mdl", "[DOI] US Sleeve"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_us_glove.mdl", "[DOI] US Gloved"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_us_glove_airborne.mdl", "[DOI] US Para"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_short_us_buffalo.mdl", "[DOI] US Buff Short"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_us_buffalo.mdl", "[DOI] US Buff Sleeve"})
-	
+
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_short_ger.mdl", "[DOI] DE Short"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_ger.mdl", "[DOI] DE Sleeve"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_ger_gloves.mdl", "[DOI] DE Gloved"})

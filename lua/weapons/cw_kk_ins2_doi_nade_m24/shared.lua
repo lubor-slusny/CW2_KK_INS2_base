@@ -10,21 +10,21 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M24 HE Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_stielhandgranate")
-	
+
 	SWEP.IconLetter = "O"
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_ww2_nade_jackit"] = {model = "models/weapons/v_splintering_stielhandgranate.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true, hideVM = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.HUD_3D2DOffset = Vector(-1, 3, 0)
 	SWEP.HUD_3D2DOffsetMenu = Vector(-8, 6, 0)
 	SWEP.CustomizationMenuScale = 0.006
@@ -40,13 +40,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_frag"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "draw",
 	base_draw = "draw",
 	base_idle = "idle",
@@ -55,7 +55,7 @@ SWEP.Animations = {
 	base_safe = "down",
 	base_crawl = "crawl",
 }
-	
+
 SWEP.SpeedDec = 5
 
 SWEP.Slot = 4
@@ -106,10 +106,10 @@ SWEP.maxVelDelayShort = 1.5
 
 if CLIENT then
 	local att = CustomizableWeaponry.registeredAttachmentsSKey["kk_ins2_ww2_nade_jackit"]
-	
+
 	CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_doi_nade_m24", function(wep, welement)
 		welement:SetBodygroup(1, wep.dt.PinPulled and 0 or 1)
-		
+
 		if wep.ActiveAttachments[att.name] then
 			if welement:GetModel() != att.activeWM then
 				welement:SetModel(att.activeWM)

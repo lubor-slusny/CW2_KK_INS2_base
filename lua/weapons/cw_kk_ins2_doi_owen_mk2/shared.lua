@@ -11,31 +11,31 @@ if CLIENT then
 	SWEP.PrintName = "Owen Mk2"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_owen")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.1
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = 0}
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["mk0"] = {model = "models/weapons/v_owen.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true},
 		["mk2"] = {model = "models/weapons/v_owen_mk2.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
-		
+
 		-- ["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_enfield_bayonet.mdl", pos = Vector(-2.2399, 41.1901, 0), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), merge = true},
 		-- ["kk_ins2_ww2_knife_fat"] = {model = "models/weapons/upgrades/a_enfield_bayonet_spike.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_owen.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["mk2"] = {model = "models/weapons/v_owen_mk2.mdl", pos = Vector(-23.4612, -4.6237, 8.2823), angle = Angle(0, 90, 0), size = Vector(1.4, 1.4, 1.4), bone = "__INVALIDBONE__", hideVM = true, active = true},
 	}
 
 	SWEP.CustomizationMenuScale = 0.013
-	
+
 	SWEP.IronsightPos = Vector(-3.7548, -2, 2.7674)
 	SWEP.IronsightAng = Vector(0.1261, 1.1881, -12.9542)
 end
@@ -129,7 +129,7 @@ SWEP.Damage = 25
 
 SWEP.FirstDeployTime = 0.8
 SWEP.DeployTime = 0.8
-SWEP.HolsterTime = 0.8	
+SWEP.HolsterTime = 0.8
 
 SWEP.WeaponLength = 16
 
@@ -141,7 +141,7 @@ SWEP.MuzzleVelocity = 420
 SWEP.ReloadTimes = {
 	base_reload = {80/33, 3.75},
 	base_reload_empty = {80/33, 4.75},
-	
+
 	base_melee_bash = {0.3, 0.9},
 	base_melee_bash_empty = {0.3, 0.9},
 }

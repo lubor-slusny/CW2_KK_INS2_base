@@ -7,12 +7,12 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "AN/M14 Incendiary"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_anm14")
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 end
 
 SWEP.Attachments = CustomizableWeaponry_KK.ins2.slowGrenadeMenu
@@ -23,13 +23,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_anm14"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",

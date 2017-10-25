@@ -1,13 +1,13 @@
 
 local function shell(wep)
 	if SERVER then return end
-	
-	wep:shellEvent() 
+
+	wep:shellEvent()
 end
 
 local function m203(wep)
 	if SERVER then return end
-	
+
 	wep:shellEvent203()
 end
 

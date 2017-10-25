@@ -7,7 +7,7 @@ ENT.PackageText = "Rare Attachments"
 ENT.Category = "CW 2.0 Attachments"
 ENT.Author = "Spy"
 ENT.Spawnable = true
-ENT.AdminSpawnable = true 
+ENT.AdminSpawnable = true
 
 ENT.attachments = {
 	"kk_ins2_gl_m320",

@@ -15,10 +15,10 @@ SWEP.Base = "cw_kk_ins2_base_main"
 SWEP.SpeedDec = 0
 SWEP.WeaponLength = 0
 
-function SWEP:IndividualThink()	
+function SWEP:IndividualThink()
 	-- weapons.GetStored("cw_kk_ins2_base").IndividualThink(self)
 	weapons.GetStored("cw_kk_ins2_base_main").IndividualThink(self)
-	
+
 	weapons.GetStored("cw_melee_base").IndividualThink(self)
 end
 
@@ -32,7 +32,7 @@ SWEP.InactiveWeaponStates = {
 	[CW_PRONE_BUSY] = true,
 	[CW_PRONE_MOVING] = true
 }
-	
+
 SWEP.reticleInactivityCallbacksRaw = {
 	["slash_primary"] = -0.4,
 	["slash_secondary"] = -0.4,

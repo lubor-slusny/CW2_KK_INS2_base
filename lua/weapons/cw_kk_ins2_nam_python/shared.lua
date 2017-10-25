@@ -10,18 +10,18 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Colt Python"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_python")
-	
+
 	SWEP.Shell = "KK_INS2_762x33"
 	SWEP.NoShells = true
 	SWEP.ShellScale = 2
-	
+
 	SWEP.AttachmentModelsVM = {
 		["std_barrel"] = {model = "models/weapons/upgrades/a_python_short.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["bg_regularbarrel"] = {model = "models/weapons/upgrades/a_python_standard.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["bg_longbarrelmr96"] = {model = "models/weapons/upgrades/a_python_long.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_revolver_mag"] = {model = "models/weapons/upgrades/a_speedloader_python.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
 
@@ -30,7 +30,7 @@ if CLIENT then
 		["bg_regularbarrel"] = {model = "models/weapons/upgrades/w_python_standard.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["bg_longbarrelmr96"] = {model = "models/weapons/upgrades/w_python_long.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-1.1145, 0, 0.4052)
 	SWEP.IronsightAng = Vector(-0.0044, -0.0618, 0)
 
@@ -59,7 +59,7 @@ SWEP.Animations = {
 	base_insert = "base_reload_insert",
 	base_reload_end = "base_reload_end",
 	base_reload_end_empty = "base_reload_end",
-	
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_fire = {"base_fire","base_fire2"},
@@ -143,7 +143,7 @@ SWEP.ReloadTimes = {
 	base_reload_start4 = {1.75, 2.45, KK_INS2_REVOLVER_SLOW_UNLOAD},
 	base_reload_insert = {0.2, 1.25},
 	base_reload_end = {1.39, 1.39},
-	
+
 	base_reload_speed = {3, 4.39, KK_INS2_REVOLVER_SPEED_UNLOAD, 1.75},
 	base_reload_speed2 = {3, 4.39, KK_INS2_REVOLVER_SPEED_UNLOAD, 1.75},
 	base_reload_speed3 = {3, 4.39, KK_INS2_REVOLVER_SPEED_UNLOAD, 1.75},
@@ -153,8 +153,8 @@ SWEP.ReloadTimes = {
 function SWEP:IndividualInitialize()
 	self.magType = "NONE"
 	self.ShotgunReload = true
-	
-	if CLIENT then 
+
+	if CLIENT then
 		self:setBodygroup(1, self:Clip1())
 		self:setBodygroup(2, self:Clip1())
 	end

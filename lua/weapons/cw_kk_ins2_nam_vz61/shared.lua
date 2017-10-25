@@ -13,18 +13,18 @@ if CLIENT then
 	SWEP.PrintName = "Vzor 61"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_vz61")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 90, Right = 0, Up = 30}
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {}
 
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-1.907, -2, 0.3887)
 	SWEP.IronsightAng = Vector(0.0334, 0.058, 0)
 

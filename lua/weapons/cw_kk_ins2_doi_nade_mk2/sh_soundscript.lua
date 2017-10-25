@@ -1,7 +1,7 @@
 
 SWEP.Sounds = {
 	// CW_KK_INS2_DOI_NADE_MK2_SPOONEJECT
-	
+
 	base_draw = {
 		{time = 0/30, sound = "CW_KK_INS2_UNIVERSAL_GRENADE_DRAW"},
 	},

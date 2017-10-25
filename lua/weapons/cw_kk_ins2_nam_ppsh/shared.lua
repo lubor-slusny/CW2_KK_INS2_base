@@ -13,29 +13,29 @@ if CLIENT then
 	SWEP.PrintName = "PPSh-41"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_ppsh41")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = 0}
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["std_mag"] = {model = "models/weapons/upgrades/v_ppshmag.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_ppsh_71"] = {model = "models/weapons/upgrades/v_ppshdrum.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/v_ppshsling.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["std_mag"] = {model = "models/weapons/upgrades/w_ppshmag.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_ppsh_71"] = {model = "models/weapons/upgrades/w_ppshdrum.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/w_ppshsling.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-1.8171, -2, 0.8168)
 	SWEP.IronsightAng = Vector(-0.3968, 0.0228, 0)
 
@@ -150,14 +150,14 @@ SWEP.KK_INS2_EmptyIdle = true
 SWEP.ReloadTimes = {
 	base_reload = {3.3, 3.9},
 	base_reloadempty = {3.3, 5.2},
-	
+
 	base_reload_drum = {4.8, 5.7},
 	base_reloadempty_drum = {4.8, 6.6},
 }
 
 SWEP.MuzzleVelocity = 488
 
-if CLIENT then 
+if CLIENT then
 	function SWEP:updateStandardParts()
 		self:setElementActive("std_mag", !self.ActiveAttachments.kk_ins2_mag_ppsh_71)
 	end

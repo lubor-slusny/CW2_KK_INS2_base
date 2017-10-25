@@ -12,26 +12,26 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Welrod Mk2"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_welrod")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_9x19"
 	-- SWEP.ShellDelay = 0.9
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = 180}
 	SWEP.ShellWorldAngleAlign = {Forward = 90, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_welrod.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
-		
+
 		-- ["kk_ins2_fnfal_skin2"] = {model = "models/weapons/v_welrod.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, material = "models/weapons/welrod/dosh.mdl"},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		-- ["kk_ins2_fnfal_skin2"] = {model = "models/weapons/w_welrod.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, material = "models/weapons/welrod/dosh.mdl"},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.2947, 0, 0.8344)
 	SWEP.IronsightAng = Vector(-0.0609, 0, 0)
 
@@ -137,6 +137,6 @@ SWEP.ReloadTimes = {
 	iron_fire_end = {25/30, 2.2},
 	base_reload = {2.27, 3.17},
 	base_reloadempty = {2.27, 4.67},
-	
+
 	base_melee_bash = {0.3, 0.8},
 }

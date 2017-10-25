@@ -20,7 +20,7 @@ if CLIENT then
 		[1] = {t = "Causes grenade to create more shrapnels upon detonation.", c = CustomizableWeaponry.textColors.VPOSITIVE},
 		[2] = {t = "LOL, no, it does not. Not yet. Enjoy model changes for now.", c = CustomizableWeaponry.textColors.VNEGATIVE}
 	}
-	
+
 	att.SelectIconOverride = surface.GetTextureID("vgui/inventory/weapon_splintering")
 end
 

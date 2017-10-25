@@ -21,19 +21,19 @@ if CLIENT then
 	}
 
 	local path = "cwkk/reticles/pgo7"
-	
+
 	att.zoomTextures = {
 		{tex = surface.GetTextureID(path), offset = {0, 1}},
 	}
-	
+
 	att._rtFov = 15
 	att._rtReticle = surface.GetTextureID(path)
 	att._reticleMat = Material(path)
-	
+
 	function att:drawRenderTarget()
 		CustomizableWeaponry_KK.ins2.rtSight:renderTarget(self, att)
 	end
-	
+
 	function att:elementRender()
 		CustomizableWeaponry_KK.ins2.rtSight:stencil(self, att)
 	end

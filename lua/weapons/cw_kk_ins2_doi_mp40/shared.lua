@@ -13,21 +13,21 @@ if CLIENT then
 	SWEP.PrintName = "MP40"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_mp40")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.1
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = 180}
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_mp40.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.5062, -2, 0.5482)
 	SWEP.IronsightAng = Vector(0.2105, 0.0425, 0)
 
@@ -133,7 +133,7 @@ SWEP.KK_INS2_EmptyIdle = true
 SWEP.ReloadTimes = {
 	base_reload = {2.2, 2.95},
 	base_reloadempty = {3.2, 4.55},
-	
+
 	base_melee_bash = {0.3, 0.9},
 	empty_melee_bash = {0.3, 0.9},
 }

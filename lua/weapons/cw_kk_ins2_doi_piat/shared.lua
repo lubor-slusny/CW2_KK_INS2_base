@@ -9,26 +9,26 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "PIAT"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_piat")
-	
+
 	SWEP.MuzzleEffect = false
 	-- SWEP.RearEffectw = true
 	SWEP.NoShells = true
-	
+
 	SWEP.BackupSights = {
 		["nil"] = {
 			Vector(-3.5442, 0, 1.9215),
 			Vector(-4.1281, 0.0421, -6)
 		},
 	}
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_piat.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	-- SWEP.IronsightPos = Vector(-3.5949, 0, 1.4701)
 	-- SWEP.IronsightAng = Vector(-2.3778, 0.006, -7)
 
@@ -38,7 +38,7 @@ if CLIENT then
 	SWEP.SprintAnimSpeed = 1
 	SWEP.ViewModelMovementScale_sprint = 0.6
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.CustomizationMenuScale = 0.013
 	SWEP.HUD_MagText = "TUBE: "
 end
@@ -140,7 +140,7 @@ SWEP.HolsterTime = 1.4
 
 SWEP.ReloadTimes = {
 	base_reload = {2.7, 4.4},
-	
+
 	base_melee = {0.3, 1.4},
 	empty_melee = {0.3, 1.4},
 }

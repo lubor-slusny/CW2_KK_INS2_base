@@ -1,4 +1,4 @@
-	
+
 SWEP.Sounds = {
 	base_crawl = {
 		{time = 0, sound = "CW_KK_INS2_UNIVERSAL_LEFTCRAWL"},

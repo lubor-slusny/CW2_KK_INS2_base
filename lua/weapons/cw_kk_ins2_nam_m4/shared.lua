@@ -13,30 +13,30 @@ if CLIENT then
 	SWEP.PrintName = "M607"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_m607")
-	
+
 	SWEP.Shell = "KK_INS2_556x45"
 	SWEP.ShellDelay = 0.06
-		
+
 	SWEP.AttachmentModelsVM = {
-		["std_mag"] = {model = "models/weapons/upgrades/a_magazine_m607_20.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true}, 
-		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/upgrades/a_magazine_m607_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true}, 
-		
+		["std_mag"] = {model = "models/weapons/upgrades/a_magazine_m607_20.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
+		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/upgrades/a_magazine_m607_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+
 		["kk_ins2_suppressor_ins"] = {model = "models/weapons/upgrades/a_suppressor_ins.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/a_foregrip_ins.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), attachment = "Foregrip"},
 	}
 
 	SWEP.AttachmentModelsWM = {
 		["std_mag"] = {model = "models/weapons/upgrades/w_magazine_m607_20.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_m1a1_30"] = {model = "models/weapons/upgrades/w_magazine_m607_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_suppressor_ins"] = {model = "models/weapons/upgrades/w_sil_ins1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/w_ins_foregrip.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	-- SWEP.IronsightPos = Vector(-2.4916, -3, 0.629)
 	-- SWEP.IronsightAng = Vector(-0.223, 0.0476, 0)
 
@@ -57,23 +57,23 @@ SWEP.Attachments = {
 }
 
 SWEP.Animations = {
-	base_pickup = "base_ready", 
-	base_draw = "base_draw", 
-	base_fire = "base_fire", 
+	base_pickup = "base_ready",
+	base_draw = "base_draw",
+	base_fire = "base_fire",
 	base_fire_aim = {"iron_fire_1", "iron_fire_2", "iron_fire_3", "iron_fire_4"},
-	base_fire_empty = "base_dryfire", 
-	base_fire_empty_aim = "iron_dryfire", 
-	base_reload = "base_reload", 
+	base_fire_empty = "base_dryfire",
+	base_fire_empty_aim = "iron_dryfire",
+	base_reload = "base_reload",
 	base_reload_empty = "base_reloadempty",
-	base_reload_mm = "base_reload_ext", 
+	base_reload_mm = "base_reload_ext",
 	base_reload_empty_mm = "base_reloadempty_ext",
-	base_idle = "base_idle", 
-	base_holster = "base_holster", 
+	base_idle = "base_idle",
+	base_holster = "base_holster",
 	base_firemode = "base_fireselect",
 	base_firemode_aim = "iron_fireselect",
-	base_sprint = "base_sprint", 
-	base_safe = "base_down", 
-	base_safe_aim = "iron_down", 
+	base_sprint = "base_sprint",
+	base_safe = "base_down",
+	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
 }
 

@@ -9,22 +9,22 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Panzerfaust 60"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_panzerfaust")
-	
+
 	-- SWEP.RearEffectw = true
 	SWEP.NoShells = true
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.6525, -2, 0.2846)
 	SWEP.IronsightAng = Vector(0.0752, 0, 7)
 
 	SWEP.SprintAnimSpeed = 1
 	SWEP.ViewModelMovementScale_sprint = 0.6
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.CustomizationMenuScale = 0.01
 	SWEP.HUD_MagText = "TUBE: "
 	SWEP.MuzzleAttachmentName = "glmuzzle"
@@ -45,7 +45,7 @@ SWEP.KK_INS2_EmptyIdle = true
 SWEP.Animations = {
 	at4_reload_start = "base_holster_empty",
 	at4_reload_end = "base_ready",
-	
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_draw_empty = "base_draw_empty",
@@ -140,7 +140,7 @@ function SWEP:getAnimTimes(idk)
 	if idk and string.find(idk, "base_melee") then
 		return 0.3, 1
 	end
-	
+
 	return self.ReloadTime, self.ReloadHalt
 end
 
@@ -157,27 +157,27 @@ end
 
 function SWEP:reloadAnimFunc(lm)
 	self.dt.AT4ReloadEnd = CurTime() + self.ReloadHalt / self.ReloadSpeed
-	
+
 	self:sendWeaponAnim("at4_reload_start", self.ReloadSpeed, 0)
 
-	CustomizableWeaponry.actionSequence.new(self, 1.2 / self.ReloadSpeed, nil, function() 
+	CustomizableWeaponry.actionSequence.new(self, 1.2 / self.ReloadSpeed, nil, function()
 		if not self.ReloadDelay then return end
-		
+
 		self:sendWeaponAnim("at4_reload_end", self.ReloadSpeed, 0)
 	end)
-	
+
 	return self:getAnimTimes()
 end //*/
 
 function SWEP:getReloadProgress()
 	local CT = CurTime()
-	
+
 	if self.dt.AT4ReloadEnd < CT then return end
-	
+
 	if CLIENT then
 		self.reticleInactivity = self.dt.AT4ReloadEnd
 	end
-	
+
 	return math.Round((CT - self.dt.AT4ReloadEnd + self.ReloadHalt / self.ReloadSpeed) * 100 / self.ReloadHalt)
 end
 

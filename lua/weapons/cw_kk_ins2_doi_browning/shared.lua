@@ -12,25 +12,25 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M1919A6 Browning"
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m1919")
-	
+
 	SWEP.NoShells = true
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.ShellEjectVelocity = 50
-	
+
 	SWEP.Shell2 = "KK_INS2_30-06_link"
 	SWEP.Shell2Scale = 0.7
 	SWEP.Shell2EjectVelocity = 50
 	SWEP.Shell2ViewAttachmentID = 2
 	SWEP.Shell2ViewAngleAlign = {Forward = 0, Right = 0, Up = 180}
 	SWEP.Shell2WorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.9629, -2, 1.275)
 	SWEP.IronsightAng = Vector(0, 0.0457, 0)
 
@@ -60,7 +60,7 @@ SWEP.Animations = {
 	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
 	base_melee = "base_melee_bash",
-	
+
 	bipod_in = "deployed_in",
 	bipod_fire = {"deployed_fire_1","deployed_fire_2"},
 	bipod_fire_aim = {"deployed_iron_fire_1","deployed_iron_fire_2"},
@@ -134,9 +134,9 @@ SWEP.MuzzleVelocity = 850
 SWEP.ReloadTimes = {
 	base_reload = {5.5, 7.33},
 	base_reload_empty = {4.7, 8.58},
-	
+
 	deployed_reload = {5.5, 7.33},
 	deployed_reload_empty = {4.7, 8.58},
-	
+
 	base_melee_bash = {0.6, 1.6},
 }

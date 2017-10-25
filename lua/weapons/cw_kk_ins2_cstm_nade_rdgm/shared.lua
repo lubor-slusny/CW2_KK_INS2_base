@@ -8,14 +8,14 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "RDG-M Smoke Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.IconLetter = "P"
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.ForegripOverridePos = {
 		none = {
 			["Pin_F1"] = {pos = Vector(), angle = Angle()},
@@ -24,7 +24,7 @@ if CLIENT then
 			["Weapon_F1"] = {pos = Vector(), angle = Angle()},
 			["Spoon_F1"] = {pos = Vector(), angle = Angle()}
 		},
-		
+
 		throwfix = {
 			["Pin_F1"] = {pos = Vector(0, 0, -20), angle = Angle()},
 			["Pin_2_F1"] = {pos = Vector(0, 0, -20), angle = Angle()},
@@ -33,10 +33,10 @@ if CLIENT then
 			["Spoon_F1"] = {pos = Vector(0, 0, -20), angle = Angle()}
 		}
 	}
-	
+
 	SWEP.ForegripParent = "none"
 	SWEP.ForegripOverride = true
-	
+
 	SWEP.HUD_3D2DBone = 54
 end
 
@@ -48,13 +48,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_m18"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_idle = "base_idle",
 	base_draw = "base_draw",
 	base_holster = "base_holster",
@@ -101,7 +101,7 @@ SWEP.timeToThrowShort = 0.9
 
 if CLIENT then
 	CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_cstm_nade_rdgm", "grenade")
-	
+
 	function SWEP:updateOtherParts()
 		-- self.ForegripOverride = (string.find(self.Sequence, "throw") != nil) // nope
 		self.ForegripParent = (string.find(self.Sequence, "throw") != nil) and "throwfix" or "none"

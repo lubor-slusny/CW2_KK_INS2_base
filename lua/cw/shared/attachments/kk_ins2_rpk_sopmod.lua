@@ -24,14 +24,14 @@ att.origWM = "models/weapons/w_rpk.mdl"
 if CLIENT then
 	att.displayIcon = surface.GetTextureID("atts/" .. att.name)
 	att.description = {}
-	
+
 	att.SelectIconOverride = surface.GetTextureID("vgui/inventory/cw_kk_ins2_rpk_sopmod")
 end
 
 function att:attachFunc()
 	self.ViewModel = att.activeVM
 	self.WorldModel = att.activeWM
-	
+
 	if CLIENT then
 		self.CW_VM:SetModel(self.ViewModel)
 	end
@@ -40,7 +40,7 @@ end
 function att:detachFunc()
 	self.ViewModel = att.origVM
 	self.WorldModel = att.origWM
-	
+
 	if CLIENT then
 		self.CW_VM:SetModel(self.ViewModel)
 	end

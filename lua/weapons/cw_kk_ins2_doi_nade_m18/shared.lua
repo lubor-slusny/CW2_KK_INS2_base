@@ -8,19 +8,19 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M18 Smoke Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m18")
-	
+
 	SWEP.AttachmentModelsVM = {
-		["eh"] = {model = "models/weapons/cw_kk_doi/v_m18.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true, 
-			hideVM = true, 
+		["eh"] = {model = "models/weapons/cw_kk_doi/v_m18.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true,
+			hideVM = true,
 			active = CustomizableWeaponry_KK.HOME,
 			material = "models/cwkkdoi/m18/weapon_m18_dm"
 		},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
 end
@@ -33,13 +33,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_m18"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",
