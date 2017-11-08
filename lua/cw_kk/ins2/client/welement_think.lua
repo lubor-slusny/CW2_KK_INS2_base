@@ -4,7 +4,7 @@ CustomizableWeaponry_KK.ins2.welementThink.IsValid = function() return true end
 
 function CustomizableWeaponry_KK.ins2.welementThink:_addWeapon(wep)
 	self._cache = self._cache or {}
-	
+
 	table.insert(self._cache, wep)
 end
 
@@ -12,8 +12,8 @@ function CustomizableWeaponry_KK.ins2.welementThink:_processWeapon(wep)
 	if not IsValid(wep) then
 		return false
 	end
-	
-	if wep.AttachmentModelsWM then 
+
+	if wep.AttachmentModelsWM then
 		for k,v in pairs(wep.AttachmentModelsWM) do
 			local f = self._funcs[k]
 			if f and v.active then
@@ -21,18 +21,18 @@ function CustomizableWeaponry_KK.ins2.welementThink:_processWeapon(wep)
 			end
 		end
 	end
-	
+
 	local f = self._funcs[wep:GetClass()]
 	if f then
 		f(wep, wep.WMEnt)
 	end
-	
+
 	return true
 end
 
 function CustomizableWeaponry_KK.ins2.welementThink:think()
 	if not self._cache then return end
-	
+
 	for k,wep in pairs(self._cache) do
 		self._cache[k] = self:_processWeapon(wep) and wep or nil
 	end
@@ -44,11 +44,11 @@ CustomizableWeaponry_KK.ins2.welementThink.templates = {
 	bipod = function(wep, welement)
 		welement:SetSequence(wep.dt.BipodDeployed and 1 or 0)
 	end,
-	
+
 	launcher = function(wep, welement)
 		welement:SetBodygroup(1, (wep:Clip1() == 1) and 0 or 1)
 	end,
-	
+
 	grenade = function(wep, welement)
 		welement:SetBodygroup(1, wep.dt.PinPulled and 0 or 1)
 	end,
@@ -62,15 +62,15 @@ local pwn
 
 CustomizableWeaponry_KK.ins2.welementThink.templates.grenadewtrail = function(wep, welement)
 	welement:SetBodygroup(1, wep.dt.PinPulled and 0 or 1)
-	
+
 	pwn = wep.Owner
-	
+
 	if IsValid(pwn) and pwn == LocalPlayer() and not pwn:ShouldDrawLocalPlayer() then
 		welement:StopParticles()
 		welement.particlesStarted = false
 		return
 	end
-	
+
 	if wep.dt.PinPulled then
 		if not welement.particlesStarted then
 			ParticleEffectAttach(wep.projectileTrailParticles, PATTACH_POINT_FOLLOW, welement, 1)
@@ -84,13 +84,13 @@ end
 
 function CustomizableWeaponry_KK.ins2.welementThink:add(id, func)
 	if not id then return end
-	
+
 	func = self.templates[func] or func // if template exists, use it
-	
+
 	self._funcs = self._funcs or {}
 	self._funcs[id] = func // if nil is passed, remove existing
 end
-	
+
 CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_rpg", "launcher")
 CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_doi_piat", "launcher")
 CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_doi_tankfist", "launcher")

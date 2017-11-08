@@ -5,31 +5,31 @@ function ENT:OnRemove()
 end
 
 function ENT:Think()
-	if self._timeToLive > CurTime() then 
+	if self._timeToLive > CurTime() then
 		self:DrawDLight()
 		self:DrawEffect()
-	end	
+	end
 end
 
 function ENT:Draw()
 	self:DrawModel()
-	
+
 	-- if self._timeToLive > CurTime() then
 		-- self:DrawEffect()
-	-- end	
+	-- end
 end
 
 function ENT:DrawEffect()
 	-- ParticleEffectAttach("muzzleflash_M3", PATTACH_POINT_FOLLOW, self, 1)
-	
+
 	-- local ed = EffectData()
 	-- ed:SetOrigin(self:GetPos())
 	-- util.Effect("ElectricSpark", ed)
 	-- util.Effect("MetalSpark", ed)
 	-- util.Effect("Sparks", ed)
-	
+
 	local c = self.LightColor
-	
+
 	for _ = 1,20 do
 		local p = self.Emitter:Add("particle/fire", self:GetPos())
 		p:SetColor(c.r, c.g, c.b)
@@ -42,14 +42,14 @@ function ENT:DrawEffect()
 		p:SetDieTime((math.random(30) / 100) + 0.05)
 		p:SetEndSize(0)
 		p:SetEndAlpha(0)
-		
+
 		-- p:SetThinkFunction(function(self)
 			-- local per = self:GetLifeTime() / self:GetDieTime()
-			
+
 			-- local r = 255 - ((255 - (c.r)) * per)
 			-- local g = 255 - ((255 - (c.g)) * per)
 			-- local b = 255 - ((255 - (c.b)) * per)
-			
+
 			-- self:SetColor(r,g,b)
 		-- end)
 	end
@@ -57,7 +57,7 @@ end
 
 function ENT:DrawDLight()
 	dlight = DynamicLight(self:EntIndex())
-					
+
 	dlight.r = self.LightColor.r
 	dlight.g = self.LightColor.g
 	dlight.b = self.LightColor.b

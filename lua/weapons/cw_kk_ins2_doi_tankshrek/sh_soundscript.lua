@@ -6,7 +6,7 @@ SWEP.Sounds = {
 		{time = 75/30, sound = "CW_KK_INS2_DOI_TANKSHREK_RATTLE"},
 		{time = 93/30, sound = "CW_KK_INS2_DOI_TANKSHREK_RESHOULDER"},
 	},
-	
+
 	base_draw = {
 		{time = 0, sound = "CW_KK_INS2_UNIVERSAL_DRAW"},
 		{time = 16/30, sound = "CW_KK_INS2_DOI_TANKSHREK_RATTLE"},
@@ -41,11 +41,11 @@ SWEP.Sounds = {
 	iron_dryfire = {
 		{time = 1/30, sound = "CW_KK_INS2_DOI_LAUNCHER_EMPTY"},
 	},
-	
+
 	iron_dryfire_preblend = {
 		{time = 1/30, sound = "CW_KK_INS2_DOI_LAUNCHER_EMPTY"},
 	},
-	
+
 	base_melee = {
 		{time = 5/31, sound = "CW_KK_INS2_DOI_MELEE"},
 	},

@@ -14,23 +14,23 @@ if CLIENT then
 	SWEP.PrintName = "IZH-43"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_izh43")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_12guage"
 	SWEP.ShellEjectVelocity = 0
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_sawnoff_generic"] = {model = "models/weapons/v_nam_sawedoff.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true, hideVM = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_sawnoff_generic"] = {model = "models/weapons/w_sawedoff.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-1.7707, -2.5, 1.0321)
 	SWEP.IronsightAng = Vector(0.6919, 0, 0)
 
@@ -144,7 +144,7 @@ function SWEP:getStripperClipAnimation(ammo, mag)
 	if mag < 1 and ammo >= self.Primary.ClipSize then
 		return "reload_empty"
 	end
-	
+
 	return "reload"
 end
 
@@ -157,11 +157,11 @@ end
 function SWEP:updateReloadTimes()
 	-- ReloadStartTime + InsertShellTime = base_reload
 	-- ReloadStartTime + InsertShellTime + InsertShellTime + ReloadFinishWait = base_reloadempty
-	
+
 	local p, q = self:getAnimTimes("base_reload_empty")
 
 	self.InsertShellTime = q - p
 	self.ReloadStartTime = p - self.InsertShellTime
-	
+
 	self.ReloadFinishWait = 0
 end

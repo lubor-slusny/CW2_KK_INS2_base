@@ -19,4 +19,3 @@ CustomizableWeaponry:addReloadSound("CW_KK_INS2_DOI_ENFIELD_MAGIN", "weapons/enf
 CustomizableWeaponry:addReloadSound("CW_KK_INS2_DOI_ENFIELD_RATTLE", "weapons/enfield/handling/enfield_rattle.wav")
 CustomizableWeaponry:addReloadSound("CW_KK_INS2_DOI_ENFIELD_ROUNDSIN", "weapons/enfield/handling/enfield_roundsin.wav")
 CustomizableWeaponry:addReloadSound("CW_KK_INS2_DOI_ENFIELD_SHOULDER", "weapons/enfield/handling/enfield_shoulder.wav")
-

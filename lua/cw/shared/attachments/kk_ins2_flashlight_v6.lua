@@ -14,25 +14,25 @@ if CLIENT then
 		[1] = {t = "[impulse 100] toggles on/off.", c = CustomizableWeaponry.textColors.REGULAR},
 		[2] = {t = "100% clientside projected texture.", c = CustomizableWeaponry.textColors.VPOSITIVE},
 	}
-	
+
 	att.reticle = "cw2/reticles/aim_reticule"
-	
+
 	local model, beamAtt
-	
+
 	function att:elementRender()
 		if not self.ActiveAttachments[att.name] then return end
-		
+
 		beamAtt = nil
-		
+
 		if self.KK_INS2_FL_SRC_OVERRIDE then
 			beamAtt = self:KK_INS2_FL_SRC_OVERRIDE()
 		end
-		
+
 		if beamAtt == nil and self.AttachmentModelsVM[att.name] then
 			model = self.AttachmentModelsVM[att.name].ent
 			beamAtt = model:GetAttachment(1)
 		end
-		
+
 		if beamAtt == nil then
 			model = self.CW_VM
 			beamAtt = model:GetAttachment(1)
@@ -40,7 +40,7 @@ if CLIENT then
 
 		CustomizableWeaponry_KK.ins2.flashlight.v6.elementRender(self, beamAtt)
 	end
-	
+
 	// for V6 LEM, true - ON, false - OFF
 	function att:getLEMState()
 		-- return (self.dt.INS2LAMMode % 2) != 0

@@ -7,18 +7,18 @@ end
 
 function ENT:Think()
 	self:SetBodygroup(0,1)
-		
+
 	-- if CurTime() > self.ArmTime and self.dt.State != self.States.misfired then
 		-- if not self.NextSoundTime or self.NextSoundTime < CT then
 			-- self:EmitSound("CW_KK_INS2_RPG_PROJECTILE", 105, 100)
 			-- self.NextSoundTime = CT + 3
 		-- end
 	-- end
-end 
+end
 
 function ENT:Draw()
 	self:DrawModel()
-	
+
 	if self.dt.State == self.States.armed and self.selfDestructTime > CurTime() then
 		self:DrawDLight()
 		self:DrawEffect()
@@ -33,8 +33,8 @@ end
 
 function ENT:DrawDLight()
 	dlight = DynamicLight(self:EntIndex())
-					
-	dlight.r = 255 
+
+	dlight.r = 255
 	dlight.g = 218
 	dlight.b = 74
 	dlight.style = math.pow(6,math.random(0,1))

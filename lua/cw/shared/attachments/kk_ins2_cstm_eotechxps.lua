@@ -18,14 +18,14 @@ if CLIENT then
 	att.description = {
 		[1] = {t = "Provides a bright reticle to ease aiming.", c = CustomizableWeaponry.textColors.POSITIVE}
 	}
-	
+
 	att.reticle = "models/weapons/optics/eotech_reticule_holo"
 	att._reticleSize = 14
-	
+
 	function att:elementRender()
 		CustomizableWeaponry_KK.ins2.stencilSight:elementRender(self, att)
 	end
-	
+
 end
 
 CustomizableWeaponry:registerAttachment(att)

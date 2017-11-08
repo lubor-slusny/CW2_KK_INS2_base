@@ -9,19 +9,19 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "ETFW-46"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_flamethrower_eintoss46_german")
-	
+
 	SWEP.NoShells = true
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/v_flame_eintoss46.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true, hideVM = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		-- ["whorehead"] = {model = "models/weapons/w_molotov.mdl", pos = Vector(1.1313, -0.0273, -0.4484), angle = Angle(99.0829, 13.4942, 0), size = Vector(1, 1, 1), attachment = "muzzle", active = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.6808, 0, 1.7394)
 	SWEP.IronsightPos = Vector()
 	SWEP.IronsightAng = Vector()
@@ -29,7 +29,7 @@ if CLIENT then
 	SWEP.SprintAnimSpeed = 1
 	SWEP.ViewModelMovementScale_sprint = 0.6
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.CustomizationMenuScale = 0.01
 	SWEP.HUD_MagText = "LOAD: "
 end
@@ -47,7 +47,7 @@ SWEP.Attachments = {
 SWEP.Animations = {
 	at4_reload_start = "base_holster",
 	at4_reload_end = "base_ready",
-	
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_fire = "base_fire",
@@ -136,7 +136,7 @@ function SWEP:getAnimTimes(idk)
 	if idk == "base_melee" then
 		return 0.3, 1
 	end
-	
+
 	return self.ReloadTime, self.ReloadHalt
 end
 
@@ -153,27 +153,27 @@ end
 
 function SWEP:reloadAnimFunc(lm)
 	self.dt.AT4ReloadEnd = CurTime() + self.ReloadHalt / self.ReloadSpeed
-	
+
 	self:sendWeaponAnim("at4_reload_start", self.ReloadSpeed, 0)
 
-	CustomizableWeaponry.actionSequence.new(self, 1.2 / self.ReloadSpeed, nil, function() 
+	CustomizableWeaponry.actionSequence.new(self, 1.2 / self.ReloadSpeed, nil, function()
 		if not self.ReloadDelay then return end
-		
+
 		self:sendWeaponAnim("at4_reload_end", self.ReloadSpeed, 0)
 	end)
-	
+
 	return self.ReloadTime, self.ReloadHalt
 end //*/
 
 function SWEP:getReloadProgress()
 	local CT = CurTime()
-	
+
 	if self.dt.AT4ReloadEnd < CT then return end
-	
+
 	if CLIENT then
 		self.reticleInactivity = self.dt.AT4ReloadEnd
 	end
-	
+
 	return math.Round((CT - self.dt.AT4ReloadEnd + self.ReloadHalt / self.ReloadSpeed) * 100 / self.ReloadHalt)
 end
 

@@ -1,14 +1,14 @@
 
-local function shell(wep) 
+local function shell(wep)
 	if SERVER then return end
-	
-	wep:shellEvent() 
+
+	wep:shellEvent()
 end
 
 local function link(wep)
 	if SERVER then return end
-	
-	wep:shellEvent2() 
+
+	wep:shellEvent2()
 end
 
 SWEP.Sounds = {
@@ -222,7 +222,7 @@ SWEP.Sounds = {
 	deployed_iron_fireselect = {
 		{time = 0, sound = "CW_KK_INS2_DOI_MG34_FIRESELECT"},
 	},
-	
+
 	base_melee_bash = {
 		{time = 10/31, sound = "CW_KK_INS2_DOI_MELEE"},
 	},

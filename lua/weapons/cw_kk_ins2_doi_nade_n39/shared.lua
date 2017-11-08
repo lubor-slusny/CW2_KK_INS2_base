@@ -10,18 +10,18 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "N39 Smoke Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nebelhandgranate")
-	
+
 	SWEP.IconLetter = "O"
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.HUD_3D2DOffset = Vector(-1, 3, 0)
 	SWEP.HUD_3D2DOffsetMenu = Vector(-8, 6, 0)
 	SWEP.CustomizationMenuScale = 0.006
@@ -35,13 +35,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_m18"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_idle = "idle",
 	base_pickup = "draw",
 	base_draw = "draw",
@@ -50,7 +50,7 @@ SWEP.Animations = {
 	base_safe = "down",
 	base_crawl = "crawl",
 }
-	
+
 SWEP.SpeedDec = 5
 
 SWEP.Slot = 4

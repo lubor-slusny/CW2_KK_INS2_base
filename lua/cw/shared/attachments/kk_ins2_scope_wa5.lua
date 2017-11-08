@@ -22,28 +22,28 @@ if CLIENT then
 	}
 
 	local path = "models/weapons/optics/enfield_crosshair"
-	
+
 	att.zoomTextures = {
 		{tex = surface.GetTextureID(path), offset = {0, 1}},
 	}
-	
+
 	att._rtFov = 7
 	att._rtReticle = surface.GetTextureID(path)
 	att._reticleMat = Material(path)
-	
+
 	att.zoomDesired = 7
-	
-	function att:drawRenderTarget()		
+
+	function att:drawRenderTarget()
 		local scopeEnt = self.AttachmentModelsVM[att.name].ent
-		if self:isAiming() then 
+		if self:isAiming() then
 			scopeEnt:SetSequence(2)
 		else
 			scopeEnt:SetSequence(1)
 		end
-		
+
 		CustomizableWeaponry_KK.ins2.rtSight:renderTarget(self, att)
 	end
-	
+
 	function att:elementRender()
 		CustomizableWeaponry_KK.ins2.rtSight:stencil(self, att)
 	end

@@ -12,43 +12,43 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "AK-74"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_ak74")
-	
+
 	SWEP.Shell = "KK_INS2_545x39"
 	SWEP.ShellDelay = 0.05
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = -30}
-	
+
 	SWEP.BackupSights = {
 		["kk_ins2_elcan"] = {
 			Vector(-2.3004, -3, -1.4735),
 			Vector(-0.5597, 0, 0)
 		},
 	}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_modkit_06.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["handguardStandard"] = {model = "models/weapons/upgrades/a_standard_ak74.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		
+
 		["kk_ins2_pbs5"] = {model = "models/weapons/upgrades/a_suppressor_aks.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/a_woodgrips_ak74.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_gl_gp25"] = {model = "models/weapons/upgrades/a_gl_gp25.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_anpeq15"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_anpeq_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_magnifier"] = {model = "models/weapons/upgrades/a_optic_aimp2x.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_aimpoint"] = {model = "models/weapons/upgrades/a_optic_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_elcan"] = {model = "models/weapons/upgrades/a_optic_elcan_m.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, retSizeMult = 0.85},
 		["kk_ins2_eotech"] = {model = "models/weapons/upgrades/a_optic_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_kobra"] = {model = "models/weapons/upgrades/a_optic_kobra_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, retSizeMult = 1.2},
 		["kk_ins2_po4"] = {model = "models/weapons/upgrades/a_optic_po4x24.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_cstm_cmore"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_cmore.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_compm4s"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_compm4s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_microt1"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_microt1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -58,27 +58,27 @@ if CLIENT then
 
 		["kk_ins2_cstm_pgo7"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_pgo7.mdl", bone = "Weapon", pos = Vector(0.453, -3.218, -0.301), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/w_modkit_6.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["handguardStandard"] = {model = "models/weapons/upgrades/w_standard_ak74.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		
+
 		["kk_ins2_pbs5"] = {model = "models/weapons/upgrades/w_sil_ins1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/w_foregrip_wood_2.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_gl_gp25"] = {model = "models/weapons/upgrades/w_gp25.mdl", attachment = "gl", pos = Vector(-10.75,0.2,0), angle = Angle(0, 0, -90), size = Vector(1, 1, 1)},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/w_laser_ins.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/w_laser_ins.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_magnifier"] = {model = "models/weapons/upgrades/w_magaim.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_aimpoint"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_elcan"] = {model = "models/weapons/upgrades/w_elcan.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_eotech"] = {model = "models/weapons/upgrades/w_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_kobra"] = {model = "models/weapons/upgrades/w_kobra.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_po4"] = {model = "models/weapons/upgrades/w_po.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_cstm_cmore"] = {model = "models/weapons/attachments/w_cw_kk_ins2_cstm_cmore.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_compm4s"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_microt1"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -86,13 +86,13 @@ if CLIENT then
 		["kk_ins2_cstm_barska"] = {model = "models/weapons/upgrades/w_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_eotechxps"] = {model = "models/weapons/attachments/w_cw_kk_ins2_cstm_eotechxps.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.2449, -2, 0.6504)
 	SWEP.IronsightAng = Vector(0.35, 0, 0)
 
 	SWEP.M203Pos = Vector(-1.0384, -4, 0.8356)
 	SWEP.M203Ang = Vector(1.0405, -0.0059, 0)
-	
+
 	SWEP.KKINS2KobraPos = Vector(-2.2509, -1, -0.2497)
 	SWEP.KKINS2KobraAng = Vector()
 
@@ -112,7 +112,7 @@ if CLIENT then
 	SWEP.KKINS2MagnifierAng = Vector()
 
 	// for the keks
-	
+
 	SWEP.KKINS2CSTMPGO7Pos = Vector(-0.8964, -3, -0.5)
 	SWEP.KKINS2CSTMPGO7Ang = Vector()
 
@@ -152,7 +152,7 @@ SWEP.Animations = {
 	base_safe = "base_down",
 	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
-	
+
 	foregrip_pickup = "foregrip_ready",
 	foregrip_draw = "foregrip_draw",
 	foregrip_fire = "foregrip_fire",
@@ -169,7 +169,7 @@ SWEP.Animations = {
 	foregrip_safe = "foregrip_down",
 	foregrip_safe_aim = "foregrip_iron_down",
 	foregrip_crawl = "foregrip_crawl",
-	
+
 	gl_off_pickup = "gl_ready",
 	gl_off_draw = "gl_draw",
 	gl_off_fire = "gl_fire",
@@ -199,7 +199,7 @@ SWEP.Animations = {
 	gl_on_safe = "glsetup_down",
 	gl_on_safe_aim = "glsetup_iron_down",
 	gl_on_crawl = "glsetup_crawl",
-	
+
 	gl_turn_on = "glsetup_in",
 	gl_turn_off = "glsetup_out",
 }
@@ -264,16 +264,16 @@ SWEP.MuzzleVelocity = 890
 SWEP.ReloadTimes = {
 	base_reload = {2.2, 3.15},
 	base_reloadempty = {2.2, 4.35},
-	
+
 	foregrip_reload = {2.2, 3.15},
 	foregrip_reloadempty = {2.2, 4.35},
-	
+
 	gl_reload = {2.2, 3.15},
 	gl_reloadempty = {2.2, 4.35},
-	
+
 	glsetup_in = {0.6, 0.6},
 	glsetup_out = {0.7, 0.7},
-	
+
 	glsetup_reload = {1.75, 2.67}
 }
 

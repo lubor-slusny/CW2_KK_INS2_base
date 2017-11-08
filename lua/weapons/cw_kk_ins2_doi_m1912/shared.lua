@@ -11,16 +11,16 @@ if CLIENT then
 	SWEP.PrintName = "M1912"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/cw_kk_ins2_doi_m1912")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_12guage"
 	-- SWEP.ShellDelay = 13/30
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.004, -2, 1.0358)
 	SWEP.IronsightAng = Vector(0.3819, 0.0619, 0)
 
@@ -124,7 +124,7 @@ SWEP.ReloadTimes = {
 	base_fire_cock_2 = {2/24, 0.5},
 	iron_fire_cock_1 = {4/35, 0.5},
 	iron_fire_cock_2 = {4/35, 0.5},
-	
+
 	base_reload_start = {0.6, 0.6},
 	base_reload_start_empty = {2.25, 2.89, KK_INS2_SHOTGUN_LOAD_FIRST},
 	base_reload_insert = {15/36, 0.72},

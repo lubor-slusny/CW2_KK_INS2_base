@@ -1,14 +1,14 @@
 
-local function shell(wep) 
+local function shell(wep)
 	if SERVER then return end
-	
-	wep:shellEvent() 
+
+	wep:shellEvent()
 end
 
 local function link(wep)
 	if SERVER then return end
-	
-	wep:shellEvent2() 
+
+	wep:shellEvent2()
 end
 
 SWEP.Sounds = {
@@ -168,7 +168,7 @@ SWEP.Sounds = {
 	deployed_iron_dryfire = {
 		{time = 0, sound = "CW_KK_INS2_DOI_BROWNING_EMPTY"},
 	},
-	
+
 	base_melee_bash = {
 		{time = 10/33, sound = "CW_KK_INS2_DOI_MELEE"},
 	},

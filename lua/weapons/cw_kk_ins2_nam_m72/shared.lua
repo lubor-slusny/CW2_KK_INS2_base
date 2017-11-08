@@ -9,12 +9,12 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M72"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_law")
-	
+
 	SWEP.RearEffectw = true
 	SWEP.NoShells = true
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
 
@@ -28,7 +28,7 @@ if CLIENT then
 			["sight_rear_l"] = {pos = Vector(), angle = Angle()},
 			["sight_rear_d"] = {pos = Vector(), angle = Angle()}
 		},
-		
+
 		iron = {
 			["sight_rear_u"] = {pos = Vector(0, 0.3, 0), angle = Angle()},
 			["sight_rear_r"] = {pos = Vector(-0.3, 0, 0), angle = Angle()},
@@ -36,10 +36,10 @@ if CLIENT then
 			["sight_rear_d"] = {pos = Vector(0, -0.3, 0), angle = Angle()}
 		}
 	}
-	
+
 	SWEP.ForegripParent = "none"
 	SWEP.ForegripOverride = true
-	
+
 	SWEP.ViewModelMovementScale_sprint = 0.5
 	SWEP.CustomizationMenuScale = 0.01
 	SWEP.HUD_MagText = "TUBE: "
@@ -52,7 +52,7 @@ SWEP.Attachments = {}
 SWEP.Animations = {
 	at4_reload_start = "base_toss",
 	at4_reload_end = "base_ready",
-	
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_fire = "base_fire",
@@ -151,27 +151,27 @@ end
 
 function SWEP:reloadAnimFunc(lm)
 	self.dt.AT4ReloadEnd = CurTime() + self.ReloadHalt / self.ReloadSpeed
-	
+
 	self:sendWeaponAnim("at4_reload_start", self.ReloadSpeed, 0)
 
-	CustomizableWeaponry.actionSequence.new(self, 1.8 / self.ReloadSpeed, nil, function() 
+	CustomizableWeaponry.actionSequence.new(self, 1.8 / self.ReloadSpeed, nil, function()
 		if not self.ReloadDelay then return end
-		
+
 		self:sendWeaponAnim("at4_reload_end", self.ReloadSpeed, 0)
 	end)
-	
+
 	return self:getAnimTimes()
 end //*/
 
 function SWEP:getReloadProgress()
 	local CT = CurTime()
-	
+
 	if self.dt.AT4ReloadEnd < CT then return end
-	
+
 	if CLIENT then
 		self.reticleInactivity = self.dt.AT4ReloadEnd
 	end
-	
+
 	return math.Round((CT - self.dt.AT4ReloadEnd + self.ReloadHalt / self.ReloadSpeed) * 100 / self.ReloadHalt)
 end
 

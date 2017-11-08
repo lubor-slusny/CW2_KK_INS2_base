@@ -11,28 +11,28 @@ if CLIENT then
 	SWEP.PrintName = "Ithaca M37"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_ithaca37")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_12guage"
 	-- SWEP.ShellDelay = 13/30
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 90, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["std_mag"] = {model = "models/weapons/upgrades/a_ithaca_standard.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["ext_mag"] = {model = "models/weapons/upgrades/a_ithaca_mag.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_ithaca_namonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_ithaca_sling.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		-- ["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/w_kar98k_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.0257, -2.5, 0.962)
 	SWEP.IronsightAng = Vector(0.3882, 0, 0)
 
@@ -140,7 +140,7 @@ SWEP.ReloadTimes = {
 	base_fire_cock_2 = {7/35, 0.4},
 	iron_fire_cock_1 = {7/35, 0.4},
 	iron_fire_cock_2 = {7/35, 0.4},
-	
+
 	base_reload_start = {0.65, 0.65},
 	base_reload_start_empty = {1.3, 2.2, KK_INS2_SHOTGUN_LOAD_FIRST},
 	base_reload_insert = {0.45, 0.93},

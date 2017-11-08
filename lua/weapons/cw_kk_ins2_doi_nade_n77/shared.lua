@@ -10,18 +10,18 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "N.77 Smoke Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_no79")
-	
+
 	SWEP.IconLetter = "O"
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.HUD_3D2DBone = 58
 end
 
@@ -33,10 +33,10 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_n77"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",
@@ -45,7 +45,7 @@ SWEP.Animations = {
 	base_safe = "base_down",
 	base_crawl = "base_crawl",
 }
-	
+
 SWEP.SpeedDec = 5
 
 SWEP.Slot = 4

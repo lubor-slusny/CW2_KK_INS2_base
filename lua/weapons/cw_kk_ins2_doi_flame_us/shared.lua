@@ -13,16 +13,16 @@ SWEP.magType = "NONE"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Flame US"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_flamethrower_american")
-	
+
 	SWEP.NoShells = true
-	
+
 	SWEP.AttachmentModelsVM = {
 		["muzzle"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(0.075, 0.075, 0.075), attachment = "muzzle", bodygroups = {[1] = 1,}, nodraw = true, active = true},
 		["pilot"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(0.075, 0.075, 0.075), attachment = "pilot", bodygroups = {[1] = 1,}, nodraw = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
 
 	SWEP.IronsightPos = Vector(-2.2377, -2, 1.0456)

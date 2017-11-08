@@ -12,18 +12,18 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Vzor 58"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_vz58")
-	
+
 	SWEP.Shell = "KK_INS2_545x39"
 	SWEP.ShellDelay = 0.03
-	
+
 	SWEP.AttachmentModelsVM = {}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-1.3393, -3, 1.0158)
 	SWEP.IronsightAng = Vector(-0.2236, 0.0571, 0)
 

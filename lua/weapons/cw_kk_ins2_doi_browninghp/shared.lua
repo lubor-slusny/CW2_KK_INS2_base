@@ -12,26 +12,26 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Browning HP"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_browninghp")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.06
 	SWEP.ShellWorldAngleAlign = {Forward = 90, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_slide_alt_browninghp.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_slide_base_browninghp.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_hoovy"] = {model = "models/weapons/upgrades/a_compensator_browninghp.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["bg_ar15sturdystock"] = {model = "models/weapons/upgrades/a_stock_browninghp.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_browninghp.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.118, 0, 0.7924)
 	SWEP.IronsightAng = Vector(-0.0121, 0.0454, 0)
 
@@ -146,7 +146,7 @@ SWEP.MuzzleVelocity = 335
 SWEP.ReloadTimes = {
 	base_reload = {60/31.5, 2.6},
 	base_reloadempty = {60/31.5, 3.2},
-	
+
 	base_melee_bash = {0.3, 0.8},
 	empty_melee_bash = {0.3, 0.8},
 }

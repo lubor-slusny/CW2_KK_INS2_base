@@ -12,14 +12,14 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "USP"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_usp")
-	
+
 	SWEP.Shell = "KK_INS2_45apc"
 	SWEP.ShellDelay = 0.06
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["std_barrel"] = {model = "models/weapons/usp/a_uspbarrel.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_hoovy"] = {model = "models/weapons/usp/a_match.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), merge = true},
@@ -32,7 +32,7 @@ if CLIENT then
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_mak.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_m6x"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_m6x.mdl", bone = "Weapon", pos = Vector(0.004, 1.105, -1.175), angle = Angle(0, -90, 0), size = Vector(0.8, 0.8, 0.8)},
 
-		["kk_ins2_m6x_rail"] = {model = "models/cw2/attachments/lowerpistolrail.mdl", bone = "Weapon", pos = Vector(0.006, 0.765, -0.561), angle = Angle(0, 90, 0), size = Vector(0.105, 0.105, 0.105), 
+		["kk_ins2_m6x_rail"] = {model = "models/cw2/attachments/lowerpistolrail.mdl", bone = "Weapon", pos = Vector(0.006, 0.765, -0.561), angle = Angle(0, 90, 0), size = Vector(0.105, 0.105, 0.105),
 			material = "models/weapons/attachments/cw_kk_ins2_cstm_m6x/rail_gy",
 		},
 	}
@@ -40,14 +40,14 @@ if CLIENT then
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_hoovy"] = {model = "models/weapons/upgrades/w_match.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_suppressor_pistol"] = {model = "models/weapons/upgrades/w_sil_pistol.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_mag_m45_8"] = {model = "models/weapons/usp/w_uspmag.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_m45_15"] = {model = "models/weapons/usp/w_extuspmag.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/w_laser_sec.mdl", pos = Vector(), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/w_laser_sec.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.5384, 0, 0.8609)
 	SWEP.IronsightAng = Vector(-0.2183, 0.0035, 0)
 
@@ -157,7 +157,7 @@ SWEP.ReloadTimes = {
 	base_reload_empty_extmag = {2, 2.8},
 }
 
-if CLIENT then 
+if CLIENT then
 	function SWEP:updateStandardParts()
 		self:setElementActive("kk_ins2_mag_m45_8", !self.ActiveAttachments.kk_ins2_mag_m45_15)
 	end

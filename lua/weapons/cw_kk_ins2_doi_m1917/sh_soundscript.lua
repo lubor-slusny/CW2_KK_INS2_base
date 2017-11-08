@@ -1,12 +1,12 @@
 
 local function spawnShells(self)
 	if SERVER then return end
-	
+
 	local vm = self.CW_VM
 	local b = vm:GetBodygroup(self._beltBGID)
 	local s = vm:GetBodygroup(self._shellsBGID)
-	
-	for _ = 1, (s - b) do 
+
+	for _ = 1, (s - b) do
 		self:shellEventRev()
 	end
 end
@@ -27,12 +27,12 @@ local function meleeShellCorection(self)
 	if db[self] then
 		CustomizableWeaponry_KK.ins2.bulletBgs.bothToClip(self)
 	end
-	
+
 	self.reticleInactivity = UnPredictedCurTime() + 0.8
-	
+
 	lastValidResetTime = CurTime()
 	local localValidResetTime = lastValidResetTime
-	
+
 	CustomizableWeaponry.actionSequence.new(self, 0.7, nil, function()
 		if lastValidResetTime == localValidResetTime then
 			self:idleAnimFunc()
@@ -151,12 +151,12 @@ SWEP.Sounds = {
 		{time = 0, sound = "CW_KK_INS2_DOI_M1917_COCKHAMMER"},
 		{time = 4/30, sound = "CW_KK_INS2_DOI_M1917_EMPTY"},
 	},
-	
+
 	base_melee_bash = {
 		{time = 0, sound = "", callback = meleeShellCorection},
 		{time = 9/33, sound = "CW_KK_INS2_DOI_MELEE"},
 	},
-	
+
 	base_melee_bash_empty = {
 		{time = 0, sound = "", callback = meleeShellCorection},
 		{time = 9/33, sound = "CW_KK_INS2_DOI_MELEE"},

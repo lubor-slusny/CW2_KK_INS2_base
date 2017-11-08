@@ -10,20 +10,20 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "SW M10"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_model10")
-	
+
 	SWEP.Shell = "KK_INS2_762x33"
 	SWEP.NoShells = true
 	SWEP.ShellScale = 2
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_revolver_mag"] = {model = "models/weapons/upgrades/a_speedloader_rev.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_band.mdl", bone = "Weapon", pos = Vector(0, 3.437, 1.531), angle = Angle(0, -90, 0), size = Vector(0.8, 0.8, 0.8)},
 		-- ["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_band.mdl", bone = "Weapon", pos = Vector(0, 3.437, 1.531), angle = Angle(0, -90, 0), size = Vector(0.8, 0.8, 0.8)},
 		-- ["kk_ins2_anpeq15"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_anpeq_band.mdl", bone = "Weapon", pos = Vector(0, 3.437, 1.531), angle = Angle(0, -90, 0), size = Vector(0.8, 0.8, 0.8)},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_mak.mdl", bone = "Weapon", pos = Vector(0, 2.602, -0.06), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_mak.mdl", bone = "Weapon", pos = Vector(0, 2.602, -0.06), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
 	}
@@ -55,8 +55,8 @@ SWEP.Animations = {
 	base_insert = "base_reload_insert",
 	base_reload_end = "base_reload_end",
 	base_reload_end_empty = "base_reload_end",
-	base_idle = "base_reload_end",	
-	
+	base_idle = "base_reload_end",
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_fire = {"base_fire","base_fire2"},
@@ -138,8 +138,8 @@ SWEP.ReloadTimes = {
 function SWEP:IndividualInitialize()
 	self.magType = "NONE"
 	self.ShotgunReload = true
-	
-	if CLIENT then 
+
+	if CLIENT then
 		self:setBodygroup(1, self:Clip1())
 		self:setBodygroup(2, self:Clip1())
 	end

@@ -13,23 +13,23 @@ if CLIENT then
 	SWEP.PrintName = "MAC-10"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_mac10")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.15
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = 180}
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
-	SWEP.AttachmentModelsVM = {	
+
+	SWEP.AttachmentModelsVM = {
 		["kk_ins2_suppressor_ins"] = {model = "models/weapons/upgrades/a_suppressor_mac10.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_suppressor_ins"] = {model = "models/weapons/upgrades/w_suppressor_mac10.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.1541, -2, 0.6321)
 	SWEP.IronsightAng = Vector(0, 0.0578, 0)
 

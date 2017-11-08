@@ -174,7 +174,7 @@ SWEP.Sounds = {
 		{time = 92/30, sound = "CW_KK_INS2_FNFAL_BOLTBACK"},
 		{time = 104/30, sound = "CW_KK_INS2_FNFAL_BOLTRELEASE"},
 	},
-	
+
 	deployed_reload_ext = {
 		{time = 17/30, sound = "CW_KK_INS2_FNFAL_MAGRELEASE"},
 		{time = 20/30, sound = "CW_KK_INS2_FNFAL_MAGOUT"},
@@ -192,7 +192,7 @@ SWEP.Sounds = {
 		{time = 92/30, sound = "CW_KK_INS2_FNFAL_BOLTBACK"},
 		{time = 104/30, sound = "CW_KK_INS2_FNFAL_BOLTRELEASE"},
 	},
-	
+
 	base_crawl = {
 		{time = 0/30, sound = "CW_KK_INS2_UNIVERSAL_LEFTCRAWL"},
 		{time = 22/30, sound = "CW_KK_INS2_UNIVERSAL_RIGHTCRAWL"},

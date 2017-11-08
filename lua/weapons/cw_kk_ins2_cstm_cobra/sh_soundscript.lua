@@ -1,19 +1,19 @@
 
 local function shells(self)
 	if SERVER then return end
-	
+
 	local vm = self.CW_VM
 	local b = vm:GetBodygroup(self._beltBGID)
 	local s = vm:GetBodygroup(self._shellsBGID)
-	
-	for _ = 1, (s - b) do 
+
+	for _ = 1, (s - b) do
 		self:shellEventRev()
 	end
 end
 
 local function bigone(self)
 	if SERVER then return end
-	
+
 	if !CustomizableWeaponry_KK.HOME then return end
 	self:shellEventRev2()
 end

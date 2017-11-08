@@ -11,24 +11,24 @@ SWEP.magType = "brMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M1918A2 BAR"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_bar")
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.ShellDelay = 0.12
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/a_bipod_bar.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_bar.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_bar.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_bar.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/w_bipod_bar.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.1192, -2, 1.4437)
 	SWEP.IronsightAng = Vector(-0.3029, 0, 0)
 end
@@ -72,7 +72,7 @@ SWEP.Animations = {
 	base_crawl_empty = "base_crawl_empty",
 	base_melee = "base_melee_bash",
 	base_melee_empty = "base_melee_bash",
-	
+
 	bipod_in = "deployed_in",
 	bipod_in_empty = "deployed_in_empty",
 	bipod_fire = {"deployed_fire_1", "deployed_fire_2"},
@@ -158,10 +158,10 @@ SWEP.MuzzleVelocity = 860
 SWEP.ReloadTimes = {
 	base_reloadfull = {3.54, 4.42},
 	base_reloadempty = {4.9, 5.79},
-	
+
 	deployed_reload = {3.54, 4.42},
 	deployed_reload_empty = {4.9, 5.79},
-	
+
 	base_melee_bash = {0.5, 1.6},
 }
 
@@ -174,4 +174,3 @@ end
 		-- self.AttachmentModelsVM.slingpin.ent:SetBodygroup(1,self.ActiveAttachments.kk_ins2_ww2_sling and 1 or 0)
 	-- end
 -- end
-	

@@ -4,7 +4,7 @@ AddCSLuaFile()
 
 // SOUNDS
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_SHOVEL", {"weapons/entrenchingtool/ent_tool_melee_01.wav", "weapons/entrenchingtool/ent_tool_melee_02.wav", "weapons/entrenchingtool/ent_tool_melee_03.wav", "weapons/entrenchingtool/ent_tool_melee_04.wav", "weapons/entrenchingtool/ent_tool_melee_05.wav", "weapons/entrenchingtool/ent_tool_melee_06.wav"})
-	
+
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_KNIFE", {"weapons/universal/weapon_melee_01.wav", "weapons/universal/weapon_melee_02.wav", "weapons/universal/weapon_melee_03.wav", "weapons/universal/weapon_melee_04.wav", "weapons/universal/weapon_melee_05.wav", "weapons/universal/weapon_melee_06.wav"})
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_KNIFE_HITPLY", {"weapons/universal/weapon_melee_hitflesh_01.wav", "weapons/universal/weapon_melee_hitflesh_02.wav", "weapons/universal/weapon_melee_hitflesh_03.wav", "weapons/universal/weapon_melee_hitflesh_04.wav"})
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_KNIFE_HITWORLD", {"weapons/universal/weapon_melee_hitworld_01.wav", "weapons/universal/weapon_melee_hitworld_02.wav"})
@@ -13,14 +13,14 @@ AddCSLuaFile()
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_MELEE_FT", {"weapons/meleebash/melee_bash_flamethrower_01.wav", "weapons/meleebash/melee_bash_flamethrower_02.wav", "weapons/meleebash/melee_bash_flamethrower_03.wav", "weapons/meleebash/melee_bash_flamethrower_04.wav", "weapons/meleebash/melee_bash_flamethrower_05.wav"})
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_MELEE_HITPLY", {"weapons/meleebash/melee_bash_hit_flesh_01.wav", "weapons/meleebash/melee_bash_hit_flesh_02.wav", "weapons/meleebash/melee_bash_hit_flesh_03.wav", "weapons/meleebash/melee_bash_hit_flesh_04.wav", "weapons/meleebash/melee_bash_hit_flesh_05.wav", "weapons/meleebash/melee_bash_hit_flesh_06.wav", "weapons/meleebash/melee_bash_hit_flesh_07.wav", "weapons/meleebash/melee_bash_hit_flesh_08.wav", "weapons/meleebash/melee_bash_hit_flesh_09.wav", "weapons/meleebash/melee_bash_hit_flesh_10.wav", "weapons/meleebash/melee_bash_hit_flesh_11.wav", "weapons/meleebash/melee_bash_hit_flesh_12.wav"})
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_MELEE_HITWORLD", {"weapons/meleebash/melee_bash_hitworld_01.wav", "weapons/meleebash/melee_bash_hitworld_02.wav", "weapons/meleebash/melee_bash_hitworld_03.wav", "weapons/meleebash/melee_bash_hitworld_04.wav"})
-	
+
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_BAYONET_HITPLY", {"weapons/bayonet/bayonet_hitflesh_01.wav", "weapons/bayonet/bayonet_hitflesh_02.wav", "weapons/bayonet/bayonet_hitflesh_03.wav", "weapons/bayonet/bayonet_hitflesh_04.wav"})
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_BAYONET_HITWORLD", {"weapons/bayonet/bayonet_hitworld_01.wav", "weapons/bayonet/bayonet_hitworld_02.wav", "weapons/bayonet/bayonet_hitworld_03.wav", "weapons/bayonet/bayonet_hitworld_04.wav"})
 
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_HATCHET", {"weapons/meleebash/hatchet_melee_01.wav", "weapons/meleebash/hatchet_melee_02.wav", "weapons/meleebash/hatchet_melee_03.wav", "weapons/meleebash/hatchet_melee_04.wav", "weapons/meleebash/hatchet_melee_05.wav"})
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_HATCHET_HITPLY", {"weapons/meleebash/hatchet_hitflesh_01.wav", "weapons/meleebash/hatchet_hitflesh_02.wav", "weapons/meleebash/hatchet_hitflesh_03.wav", "weapons/meleebash/hatchet_hitflesh_04.wav"})
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_HATCHET_HITWORLD", {"weapons/meleebash/hatchet_hitworld_01.wav", "weapons/meleebash/hatchet_hitworld_02.wav", "weapons/meleebash/hatchet_hitworld_03.wav", "weapons/meleebash/hatchet_hitworld_04.wav"})
-	
+
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_BAYONET_DRAW", {"weapons/universal/bayonet_draw_01.wav", "weapons/universal/bayonet_draw_02.wav", "weapons/universal/bayonet_draw_03.wav"})
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_BAYONET_HOLSTER", {"weapons/universal/bayonet_holster_01.wav", "weapons/universal/bayonet_holster_02.wav", "weapons/universal/bayonet_holster_03.wav"})
 
@@ -28,7 +28,7 @@ AddCSLuaFile()
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_UNIVERSAL_ADSOUT", {"weapons/universal/uni_ads_out_01.wav", "weapons/universal/uni_ads_out_02.wav", "weapons/universal/uni_ads_out_02.wav", "weapons/universal/uni_ads_out_04.wav", "weapons/universal/uni_ads_out_05.wav", "weapons/universal/uni_ads_out_06.wav"})
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_UNIVERSAL_LOWER", {"weapons/universal/uni_weapon_lower_01.wav", "weapons/universal/uni_weapon_lower_02.wav", "weapons/universal/uni_weapon_lower_02.wav", "weapons/universal/uni_weapon_lower_04.wav", "weapons/universal/uni_weapon_lower_05.wav", "weapons/universal/uni_weapon_lower_06.wav"})
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_UNIVERSAL_RAISE", {"weapons/universal/uni_weapon_raise_01.wav", "weapons/universal/uni_weapon_raise_02.wav", "weapons/universal/uni_weapon_raise_02.wav", "weapons/universal/uni_weapon_raise_04.wav", "weapons/universal/uni_weapon_raise_05.wav", "weapons/universal/uni_weapon_raise_06.wav"})
-	
+
 	CustomizableWeaponry:addFireSound("CW_KK_INS2_DOI_LAUNCHER_EMPTY", "weapons/universal/uni_launcher_empty.wav")
 
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_UNIVERSAL_A1", "weapons/universal/uni_a_01.wav")
@@ -37,7 +37,7 @@ AddCSLuaFile()
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_UNIVERSAL_A4", "weapons/universal/uni_a_04.wav")
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_UNIVERSAL_A5", "weapons/universal/uni_a_05.wav")
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_UNIVERSAL_A6", "weapons/universal/uni_a_06.wav")
-	
+
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_PLAYER_DAMAGEMAJOR", {
 		"player/damage/pl_damage_major_01.wav",
 		"player/damage/pl_damage_major_02.wav",
@@ -77,7 +77,7 @@ AddCSLuaFile()
 		"player/damage/pl_damage_minor_20.wav",
 		"player/damage/pl_damage_minor_21.wav",
 	})
-	
+
 // SHELLS
 if CLIENT then
 	CustomizableWeaponry.shells:addNew_KKINS2("KK_INS2_30-06_link", "models/weapons/shells/30-06_link.mdl", "CW_KK_INS2_SHELL_LINK", Vector(-0.65, -0.5, -0.25), Vector(0.9, 0.55, 0.25))
@@ -161,14 +161,14 @@ if CLIENT then
 	-- killicon.AddFont("cw_kk_ins2_doi_tankfist",			"HL2MPTypeDeath", "3", killCol)
 	-- killicon.AddFont("cw_kk_ins2_doi_tankshrek",		"HL2MPTypeDeath", "3", killCol)
 	-- killicon.AddFont("cw_kk_ins2_doi_zooka",			"HL2MPTypeDeath", "3", killCol)
-	
+
 	-- killicon.AddFont("cw_kk_ins2_doi_bino_de",			"HL2MPTypeDeath", "3", killCol)
 	-- killicon.AddFont("cw_kk_ins2_doi_bino_gb",			"HL2MPTypeDeath", "3", killCol)
 	-- killicon.AddFont("cw_kk_ins2_doi_bino_us",			"HL2MPTypeDeath", "3", killCol)
-	
+
 	// doi got nice new ki.. ehm inventory icons
 	// guns and launchers
-	
+
 	killicon.Add("cw_kk_ins2_doi_mel_brass",			"vgui/hud/weapons/weapon_brassknuckles", killCol)
 	killicon.Add("cw_kk_ins2_doi_mel_enfield",			"vgui/hud/weapons/weapon_enfield_bayonet", killCol)
 	killicon.Add("cw_kk_ins2_doi_mel_enfield2",			"vgui/hud/weapons/weapon_enfield_bayonet", killCol)
@@ -241,13 +241,13 @@ if CLIENT then
 	killicon.Add("cw_kk_ins2_doi_tankfist",				"vgui/hud/weapons/weapon_panzerfaust", killCol)
 	killicon.Add("cw_kk_ins2_doi_tankshrek",			"vgui/hud/weapons/weapon_panzerschreck", killCol)
 	killicon.Add("cw_kk_ins2_doi_zooka",				"vgui/hud/weapons/weapon_bazooka", killCol)
-	
+
 	killicon.Add("cw_kk_ins2_doi_bino_de",				"vgui/hud/weapons/weapon_binoculars_german", killCol)
 	killicon.Add("cw_kk_ins2_doi_bino_gb",				"vgui/hud/weapons/weapon_binoculars_british", killCol)
 	killicon.Add("cw_kk_ins2_doi_bino_us",				"vgui/hud/weapons/weapon_binoculars_american", killCol)
-	
-	// projectiles 
-	
+
+	// projectiles
+
 	killicon.Add("cw_kk_ins2_projectile_m6a1",			"vgui/hud/weapons/weapon_bazooka", killCol)
 	killicon.Add("cw_kk_ins2_projectile_m10",			"vgui/hud/weapons/weapon_bazooka", killCol)
 	killicon.Add("cw_kk_ins2_projectile_molotov_doi",	"vgui/hud/weapons/weapon_flamethrower_eintoss46_german", killCol)
@@ -259,20 +259,20 @@ if CLIENT then
 	killicon.Add("cw_kk_ins2_projectile_shrek",			"vgui/hud/weapons/weapon_panzerschreck", killCol)
 	killicon.Add("cw_kk_ins2_projectile_ww2_c4_de",		"vgui/hud/weapons/weapon_sprengbuchse", killCol)
 	killicon.Add("cw_kk_ins2_projectile_ww2_c4_us",		"vgui/hud/weapons/weapon_tnt", killCol)
-	
+
 	// nice class names
-	
+
 	language.Add("cw_kk_ins2_projectile_m10", "M10A1 WP rocket")
 	language.Add("cw_kk_ins2_projectile_m6a1", "M6A1 HEAT rocket")
 	language.Add("cw_kk_ins2_projectile_pf60", "Panzerfaust projectile")
 	language.Add("cw_kk_ins2_projectile_shrek", "Panzerschreck projectile")
 	language.Add("cw_kk_ins2_projectile_piat", "PIAT projectile")
-	
+
 	language.Add("cw_kk_ins2_projectile_n69", "No. 69 Frag. Grenade")
 	language.Add("cw_kk_ins2_projectile_n76", "No. 76 WP Grenade")
 	language.Add("cw_kk_ins2_projectile_n77", "No. 77 Smoke Grenade")
-	
+
 	language.Add("cw_kk_ins2_projectile_ww2_c4_de", "Thrown Satchel Charge")
 	language.Add("cw_kk_ins2_projectile_ww2_c4_us", "Thrown Satchel Charge")
-	
+
 end

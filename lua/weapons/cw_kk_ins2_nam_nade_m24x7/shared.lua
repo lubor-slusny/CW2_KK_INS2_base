@@ -10,25 +10,25 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M24x7 HE IED"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_geballteladung")
-	
+
 	SWEP.IconLetter = "O"
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["nam_buddy"] = {model = "models/weapons/v_nam_geballteladung.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true, hideVM = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.HUD_3D2DOffset = Vector(-1, 3, 0)
 	SWEP.HUD_3D2DOffsetMenu = Vector(-8, 6, 0)
 	SWEP.CustomizationMenuScale = 0.006
-	
+
 	SWEP.HUD_3D2DBone = 54
 end
 
@@ -40,13 +40,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_ww2_c4_de"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "draw",
 	base_draw = "draw",
 	base_idle = "idle",
@@ -55,7 +55,7 @@ SWEP.Animations = {
 	base_safe = "down",
 	base_crawl = "crawl",
 }
-	
+
 SWEP.SpeedDec = 5
 
 SWEP.Slot = 4

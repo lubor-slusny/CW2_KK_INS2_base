@@ -1,7 +1,7 @@
 
 local function m203(wep)
 	if SERVER then return end
-	
+
 	wep:shellEvent203()
 end
 
@@ -221,7 +221,7 @@ SWEP.Sounds = {
 	glsetup_iron_dryfire = {
 		{time = 0, sound = "CW_KK_INS2_M203_EMPTY"},
 	},
-	
+
 	base_crawl = {
 		{time = 0/30, sound = "CW_KK_INS2_UNIVERSAL_LEFTCRAWL"},
 		{time = 22/30, sound = "CW_KK_INS2_UNIVERSAL_RIGHTCRAWL"},

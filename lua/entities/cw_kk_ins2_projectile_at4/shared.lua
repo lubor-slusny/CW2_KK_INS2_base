@@ -4,7 +4,7 @@ ENT.PrintName = "AT4 Projectile"
 ENT.Author = "L337N008"
 ENT.Information = "A 40MM grenade modified to be launched from AT4"
 ENT.Spawnable = false
-ENT.AdminSpawnable = false 
+ENT.AdminSpawnable = false
 
 ENT.Editable = true
 
@@ -29,7 +29,7 @@ function ENT:Initialize()
 		self:SetMoveType(MOVETYPE_VPHYSICS)
 		self:SetSolid(SOLID_VPHYSICS)
 		self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
-		
+
 		local phys = self:GetPhysicsObject()
 
 		if phys and phys:IsValid() then
@@ -48,9 +48,9 @@ function ENT:Initialize()
 	else
 		self.Emitter = ParticleEmitter(self:GetPos())
 	end
-	
+
 	local CT = CurTime()
-	
+
 	self.ArmTime = CT
 	self.selfDestructTime = CT + 5.1
 end

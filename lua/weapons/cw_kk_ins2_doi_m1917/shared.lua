@@ -10,21 +10,21 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "SW M1917"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_sw1917")
-	
+
 	SWEP.Shell = "KK_INS2_45apc"
 	SWEP.NoShells = true
 	SWEP.ShellScale = 1
 	SWEP.ShellEjectVelocity = 50
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_revolver_mag"] = {model = "models/weapons/upgrades/a_clips_sw1917.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_ww2_stripper"] = {model = "models/weapons/upgrades/a_clips_sw1917.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_sw1917.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
 
 	SWEP.IronsightPos = Vector(-2.7774, 0, 1.3158)
@@ -52,11 +52,11 @@ SWEP.Animations = {
 	base_insert = "base_reload_insert",
 	base_reload_end = "base_reload_end",
 	base_reload_end_empty = "base_reload_end",
-	base_idle = "base_reload_end",	
-	
+	base_idle = "base_reload_end",
+
 	base_reload = "base_reload_clip",
 	base_reload_empty = "base_reload_clip_empty",
-	
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_draw_empty = "base_draw_empty",
@@ -146,10 +146,10 @@ SWEP.ReloadTimes = {
 	base_reload_start_empty = {2.2, 2.9, KK_INS2_REVOLVER_SLOW_UNLOAD},
 	base_reload_insert = {0.4, 0.95},
 	base_reload_end = {2, 2},
-	
+
 	base_reload_clip = {93/32, 5.4, KK_INS2_REVOLVER_SPEED_UNLOAD, 1.7, 121/32},
 	base_reload_clip_empty = {93/32, 6, KK_INS2_REVOLVER_SPEED_UNLOAD, 1.7, 121/32},
-	
+
 	base_melee_bash = {0.3, 0.8},
 	base_melee_bash_empty = {0.3, 0.8},
 }
@@ -157,8 +157,8 @@ SWEP.ReloadTimes = {
 function SWEP:IndividualInitialize()
 	self.magType = "NONE"
 	self.ShotgunReload = true
-	
-	if CLIENT then 
+
+	if CLIENT then
 		self:setBodygroup(1, self:Clip1())
 		self:setBodygroup(2, self:Clip1())
 	end
@@ -175,6 +175,6 @@ function SWEP:getStripperClipAnimation(ammo, mag)
 	if mag < 1 then
 		return "reload_empty"
 	end
-	
+
 	return "reload"
 end

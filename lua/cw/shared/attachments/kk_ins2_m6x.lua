@@ -17,16 +17,16 @@ if CLIENT then
 		[1] = {t = "[impulse 100] cycles through modes.", c = CustomizableWeaponry.textColors.REGULAR},
 		[2] = {t = "Uses LAM/LEM colors.", c = CustomizableWeaponry.textColors.REGULAR},
 	}
-	
+
 	local rgb = {"r","g","b","a"}
 	local mode, laserAtt, lightAtt
-	
+
 	function att:elementRender()
 		if not self.ActiveAttachments[att.name] then return end
-		
+
 		-- mode = self.dt.INS2LAMMode
 		mode = self:GetNWInt("INS2LAMMode")
-		
+
 		if self.AttachmentModelsVM[att.name] then
 			laserAtt = self.AttachmentModelsVM[att.name].ent:GetAttachment(1)
 			lightAtt = self.AttachmentModelsVM[att.name].ent:GetAttachment(2)
@@ -34,16 +34,16 @@ if CLIENT then
 			laserAtt = self.AttachmentModelsVM["kk_ins2_lam"].ent:GetAttachment(1)
 			lightAtt = self.AttachmentModelsVM["kk_ins2_flashlight"].ent:GetAttachment(1)
 		end
-		
+
 		if (mode % 2) == 1 then
 			CustomizableWeaponry.registeredAttachmentsSKey["kk_ins2_lam"]._elementRender(self, laserAtt)
 		else
 			self.lastLaserPos = nil
 		end
-		
+
 		CustomizableWeaponry_KK.ins2.flashlight.v6.elementRender(self, lightAtt)
 	end
-	
+
 	// for V6 LEM, true - ON, false - OFF
 	function att:getLEMState()
 		-- return (self.dt.INS2LAMMode > 1)
@@ -53,7 +53,7 @@ end
 
 function att:attachFunc()
 	CustomizableWeaponry_KK.ins2.flashlight.v6.attach(self, att)
-	
+
 	if CLIENT then
 		if not self.AttachmentModelsVM[att.name] then
 			self.AttachmentModelsVM["kk_ins2_flashlight"].active = true
@@ -64,7 +64,7 @@ end
 
 function att:detachFunc()
 	CustomizableWeaponry_KK.ins2.flashlight.v6.detach(self, att)
-	
+
 	if CLIENT then
 		if not self.AttachmentModelsVM[att.name] then
 			self.AttachmentModelsVM["kk_ins2_flashlight"].active = false

@@ -9,12 +9,12 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "AT4"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_at4")
-	
+
 	SWEP.RearEffectw = true
 	SWEP.NoShells = true
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_counter_front"] = {model = "models/weapons/stattrack.mdl", bone = "AT4", rel = "", pos = Vector(-0.029, 3.767, 2.51), angle = Angle(), size = Vector(1, 1, 1), ignoreKKBGO = true},
 		["kk_counter_mid"] = {model = "models/weapons/stattrack.mdl", bone = "AT4", rel = "", pos = Vector(1.218, -8.176, 1.179), angle = Angle(-47.401, 0, 0), size = Vector(0.699, 0.699, 0.699), ignoreKKBGO = true},
@@ -39,7 +39,7 @@ SWEP.Attachments = {
 SWEP.Animations = {
 	at4_reload_start = "base_toss",
 	at4_reload_end = "base_ready",
-	
+
 	base_pickup = "base_ready",
 	base_draw = "base_draw",
 	base_fire = "base_fire",
@@ -134,27 +134,27 @@ end
 
 function SWEP:reloadAnimFunc(lm)
 	self.dt.AT4ReloadEnd = CurTime() + self.ReloadHalt / self.ReloadSpeed
-	
+
 	self:sendWeaponAnim("at4_reload_start", self.ReloadSpeed, 0)
 
-	CustomizableWeaponry.actionSequence.new(self, 1.8 / self.ReloadSpeed, nil, function() 
+	CustomizableWeaponry.actionSequence.new(self, 1.8 / self.ReloadSpeed, nil, function()
 		if not self.ReloadDelay then return end
-		
+
 		self:sendWeaponAnim("at4_reload_end", self.ReloadSpeed, 0)
 	end)
-	
+
 	return self:getAnimTimes()
 end //*/
 
 function SWEP:getReloadProgress()
 	local CT = CurTime()
-	
+
 	if self.dt.AT4ReloadEnd < CT then return end
-	
+
 	if CLIENT then
 		self.reticleInactivity = self.dt.AT4ReloadEnd
 	end
-	
+
 	return math.Round((CT - self.dt.AT4ReloadEnd + self.ReloadHalt / self.ReloadSpeed) * 100 / self.ReloadHalt)
 end
 

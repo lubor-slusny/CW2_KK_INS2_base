@@ -3,13 +3,13 @@ if not CustomizableWeaponry then return end
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "New Gun"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_hatchet")
-	
+
 	SWEP.AttachmentModelsVM = {
 		["ani_body"] = {model = "models/weapons/v_cw_kk_doi_hatchet_redux.mdl", pos = Vector(0, 0, 1), angle = Angle(0, -70, 0), size = Vector(1, 1, 1), bone = "Weapon", hideVM = true, active = true},
 	}
-	
+
 	SWEP.HUD_3D2DBone = 39
 end
 

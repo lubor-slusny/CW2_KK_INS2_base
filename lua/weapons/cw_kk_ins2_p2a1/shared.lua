@@ -11,15 +11,15 @@ if CLIENT then
 	SWEP.PrintName = "HK P2A1"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_p2a1")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_12guage"
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.4598, -2, 0.5881)
 	SWEP.IronsightAng = Vector()
 

@@ -7,28 +7,28 @@ SWEP.KKINS2Nade = true
 
 if CLIENT then
 	include("cl_statdisplay.lua")
-	
+
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Grenade base (KK INS2 Edit)"
-	
+
 	SWEP.SprintAnimSpeed = 1.2
 	SWEP.ViewModelMovementScale_sprint = 0.5
 	SWEP.ViewModelMovementScale_base = 0.6
 	SWEP.DisableSprintViewSimulation = true
 	SWEP.HUD_3D2DScale = 0.008
-	
+
 	SWEP.HUD_3D2DBone = 59
 	SWEP.HUD_3D2DOffset = Vector(-5, 2.5, 0)
 	SWEP.HUD_3D2DOffsetMenu = Vector(-5, 2.5, 0)
 	SWEP.CustomizationMenuScale = 0.005
-	
+
 	SWEP.CustomizePos = Vector()
 	SWEP.CustomizeAng = Vector()
 end
 
 SWEP.CanRestOnObjects = false
 SWEP.projectileClass = "cw_kk_ins2_projectile_m18"
-	
+
 -- SWEP.SprintingEnabled = false
 SWEP.AimingEnabled = false
 SWEP.CanCustomize = true
@@ -138,7 +138,7 @@ SWEP.velocityModUpMinMax = {0.8, 1.2}
 // EquipAmmo replacement for SWEP.Primary.DefaultClip
 //-----------------------------------------------------------------------------
 
-if SERVER then	
+if SERVER then
 	function SWEP:EquipAmmo(ply)
 		ply:GiveAmmo(1, self.Primary.Ammo)
 	end
@@ -156,31 +156,31 @@ if SERVER then
 end
 
 //-----------------------------------------------------------------------------
-// OnDrop edited to 
+// OnDrop edited to
 // - replace dropped SWEP with live grenade if pin was pulled prior to drop
 // - remove one round from players inventory
 //-----------------------------------------------------------------------------
-	
+
 if SERVER then
 	function SWEP:OnDrop()
 		if IsValid(self.lastOwner) then
 			if self.lastOwner:GetAmmoCount(self.Primary.Ammo) > 0 then
 				self.lastOwner:RemoveAmmo(1, self.Primary.Ammo)
-					
+
 					if self.dt.PinPulled then
 						self.onRemovePos = self:GetPos()
 						self.onRemoveAng = self:GetAngles()
 						self.onRemoveVel = self:GetVelocity()
-						
+
 						SafeRemoveEntity(self)
 					end
-					
+
 				return
 			end
 		end
-		
+
 		SafeRemoveEntity(self)
-	end	
+	end
 end
 
 //-----------------------------------------------------------------------------
@@ -191,13 +191,13 @@ if SERVER then
 	function SWEP:OnRemove()
 		if self.dt.PinPulled then
 			local grenade = self:createProjectile()
-			
-			if IsValid(grenade) then	
+
+			if IsValid(grenade) then
 				grenade:SetPos(self.onRemovePos or self:GetPos())
 				grenade:SetAngles(self.onRemoveAng or self:GetAngles())
-				
+
 				local phy = grenade:GetPhysicsObject()
-				if phy then 
+				if phy then
 					phy:SetVelocity(self.onRemoveVel or self:GetVelocity())
 				end
 			end
@@ -228,27 +228,27 @@ end
 if CLIENT then
 	local m, pos, ang, offset
 	local muz = {}
-	
+
 	function SWEP:getMuzzlePosition()
 		if self.Owner:ShouldDrawLocalPlayer() then
 			m = self.Owner:GetBoneMatrix(self.Owner:LookupBone("ValveBiped.Bip01_R_Hand"))
 		else
 			m = self.CW_VM:GetBoneMatrix(self.HUD_3D2DBone)
 		end
-		
+
 		if self.CustomizeMenuAlpha > 0 then
 			offset = self.HUD_3D2DOffsetMenu
 		else
 			offset = self.HUD_3D2DOffset
 		end
-		
+
 		pos = m:GetTranslation()
 		ang = EyeAngles()
-		
+
 		pos = pos + ang:Right() * offset.x
 		pos = pos + ang:Up() * offset.y
 		pos = pos + ang:Forward() * offset.z
-		
+
 		muz.Pos = pos
 		muz.Ang = m:GetAngles()
 		return muz
@@ -261,10 +261,10 @@ end
 //-----------------------------------------------------------------------------
 
 function SWEP:Reload() end
-	
+
 //-----------------------------------------------------------------------------
 // IndividualThink edited to
-// - play draw anim after increasing ammo reserve to 1 
+// - play draw anim after increasing ammo reserve to 1
 // - use custom timings for entity spawns, fuse timer, animation delays
 // - spawn projectile entity using separate function
 // - apply throw velocity using separate function
@@ -279,16 +279,16 @@ local hasShortMenu
 function SWEP:IndividualThink()
 	// for OnDrop func
 	self.lastOwner = self.Owner
-	
+
 	// for lulz
 	if CLIENT then
 		hasShortMenu = self.Attachments and self.Attachments[1] and self.Attachments[1].nadestuff
-		
+
 		if hasShortMenu or (self.CustomizationTab == 2) then
 			self.CustomizationTab = self.CustomizationTabOverride
 		end
 	end
-	
+
 	// for 0-to-1-ammo draw-anim
 	local cur = self.Owner:GetAmmoCount(self.Primary.Ammo)
 	local last = self._lastPrimaryAmmoCount
@@ -300,20 +300,20 @@ function SWEP:IndividualThink()
 		self:SetNextSecondaryFire(CurTime() + self.DeployTime)
 	end
 	self._lastPrimaryAmmoCount = cur
-	
+
 	-- weapons.GetStored("cw_kk_ins2_base").IndividualThink(self)
 	weapons.GetStored("cw_kk_ins2_base_main").IndividualThink(self)
 
 	if !self.dt.PinPulled then
 		self.disableDropping = self.disableDropping_Orig
 	end
-	
-	if SP and CLIENT then 
+
+	if SP and CLIENT then
 		return
 	end
 
 	local CT = CurTime()
-	
+
 	if self.dt.PinPulled then
 		if self.throwTime and self.throwTime < CT then
 			if self.keyReleased or !self.Owner:KeyDown(self._curKeyPress) then
@@ -321,25 +321,25 @@ function SWEP:IndividualThink()
 					self.entityTime = CurTime() + self._curSpawnTime
 					self:sendWeaponAnim(self._curThrowAnim)
 					self.Owner:SetAnimation(PLAYER_ATTACK1)
-					
+
 					self.keyReleased = true
 				end
-				
+
 				self.animPlayed = true
-				
+
 				if CT > self.entityTime then
 					self.dt.PinPulled = false
-					
+
 					if not CustomizableWeaponry.callbacks.processCategory(wep, "shouldSuppressAmmoUsage") then
 						self.Owner:RemoveAmmo(1, self.Primary.Ammo)
 						CustomizableWeaponry.callbacks.processCategory(wep, "postConsumeAmmo")
 					end
-					
+
 					local animLength = self._curSwapTime - self._curSpawnTime
-					
+
 					self:SetNextPrimaryFire(CT + animLength + self.DeployTime)
 					self:SetNextSecondaryFire(CT + animLength + self.DeployTime)
-					
+
 					timer.Simple(animLength, function()
 						if IsValid(self) and IsValid(self.Owner) then
 							if self.Owner:GetAmmoCount(self.Primary.Ammo) <= 0 and not self.KKINS2RCE then
@@ -349,14 +349,14 @@ function SWEP:IndividualThink()
 							end
 						end
 					end)
-					
+
 					if SERVER then
 						local grenade = self:createProjectile()
-						
+
 						if IsValid(grenade) then
 							self:applyThrowVelocity(grenade)
 						end
-						
+
 						hook.Call("GrenadeThrown", nil, self, grenade)
 					end
 				end
@@ -364,15 +364,15 @@ function SWEP:IndividualThink()
 				if self.cookTime and (self.cookTime + self.fuseTime) < CT then
 					self.dt.PinPulled = false
 					self.animPlayed = true
-					
+
 					self:SetNextPrimaryFire(CT + 1)
 					self:SetNextSecondaryFire(CT + 1)
-					
+
 					if not CustomizableWeaponry.callbacks.processCategory(wep, "shouldSuppressAmmoUsage") then
 						self.Owner:RemoveAmmo(1, self.Primary.Ammo)
 						CustomizableWeaponry.callbacks.processCategory(wep, "postConsumeAmmo")
 					end
-					
+
 					timer.Simple(0.2, function()
 						if IsValid(self) and IsValid(self.Owner) then
 							if self.Owner:GetAmmoCount(self.Primary.Ammo) <= 0 and not self.KKINS2RCE then
@@ -382,38 +382,38 @@ function SWEP:IndividualThink()
 							end
 						end
 					end)
-					
+
 					if SERVER then
 						self:overCook()
 					end
 				end
 			end
 		end
-		
+
 		if self.plantTime and self.plantTime < CT then
 			local nw, tr = self:isNearWall()
-			
+
 			if nw and not self._grenadePlanted then
 				self._grenadePlanted = true
-				
+
 				if SERVER then
 					local grenade = self:createProjectile()
-					
+
 					if IsValid(grenade) then
 						local pos = tr.HitPos
 						local ang = tr.HitNormal:Angle()
-						
+
 						pos = pos + ang:Forward() * self.PlantPos.x
 						pos = pos + ang:Right() * self.PlantPos.y
 						pos = pos + ang:Up() * self.PlantPos.z
-						
+
 						ang:RotateAroundAxis(ang:Right(), self.PlantAng.x)
 						ang:RotateAroundAxis(ang:Up(), self.PlantAng.y)
 						ang:RotateAroundAxis(ang:Forward(), self.PlantAng.z)
-						
+
 						grenade:SetPos(pos)
 						grenade:SetAngles(ang)
-							
+
 						if (tr.Entity:GetClass() == "worldspawn") then
 							grenade:PhysicsDestroy()
 							-- grenade:PhysicsInit(SOLID_VPHYSICS)
@@ -421,19 +421,19 @@ function SWEP:IndividualThink()
 							constraint.Weld(tr.Entity, grenade, tr.PhysicsBone, 0, 0, true, false)
 						end
 					end
-					
+
 					hook.Call("GrenadePlanted", nil, self, grenade)
 				end
-				
+
 				local suppressAmmoUsage = CustomizableWeaponry.callbacks.processCategory(self, "shouldSuppressAmmoUsage")
 				if not suppressAmmoUsage then
 					self.Owner:RemoveAmmo(1, self.Primary.Ammo)
 				end
 			end
-			
+
 			if self._curSwapTime < CT then
 				self.dt.PinPulled = false
-				
+
 				if self.Owner:GetAmmoCount(self.Primary.Ammo) <= 0 and not self.KKINS2RCE then
 					self.Owner:ConCommand("lastinv")
 				else
@@ -454,14 +454,14 @@ if CLIENT then
 end
 
 function SWEP:getControlls()
-	local setting 
-	
+	local setting
+
 	if CLIENT then
 		setting = self._cvarControlls:GetInt() or 1
 	else
 		setting = self.Owner:GetInfoNum("cw_kk_ins2_ins_nade_ctrls", 1)
 	end
-	
+
 	return (2 - math.Clamp(setting, 0, 1))
 end
 
@@ -476,7 +476,7 @@ function SWEP:_attack(key)
 	if self:IsOwnerCrawling() then
 		return
 	end
-	
+
 	if self.Owner:GetAmmoCount(self.Primary.Ammo) < 1 and self:Clip1() < 1 then
 		return
 	end
@@ -491,29 +491,29 @@ function SWEP:_attack(key)
 			return
 		end
 	end
-	
+
 	if self.InactiveWeaponStates[self.dt.State] then
 		return
 	end
-	
+
 	CT = CurTime()
-	
+
 	local nw, tr = self:isNearWall()
 	self.plantTime = nil
 	self._doingShortThrow = false
-	
+
 	if nw and self.canPlant then							// if wep allows planting and we re near-wall then plant
 		self:sendWeaponAnim("plant")
 		self.plantTime = CT + self.spawnTimePlant
 		self.cookTime = CT + self.spoonTimePlant
-		
+
 		self._grenadePlanted = false
 		self.throwTime = nil
-		
+
 		self._curThrowAnim = nil
 		self._curSwapTime = CT + self.swapTimePlant
 		self._curSpawnTime = nil
-		
+
 		self:SetNextPrimaryFire(self._curSwapTime)
 		self:SetNextSecondaryFire(self._curSwapTime)
 	elseif self.mustCook or (self.canCook and key == self:getControlls()) then 	// if wep allows it and pressed key is cooking key then cook
@@ -521,28 +521,28 @@ function SWEP:_attack(key)
 			self:sendWeaponAnim("pull_short")
 			self._curThrowAnim = "throw_short"
 			self._doingShortThrow = true
-		
+
 			self.throwTime = CT + self.timeToThrowShort
 			self.cookTime = CT + self.spoonTimeShort
-			
+
 			self._curSwapTime = self.swapTimeShort
 			self._curSpawnTime = self.spawnTimeShort
-			
+
 			self._maxVelocityTime = CT + self.maxVelDelayShort
 		else													// otherwise u shud have used the other key
 			if self.Owner:KeyDown(IN_USE) then
 				return
 			end
-			
+
 			self:sendWeaponAnim("pull_cook")
 			self._curThrowAnim = "throw_cook"
-			
+
 			self.throwTime = CT + self.timeToThrowCook
 			self.cookTime = CT + self.spoonTime
-			
+
 			self._curSwapTime = self.swapTimeCook
 			self._curSpawnTime = self.spawnTimeCook
-			
+
 			self._maxVelocityTime = CT + self.maxVelDelayCook
 		end
 	else													// else hold your spoon
@@ -550,33 +550,33 @@ function SWEP:_attack(key)
 			self:sendWeaponAnim("pull_short")
 			self._curThrowAnim = "throw_short"
 			self._doingShortThrow = true
-			
+
 			self.throwTime = CT + self.timeToThrowShort
 			self.cookTime = nil
-			
+
 			self._curSwapTime = self.swapTimeShort
 			self._curSpawnTime = self.spawnTimeShort
-			
+
 			self._maxVelocityTime = CT + self.maxVelDelayShort
 		else
 			self:sendWeaponAnim("pullpin")
 			self._curThrowAnim = "throw"
-			
+
 			self.throwTime = CT + self.timeToThrow
 			self.cookTime = nil
-			
+
 			self._curSwapTime = self.swapTime
 			self._curSpawnTime = self.spawnTime
-			
+
 			self._maxVelocityTime = CT + self.maxVelDelay
 		end
 	end
-	
+
 	self.dt.PinPulled = true
 	self.disableDropping = true
 	self.animPlayed = false
 	self.keyReleased = false
-	
+
 	self._curKeyPress = keyPress[key]
 end
 
@@ -604,16 +604,16 @@ end
 
 function SWEP:overCook()
 	local hitPos = self.Owner:EyePos() + (self.Owner:EyeAngles():Forward() * 18)
-	
+
 	local grenade = ents.Create(self.projectileClass)
-	
+
 	if IsValid(grenade) then
 		grenade:SetNoDraw(true)
 		grenade:SetPos(hitPos)
 		grenade:Spawn()
 		grenade:Activate()
 		grenade:SetOwner(self.Owner)
-		
+
 		self:fuseProjectile(grenade, 0)
 	end
 end
@@ -628,30 +628,30 @@ end
 
 function SWEP:createProjectile()
 	local grenade = ents.Create(self.projectileClass)
-	
+
 	if IsValid(grenade) then
 		grenade.Model = self.WM or self.WorldModel
-		
+
 		local pos = self.lastOwner:GetShootPos()
-		
+
 		if self._doingShortThrow then
 			local ang = self.lastOwner:EyeAngles()
-			
+
 			pos = pos + ang:Right() * self.spawnOffsetShort.x
 			pos = pos + ang:Up() * self.spawnOffsetShort.y
 			pos = pos + ang:Forward() * self.spawnOffsetShort.z
 		end
-		
+
 		grenade:SetPos(pos)
 		grenade:SetAngles(self.lastOwner:EyeAngles())
-		
+
 		grenade:Spawn()
 		grenade:Activate()
 		grenade:SetOwner(self.lastOwner)
-		
+
 		self:fuseProjectile(grenade)
 	end
-	
+
 	return grenade
 end
 
@@ -663,15 +663,15 @@ end
 
 function SWEP:fuseProjectile(grenade, overrideTime)
 	local time
-	
+
 	if self.cookTime then
 		time = math.Clamp((self.cookTime + self.fuseTime) - CurTime(), 0, self.fuseTime)
 	else
 		time = self.fuseTime
 	end
-	
+
 	time = overrideTime or time
-	
+
 	grenade:Fuse(time)
 end
 
@@ -685,7 +685,7 @@ local v = Vector(0, 0, 150)
 
 function SWEP:applyThrowVelocity(grenade)
 	local forward, up = self:getThrowVelocityMods()
-	
+
 	CustomizableWeaponry.quickGrenade:applyThrowVelocity(self.Owner, grenade, 800 * forward, v * up)
 end
 
@@ -707,10 +707,10 @@ function SWEP:getThrowVelocityMods()
 	local min, max = self.throwTime, self._maxVelocityTime
 	local CT = CurTime() - self._curSpawnTime 					// fixes offset caused by delay between start of throw anim and ent creation
 	local mul = math.Clamp((CT - min) / (max - min), 0, 1)
-	
+
 	local proneUpMul = self:IsOwnerProne() and 0.7 or 1
 	local proneFwMul = self:IsOwnerProne() and 0.5 or 1
-		
+
 	if self._doingShortThrow then
 		min = self.velocityModForwardMinMaxShort[1]
 		max = self.velocityModForwardMinMaxShort[2]
@@ -718,9 +718,9 @@ function SWEP:getThrowVelocityMods()
 		min = self.velocityModForwardMinMax[1]
 		max = self.velocityModForwardMinMax[2]
 	end
-	
+
 	local forward = min + mul * ((max * proneFwMul) - min)
-	
+
 	if self._doingShortThrow then
 		min = self.velocityModUpMinMaxShort[1]
 		max = self.velocityModUpMinMaxShort[2]
@@ -728,7 +728,7 @@ function SWEP:getThrowVelocityMods()
 		min = self.velocityModUpMinMax[1]
 		max = self.velocityModUpMinMax[2]
 	end
-	
+
 	local up = min + mul * ((max * proneUpMul) - min)
 
 	return forward, up

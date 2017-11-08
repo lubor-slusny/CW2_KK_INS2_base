@@ -12,16 +12,16 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "SW M39"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_sw39")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.06
 	SWEP.ShellWorldAngleAlign = {Forward = 90, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-1.8478, 0, 0.4957)
 	SWEP.IronsightAng = Vector(0.1302, 0.0213, 7)
 
@@ -133,7 +133,7 @@ SWEP.MuzzleVelocity = 335
 SWEP.ReloadTimes = {
 	base_reload = {60/31.5, 2.6},
 	base_reloadempty = {60/31.5, 3.2},
-	
+
 	base_melee_bash = {0.3, 0.8},
 	empty_melee_bash = {0.3, 0.8},
 }
@@ -142,12 +142,12 @@ if CLIENT then
 	local v0 = Vector()
 	local v1 = Vector(1,1,1)
 	local bone = 63
-	
+
 	function SWEP:updateOtherParts()
 		local vm = self.CW_VM
 		local cycle = vm:GetCycle()
 		local activity = self.Sequence
-		
+
 		if self:Clip1() == 0 and (self.Sequence != self.Animations.base_reload_empty or cycle < 0.3) then
 			vm:ManipulateBoneScale(bone, v0)
 		else

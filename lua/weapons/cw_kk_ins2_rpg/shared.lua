@@ -7,45 +7,45 @@ include("sh_sounds.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "RPG-7"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_rpg7")
-	
+
 	SWEP.RearEffectw = true
 	SWEP.NoShells = true
-	
+
 	SWEP.BackupSights = {
 		["kk_ins2_cstm_pgo7"] = {
 			Vector(-2.1193, -2, -0.9167),
 			Vector(2.6066, -0.2973, 8)
 		},
 	}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_sterling.mdl", bone = "RPG_Body", pos = Vector(-1.795, -11.804, -2.003), angle = Angle(0, -90, -180), size = Vector(0.899, 0.899, 0.899)},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_sterling.mdl", bone = "RPG_Body", pos = Vector(-1.795, -11.804, -2.003), angle = Angle(0, -90, -180), size = Vector(0.899, 0.899, 0.899)},
 		["kk_ins2_anpeq15"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_anpeq_ring.mdl", bone = "RPG_Body", pos = Vector(-1.795, -11.804, -2.003), angle = Angle(0, -90, -180), size = Vector(0.899, 0.899, 0.899)},
 
 		["kk_ins2_cstm_pgo7"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_pgo7.mdl", bone = "RPG_Body", pos = Vector(1.052, -1.989, -0.811), angle = Angle(0, -90, 0), size = Vector(0.949, 0.949, 0.949)},
-		
+
 		["kk_counter"] = {model = "models/weapons/stattrack.mdl", bone = "RPG_Body", pos = Vector(0.605, -2.793, 2.559), angle = Angle(), size = Vector(0.28, 0.28, 0.28)},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		-- ["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_sterling.mdl", bone = "ValveBiped.Bip01_R_Hand", pos = Vector(-8.582, -2.365, 0.243), angle = Angle(-10, 0, 0), size = Vector(1.25, 1.25, 1.25)},
 		-- ["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_sterling.mdl", bone = "ValveBiped.Bip01_R_Hand", pos = Vector(-8.582, -2.365, 0.243), angle = Angle(-10, 0, 0), size = Vector(1.25, 1.25, 1.25)},
-		
+
 		-- ["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_sterling.mdl", bone = "R Hand", pos = Vector(-14.497, 1.049, 6.086), angle = Angle(-10, 0, 180), size = Vector(1.25, 1.25, 1.25)},
 		-- ["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/.mdl", bone = "R Hand", pos = Vector(-14.497, 1.049, 6.086), angle = Angle(-10, 0, 180), size = Vector(1.25, 1.25, 1.25)},
 
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_sterling.mdl", bone = "R Hand", pos = Vector(-11.44, 6.271, 10.972), angle = Angle(-24.098, 12.642, 180), size = Vector(1.25, 1.25, 1.25)},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_sterling.mdl", bone = "R Hand", pos = Vector(-11.44, 6.271, 10.972), angle = Angle(-24.098, 12.642, 180), size = Vector(1.25, 1.25, 1.25)},
 		["kk_ins2_anpeq15"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_anpeq_ring.mdl", bone = "R Hand", pos = Vector(-11.44, 6.271, 10.972), angle = Angle(-24.098, 12.642, 180), size = Vector(1.25, 1.25, 1.25)},
-		
+
 		["kk_ins2_cstm_pgo7"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_pgo7.mdl", bone = "R Hand", pos = Vector(0.351, -0.724, 7.335), angle = Angle(-23.414, 16.023, 14.635), size = Vector(1.2, 1.2, 1.2)},
 	}
-	
+
 	SWEP.LaserAngAdjust = Angle(0,-1,0)
-	
+
 	SWEP.IronsightPos = Vector(-2.1193, -2, -0.9167)
 	SWEP.IronsightAng = Vector(2.6066, -0.2973, 8)
 
@@ -54,27 +54,27 @@ if CLIENT then
 
 	-- SWEP.SprintPos = Vector(0, -1, 0)
 	-- SWEP.SprintAng = Vector(1.8, 0, 0)
-	
+
 	-- SWEP.AlternativePos = Vector(0, -1, 0)
 	-- SWEP.AlternativeAng = Vector(1.8, 0, 0)
-	
+
 	SWEP.SprintAnimSpeed = 1
 	SWEP.ViewModelMovementScale_sprint = 0.6
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.CustomizationMenuScale = 0.01
 	SWEP.HUD_MagText = "TUBE: "
-	
+
 	SWEP.Trivia = {
-		text = "This one is the best.", 
-		x = -500, 
-		y = -500, 
-		textFormatFunc = function(self, wep) 
-			if wep.ActiveAttachments.kk_ins2_cstm_pgo7 and wep.ActiveAttachments.kk_ins2_anpeq15 and wep.ActiveAttachments.kk_counter then 
+		text = "This one is the best.",
+		x = -500,
+		y = -500,
+		textFormatFunc = function(self, wep)
+			if wep.ActiveAttachments.kk_ins2_cstm_pgo7 and wep.ActiveAttachments.kk_ins2_anpeq15 and wep.ActiveAttachments.kk_counter then
 				return self.text
 			else
-				return "" 
-			end 
+				return ""
+			end
 		end
 	}
 end

@@ -11,21 +11,21 @@ SWEP.magType = "smgMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M1A1 Thompson"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_thompson_m1a1")
-	
+
 	SWEP.Shell = "KK_INS2_45apc"
 	SWEP.ShellDelay = 0.08
 
 	SWEP.AttachmentModelsVM = {
-		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_iron_thompson_m1a1_1.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), merge = true, active = true}, 
-		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_iron_thompson_m1a1_2.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), merge = true}, 
-		
+		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_iron_thompson_m1a1_1.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), merge = true, active = true},
+		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_iron_thompson_m1a1_2.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), merge = true},
+
 		-- ["ani_body"] = {model = "models/weapons/v_thompson_m1a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_thompson_m1a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_thompson_m1a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		-- ["handguard"] = {model = "models/weapons/upgrades/w_thompson_standard.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		-- ["mag"] = {model = "models/weapons/upgrades/w_thompson_mag_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
@@ -44,28 +44,28 @@ SWEP.MuzzleEffectWorld = "muzzleflash_thompson_3p"
 
 SWEP.Attachments = {
 	{header = "Sight", offset = {450, -200}, atts = {"bg_foldsight"}},
-	{header = "Stock", offset = {1000, 200}, atts = {"kk_ins2_ww2_sling"}}, 
+	{header = "Stock", offset = {1000, 200}, atts = {"kk_ins2_ww2_sling"}},
 	["+reload"] = {header = "Ammo", offset = {-200, 200}, atts = {"am_magnum", "am_matchgrade"}}
 }
 
 SWEP.Animations = {
-	base_pickup = "base_ready", 
-	base_draw = "base_draw", 
-	base_fire = {"base_fire", "base_fire_2", "base_fire_3"}, 
-	base_fire_aim = {"iron_fire_1", "iron_fire_2", "iron_fire_3"}, 	
-	base_fire_empty = "base_dryfire", 
-	base_fire_empty_aim = "iron_dryfire", 
-	base_reload = "base_reload", 
+	base_pickup = "base_ready",
+	base_draw = "base_draw",
+	base_fire = {"base_fire", "base_fire_2", "base_fire_3"},
+	base_fire_aim = {"iron_fire_1", "iron_fire_2", "iron_fire_3"},
+	base_fire_empty = "base_dryfire",
+	base_fire_empty_aim = "iron_dryfire",
+	base_reload = "base_reload",
 	base_reload_empty = {"base_reloadempty_1", "base_reloadempty_2"},
-	base_idle = "base_idle", 
-	base_holster = "base_holster", 
-	base_firemode = "base_fireselect", 
-	base_firemode_aim = "iron_fireselect", 
-	base_sprint = "base_sprint", 
-	base_safe = "base_down", 
-	base_safe_aim = "iron_down", 
-	base_crawl = "base_crawl", 
-	base_melee = "base_melee_bash", 
+	base_idle = "base_idle",
+	base_holster = "base_holster",
+	base_firemode = "base_fireselect",
+	base_firemode_aim = "iron_fireselect",
+	base_sprint = "base_sprint",
+	base_safe = "base_down",
+	base_safe_aim = "iron_down",
+	base_crawl = "base_crawl",
+	base_melee = "base_melee_bash",
 }
 
 SWEP.SpeedDec = 15
@@ -129,9 +129,9 @@ SWEP.WeaponLength = 16
 SWEP.MuzzleVelocity = 285
 
 SWEP.ReloadTimes = {
-	base_reload = {2.55, 3.33}, 
+	base_reload = {2.55, 3.33},
 	base_reloadempty_1 = {3.88, 4.76},
 	base_reloadempty_2 = {3.88, 4.76},
-	
+
 	base_melee_bash = {0.3, 0.9},
 }

@@ -10,22 +10,22 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Binoculars US"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_binoculars_american")
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_binoculars_american.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector()
 	SWEP.IronsightAng = Vector()
 
 	SWEP.CustomizationMenuScale = 0.01
 	SWEP.ReloadViewBobEnabled = false
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.AimOverlay = surface.GetTextureID("models/weapons/optics/binocs_overlay_american")
 end
 

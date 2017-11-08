@@ -9,7 +9,7 @@ ENT.Model = "models/weapons/w_eq_smokegrenade_thrown.mdl"
 local phys, ef
 
 function ENT:Initialize()
-	self:SetModel(self.Model) 
+	self:SetModel(self.Model)
 	self:PhysicsInit(SOLID_VPHYSICS)
 	self:SetMoveType(MOVETYPE_VPHYSICS)
 	self:SetSolid(SOLID_VPHYSICS)
@@ -20,7 +20,7 @@ function ENT:Initialize()
 	if phys and phys:IsValid() then
 		phys:Wake()
 	end
-	
+
 	self:GetPhysicsObject():SetBuoyancyRatio(0)
 end
 
@@ -30,7 +30,7 @@ end
 
 function ENT:OnRemove()
 	return false
-end 
+end
 
 local vel, len, CT
 
@@ -50,11 +50,11 @@ PrecacheParticleSystem("skybox_gunrun")
 
 function ENT:Kaboomboom()
 	local hitPos = self:GetPos()
-	
+
 	local smokeScreen = ents.Create("cw_smokescreen_impact")
 	smokeScreen:SetPos(hitPos)
 	smokeScreen:Spawn()
-	
+
 	local fx = ents.Create("cw_kk_ins2_particles")
 	fx:processProjectile(self)
 	fx:Spawn()

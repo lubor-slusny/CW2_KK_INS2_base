@@ -8,18 +8,18 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M39 HE Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/cw_kk_ins2_cstm_nade_m39")
-	
+
 	SWEP.IconLetter = "O"
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.HUD_3D2DBone = 53
 end
 
@@ -31,13 +31,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_frag"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",

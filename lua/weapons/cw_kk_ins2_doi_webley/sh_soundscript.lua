@@ -1,26 +1,26 @@
 
 local function prepareShells(self)
 	if SERVER then return end
-	
+
 	self._numShells = self.CW_VM:GetBodygroup(self._shellsBGID) - self:Clip1()
 end
 
 local function shells(self)
 	if SERVER then return end
-	
-	for _ = 1, self._numShells do 
+
+	for _ = 1, self._numShells do
 		self:shellEventWebley()
 	end
 end
 
 local lastValidResetTime
 
-local function meleeShellCorection(self)	
+local function meleeShellCorection(self)
 	self.reticleInactivity = UnPredictedCurTime() + 0.8
-	
+
 	lastValidResetTime = CurTime()
 	local localValidResetTime = lastValidResetTime
-	
+
 	CustomizableWeaponry.actionSequence.new(self, 0.7, nil, function()
 		if lastValidResetTime == localValidResetTime then
 			self:idleAnimFunc()
@@ -120,12 +120,12 @@ SWEP.Sounds = {
 		{time = 0, sound = "CW_KK_INS2_DOI_WEBLEY_COCKHAMMER"},
 		{time = 4/30, sound = "CW_KK_INS2_DOI_WEBLEY_EMPTY"},
 	},
-	
+
 	iron_dryfire_preblend = {
 		{time = 0, sound = "CW_KK_INS2_DOI_WEBLEY_COCKHAMMER"},
 		{time = 4/30, sound = "CW_KK_INS2_DOI_WEBLEY_EMPTY"},
 	},
-		
+
 	base_melee_bash = {
 		{time = 0, sound = "", callback = meleeShellCorection},
 		{time = 9/33, sound = "CW_KK_INS2_DOI_MELEE"},

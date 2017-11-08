@@ -12,19 +12,19 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Walther PPK"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_ppk")
-	
+
 	SWEP.Shell = "KK_INS2_9x19"
 	SWEP.ShellDelay = 0.06
 	SWEP.ShellWorldAngleAlign = {Forward = 90, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_ppk.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-1.9131, 0, 0.5582)
 	SWEP.IronsightAng = Vector(-0.0274, 0, 0)
 
@@ -133,7 +133,7 @@ SWEP.MuzzleVelocity = 244
 SWEP.ReloadTimes = {
 	base_reload = {2.3, 3},
 	base_reloadempty = {2.3, 4.17},
-	
+
 	base_melee_bash = {0.3, 0.8},
 	empty_melee_bash = {0.3, 0.8},
 }

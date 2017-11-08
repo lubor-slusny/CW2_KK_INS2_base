@@ -10,34 +10,34 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Galil ACE 22.5"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	-- SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_galil_sar")
 	SWEP.IconLetter = "b"
-	
+
 	SWEP.Shell = "KK_INS2_556x45"
 	SWEP.ShellDelay = 0.06
-	
+
 	local counterExists = file.Exists("models/weapons/stattrack.mdl", "GAME")
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_suppressor_sec"] = {model = "models/weapons/upgrades/a_suppressor_sec.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_mag_galil_35"] = {model = "models/weapons/upgrades/a_magazine_galil_35.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_galil_75"] = {model = "models/weapons/upgrades/a_magazine_galil_75.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/a_bipod_galil.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/a_foregrip_sec2.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), attachment = "Foregrip"},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_anpeq15"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_anpeq_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_magnifier"] = {model = "models/weapons/upgrades/a_optic_aimp2x.mdl", rLight = true, bone = "Weapon", pos = Vector(0.059, -3.7, 2.759), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
-		
+
 		["kk_ins2_aimpoint"] = {model = "models/weapons/upgrades/a_optic_aimpoint.mdl", bone = "Weapon", pos = Vector(0.059, -4, 2.759), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
-		
+
 		["kk_ins2_cstm_cmore"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_cmore.mdl", bone = "Weapon", pos = Vector(0.059, -4, 2.759), angle = Angle(), size = Vector(1, 1, 1)},
 		["kk_ins2_cstm_barska"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_barska.mdl", bone = "Weapon", pos = Vector(0.059, -2.931, 2.743), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
 
@@ -49,23 +49,23 @@ if CLIENT then
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_mag_galil_35"] = {model = "models/weapons/upgrades/w_magazine_galil_35.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_galil_75"] = {model = "models/weapons/upgrades/w_magazine_galil_75.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_suppressor_sec"] = {model = "models/weapons/upgrades/w_sil_sec1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_bipod"] = {model = "models/weapons/upgrades/w_bipod_galil.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/w_ins_foregrip.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/w_laser_ins.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/w_laser_ins.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_magnifier"] = {model = "models/weapons/upgrades/w_magaim.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_aimpoint"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_elcan"] = {model = "models/weapons/upgrades/w_elcan.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_eotech"] = {model = "models/weapons/upgrades/w_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_kobra"] = {model = "models/weapons/upgrades/w_kobra.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_po4"] = {model = "models/weapons/upgrades/w_po.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_cstm_cmore"] = {model = "models/weapons/attachments/w_cw_kk_ins2_cstm_cmore.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_compm4s"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_microt1"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -73,17 +73,17 @@ if CLIENT then
 		["kk_ins2_cstm_barska"] = {model = "models/weapons/upgrades/w_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_eotechxps"] = {model = "models/weapons/attachments/w_cw_kk_ins2_cstm_eotechxps.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.ForeGripOffsetCycle_Reload_Empty = 0
 	SWEP.ForeGripOffsetCycle_Reload = 0
 	SWEP.ForeGripOffsetCycle_Draw = 0
-	
+
 	SWEP.ForegripOverridePos = {
 		["tweak"] = {
 			["Magazine"] = {pos = Vector(0, -0.25, 0), angle = Angle()}
 		},
 	}
-	
+
 	SWEP.ForegripParent = "tweak"
 	SWEP.ForegripOverride = true
 
@@ -137,7 +137,7 @@ SWEP.Animations = {
 	base_safe = "base_down",
 	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
-	
+
 	foregrip_pickup = "foregrip_ready",
 	foregrip_draw = "foregrip_draw",
 	foregrip_fire = "foregrip_fire",
@@ -156,7 +156,7 @@ SWEP.Animations = {
 	foregrip_safe = "foregrip_down",
 	foregrip_safe_aim = "foregrip_iron_down",
 	foregrip_crawl = "foregrip_crawl",
-	
+
 	bipod_in = "deployed_in",
 	bipod_fire = "deployed_fire",
 	bipod_fire_aim = {"deployed_iron_fire_a","deployed_iron_fire_b","deployed_iron_fire_c"},
@@ -233,12 +233,12 @@ SWEP.ReloadTimes = {					//qc
 	base_reloadempty = {70/32.2, 5},
 	base_reload_drum = {116/31.8, 5.5},
 	base_reloadempty_drum = {116/31.8, 7.55},
-	
+
 	foregrip_reload = {70/32.2, 3.5},
 	foregrip_reloadempty = {70/32.2, 5},
 	foregrip_reload_drum = {116/31.8, 5.5},
 	foregrip_reloadempty_drum = {116/31.8, 7.55},
-	
+
 	deployed_reload = {70/30, 3.8},
 	deployed_reload_empty = {70/30, 5.4},
 	deployed_reload_drum = {116/31.8, 5.5},

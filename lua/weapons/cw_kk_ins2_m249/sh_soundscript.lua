@@ -1,14 +1,14 @@
 
-local function shell(wep) 
+local function shell(wep)
 	if SERVER then return end
-	
-	wep:shellEvent() 
+
+	wep:shellEvent()
 end
 
 local function link(wep)
 	if SERVER then return end
-	
-	wep:shellEvent2() 
+
+	wep:shellEvent2()
 end
 
 SWEP.Sounds = {

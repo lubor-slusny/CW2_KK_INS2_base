@@ -3,7 +3,7 @@ ENT.Base = "cw_ammo_ent_base"
 ENT.PrintName = "[DOI] M10A1 Rockets"
 ENT.Author = "Spy"
 ENT.Spawnable = true
-ENT.AdminSpawnable = true 
+ENT.AdminSpawnable = true
 ENT.Category = "CW 2.0 Ammo"
 
 ENT.CaliberSpecific = true

@@ -4,17 +4,17 @@ local att = {}
 	att.displayName = "Matte Gray Finish"
 	att.displayNameShort = "Gray"
 	att.isBG = true
-	
+
 	att.statModifiers = {
 		RecoilMult = -0.1
 	}
-	
+
 	if CLIENT then
 		-- att.displayIcon = surface.GetTextureID("atts/" .. att.name)
 		att.displayIcon = surface.GetTextureID("atts/kk_dogg")
 		att.description = {}
 	end
-	
+
 CustomizableWeaponry:registerAttachment(att)
 
 local att = {}

@@ -11,8 +11,8 @@ end
 function ENT:Think()
 	if self:WaterLevel() == 0 then
 		local dlight = DynamicLight(self:EntIndex())
-		
-		dlight.r = 255 
+
+		dlight.r = 255
 		dlight.g = 110
 		dlight.b = 74
 		dlight.Brightness = 0

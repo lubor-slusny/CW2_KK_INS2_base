@@ -1,7 +1,7 @@
 
 local function shell(wep)
 	if SERVER then return end
-	
+
 	wep:shellEvent203()
 end
 

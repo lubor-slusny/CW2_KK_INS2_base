@@ -12,31 +12,31 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "MG-42"
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_mg42")
-	
+
 	SWEP.NoShells = true
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.ShellEjectVelocity = 50
-	
+
 	SWEP.Shell2 = "KK_INS2_30-06_link"
 	SWEP.Shell2Scale = 0.9
 	SWEP.Shell2EjectVelocity = 50
 	SWEP.Shell2ViewAttachmentID = 2
 	SWEP.Shell2ViewAngleAlign = {Forward = 0, Right = 0, Up = 180}
 	SWEP.Shell2WorldAngleAlign = {Forward = 0, Right = 0, Up = 180}
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_mg42.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		["kk_counter"] = {model = "models/weapons/stattrack.mdl", pos = Vector(-0.0566, 0.3055, 2.8376), angle = Angle(0, 0, -11.6799), size = Vector(0.3137, 0.3137, 0.3137), bone = "MG42"},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.CustomizePos = Vector(6.488, -1.627, -2.821)
 	SWEP.CustomizeAng = Vector(17.009, 29.971, 16.669)
-	
+
 	SWEP.IronsightPos = Vector(-2.3595, -2, 0.952)
 	SWEP.IronsightAng = Vector(-0.0747, 0.0156, 0)
 
@@ -70,7 +70,7 @@ SWEP.Animations = {
 	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
 	base_melee = "base_melee_bash",
-	
+
 	bipod_in = "deployed_in",
 	bipod_fire = {"deployed_fire_1","deployed_fire_2"},
 	bipod_fire_aim = {"deployed_iron_fire_1","deployed_iron_fire_2"},
@@ -146,9 +146,9 @@ SWEP.MuzzleVelocity = 740
 SWEP.ReloadTimes = {
 	base_reload = {6.2, 8.21},
 	base_reload_empty = {6.94, 8.96},
-	
+
 	deployed_reload = {6, 7.97},
 	deployed_reload_empty = {6.95, 8.96},
-	
+
 	base_melee_bash = {0.6, 1.7},
 }

@@ -15,7 +15,7 @@ if CLIENT then
 	tab["cw_kk_ins2_scopelightingfix"] = CreateClientConVar("cw_kk_ins2_scopelightingfix", 1, true, false)
 	tab["cw_kk_ins2_sprint"] = CreateClientConVar("cw_kk_ins2_sprint", 1, true, false)
 	tab["cw_kk_ins2_draw_vm_in_rt"] = CreateClientConVar("cw_kk_ins2_draw_vm_in_rt", 0, true, false)
-	
+
 	local tab = CustomizableWeaponry_KK.ins2.conVars.other
 	tab["cw_kk_freeze_reticles"] = CreateClientConVar("cw_kk_freeze_reticles", 0, false, false)
 end

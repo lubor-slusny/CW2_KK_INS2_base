@@ -7,11 +7,11 @@ local ent, pos, tweakData
 function EFFECT:Init(fx)
 	ent = fx:GetEntity()
 	ent:SetAngles(ang0)
-	
+
 	pos = ent:GetPos()
-	
+
 	tweakData = ent:getTweakData()
-	
+
 	if ent:WaterLevel() == 0 then
 		for _,p in pairs(tweakData.explosionParticles) do
 			ParticleEffectAttach(p, PATTACH_ABSORIGIN_FOLLOW, ent, 0)

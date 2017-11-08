@@ -1,14 +1,14 @@
 
-local function shell(wep) 
+local function shell(wep)
 	if SERVER then return end
-	
-	wep:shellEvent() 
+
+	wep:shellEvent()
 end
 
 local function link(wep)
 	if SERVER then return end
-	
-	wep:shellEvent2() 
+
+	wep:shellEvent2()
 end
 
 SWEP.Sounds = {
@@ -70,7 +70,7 @@ SWEP.Sounds = {
 		{time = 0.02, sound = "", callback = link},
 		{time = 0.05, sound = "", callback = shell},
 	},
-	
+
 	base_ready = {
 		{time = 0/30, sound = "CW_KK_INS2_UNIVERSAL_DRAW"},
 		{time = 33/30, sound = "CW_KK_INS2_M249_BOLTBACK"},

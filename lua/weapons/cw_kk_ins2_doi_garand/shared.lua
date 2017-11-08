@@ -11,60 +11,60 @@ SWEP.magType = "m1Clip"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M1 Garand"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_m1garand")
-	
+
 	SWEP.NoShells = true
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.ShellEjectVelocity = 150
-	
+
 	SWEP.Shell2 = "KK_INS2_GARAND"
 	SWEP.Shell2EjectVelocity = 150
 	SWEP.Shell2ViewAngleAlign = {Forward = 0, Right = 30, Up = -90}
 	SWEP.Shell2WorldAngleAlign = {Forward = 0, Right = 0, Up = 90}
-	
+
 	SWEP.BackupSights = {
 		["kk_ins2_scope_m82"] = {
 			Vector(-2.4643, -2, 1.1174),
 			Vector(-0.4782, 0.006, 0)
 		},
 	}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_iron_garand_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["bg_foldsight"] = {model = "models/weapons/upgrades/a_iron_garand_s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["sleeve"] = {model = "models/weapons/upgrades/a_clothwrap_garand.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_garand_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		-- ["kk_ins2_gl_m7"] = {model = "models/weapons/upgrades/a_springfield_gl.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_gl_m7"] = {model = "models/weapons/upgrades/a_garand_gl.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
 		["kk_ins2_scope_m82"] = {model = "models/weapons/upgrades/a_optic_garand.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(0.075, 0.075, 0.075), merge = true},
 		["kk_ins2_scope_m82_rail"] = {model = "models/weapons/upgrades/a_iron_garand_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["kk_was_here_lol"] = {model = "models/weapons/upgrades/a_modkit_m1a1.mdl", pos = Vector(2.3473, -14.2344, 3.829), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), bone = "Weapon", active = true},
-		
+
 		-- ["modbody"] = {model = "models/weapons/v_cw_kk_doi_garand.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true},
 		-- ["wood"] = {model = "models/weapons/upgrades/a_standard_garand.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true, rel = "modbody"},
 		-- ["raul"] = {model = "models/weapons/upgrades/a_modkit_m1a1.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true, rel = "modbody"},
 		-- ["kk_ins2_eotech"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_barska_xl.mdl", pos = Vector(0, 0, 7.95), angle = Angle(90, 90, 0), size = Vector(1, 1, 1), attachment = "optic"},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_garand.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kki_body"] = {model = "models/weapons/v_garand.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_garand.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["sleeve"] = {model = "models/weapons/upgrades/w_clothwrap_garand.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/w_garand_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_gl_m7"] = {model = "models/weapons/upgrades/w_springfield_gl.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_m82"] = {model = "models/weapons/upgrades/w_scope_garand.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.4643, -2, 1.1174)
 	SWEP.IronsightAng = Vector(-0.4782, 0.006, 0)
 
@@ -130,7 +130,7 @@ SWEP.Animations = {
 	base_melee_empty = "base_melee_bash_empty",
 	base_stab = "base_melee_end",
 	base_stab_empty = "base_melee_end_empty",
-	
+
 	gl_off_pickup = "base_ready",
 	gl_off_draw = "base_draw",
 	gl_off_draw_empty = "base_draw_empty",
@@ -157,7 +157,7 @@ SWEP.Animations = {
 	gl_off_crawl_empty = "base_crawl_empty",
 	gl_off_melee = "base_melee_bash",
 	gl_off_melee_empty = "base_melee_bash_empty",
-	
+
 	gl_on_pickup = "base_ready",
 	gl_on_draw = "glsetup_draw",
 	gl_on_draw_empty = "glsetup_draw_empty",
@@ -178,7 +178,7 @@ SWEP.Animations = {
 	gl_on_safe_empty_aim = "glsetup_iron_down_empty",
 	gl_on_crawl = "glsetup_crawl",
 	gl_on_crawl_empty = "glsetup_crawl_empty",
-	
+
 	gl_turn_on_full = "glsetup_in",
 	gl_turn_on = "glsetup_in_empty",
 	gl_turn_off = "glsetup_out",
@@ -251,14 +251,14 @@ SWEP.ReloadTimes = {
 	base_reloadfull = {3.6, 5, KK_INS2_REVOLVER_SPEED_UNLOAD, 1.1},
 	base_reloadempty = {2.2, 3.6},
 	base_reloadempty_null = {3.5, 6.4},
-	
+
 	glsetup_reload = {2, 3.1},
-	
-	glsetup_in = {6.2, 7.6}, 
-	glsetup_in_empty = {6.2, 7.6}, 
+
+	glsetup_in = {6.2, 7.6},
+	glsetup_in_empty = {6.2, 7.6},
 	glsetup_out = {1.6, 7},
 	glsetup_out_empty = {2.75, 5.2},
-	
+
 	base_melee_bash = {0.3, 0.9},
 	base_melee_bash_empty = {0.3, 0.9},
 }
@@ -267,24 +267,24 @@ if CLIENT then
 	local bone = 66
 	local dir = Vector(0,0,-1)
 	local angleVel = Vector()
-	
+
 	local vm, att, pos, ang, velocity, align, shellEnt
 
 	function SWEP:shellEvent2()
 		if self.Owner:ShouldDrawLocalPlayer() then
 			vm = self:getMuzzleModel()
-			
+
 			att = vm:GetAttachment(self.ShellWorldAttachmentID)
-			
+
 			pos = att.Pos
 			ang = att.Ang
 			velocity = self.Owner:GetVelocity() + ang:Forward() * (50)
-			
+
 			align = self.Shell2WorldAngleAlign
 			ang:RotateAroundAxis(ang:Right(), align.Right)
 			ang:RotateAroundAxis(ang:Forward(), align.Forward)
 			ang:RotateAroundAxis(ang:Up(), align.Up)
-			
+
 			CustomizableWeaponry_KK.ins2.shells:make(
 				pos,
 				ang,
@@ -295,18 +295,18 @@ if CLIENT then
 			)
 		else
 			vm = self.CW_VM
-			
+
 			att = vm:GetBoneMatrix(bone)
-			
+
 			pos = att:GetTranslation()
 			ang = att:GetAngles()
 			velocity = self.Owner:GetVelocity() + dir * (self.Shell2EjectVelocity or 200)
-			
+
 			align = self.Shell2ViewAngleAlign
 			ang:RotateAroundAxis(ang:Right(), align.Right)
 			ang:RotateAroundAxis(ang:Forward(), align.Forward)
 			ang:RotateAroundAxis(ang:Up(), align.Up)
-			
+
 			CustomizableWeaponry_KK.ins2.shells:make(
 				pos,
 				ang,
@@ -331,10 +331,10 @@ function SWEP:overrideReloadAnim(prefix, suffix)
 	if self.dt.INS2GLActive or self:Clip1() > 0 then
 		return prefix .. "reload"
 	end
-	
+
 	if math.random(100) == 82 then
 		return "base_reload_empty_lulz"
 	end
-	
+
 	return prefix .. "reload_empty"
 end

@@ -8,7 +8,7 @@ ENT.PackageText = "M1 Garand clip"
 ENT.Category = "CW 2.0 Magazines"
 ENT.Author = "Spy"
 ENT.Spawnable = true
-ENT.AdminSpawnable = true 
+ENT.AdminSpawnable = true
 ENT.Model = "models/weapons/unloaded/snip_awp_mag.mdl"
 
 ENT.magazines = {m1Clip = 1}

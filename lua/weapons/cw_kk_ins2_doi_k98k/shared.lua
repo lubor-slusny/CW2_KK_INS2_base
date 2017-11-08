@@ -11,12 +11,12 @@ if CLIENT then
 	SWEP.PrintName = "Kar-98k"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_k98")
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.NoShells = true
-	
+
 	SWEP.BackupSights = {
 		["kk_ins2_scope_k98"] = {
 			Vector(-2.5615, -4, 1.588),
@@ -31,41 +31,41 @@ if CLIENT then
 			Vector(0.2652, 0.0073, 0)
 		},
 	}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_kar98k_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["sleeve"] = {model = "models/weapons/upgrades/a_clothwrap_kar98k.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_ww2_stripper"] = {model = "models/weapons/upgrades/a_kar98k_stripper_clip.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_gl_ggg"] = {model = "models/weapons/upgrades/a_kar98k_gl.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
 		["kk_ins2_scope_k98"] = {model = "models/weapons/upgrades/a_optic_kar98k.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_kar98k.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_k98.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_k98.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_zf4"] = {model = "models/weapons/upgrades/a_optic_kar98k_4x.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_scope_zf41"] = {model = "models/weapons/upgrades/a_optic_kk_zf41.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
 
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/w_kar98k_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["sleeve"] = {model = "models/weapons/upgrades/w_clothwrap_kar98k.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["kk_ins2_gl_ggg"] = {model = "models/weapons/upgrades/w_enfield_gl.mdl", pos = Vector(41.9803, -0.1208, 4.8887), angle = Angle(1.7669, -1.2005, 0), size = Vector(1, 1, 1), bone = "R Hand"},
 		["kk_ins2_gl_ggg"] = {model = "models/weapons/upgrades/w_grenade_kar98k.mdl", pos = Vector(0, 0, 0), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), attachment = "muzzle"},
-		
+
 		["kk_ins2_scope_k98"] = {model = "models/weapons/upgrades/w_optic_kar98k.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_zf4"] = {model = "models/weapons/upgrades/w_optic_kar98k.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_zf41"] = {model = "models/weapons/upgrades/w_optic_kar98k.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.5615, -4, 1.588)
 	SWEP.IronsightAng = Vector(0.2652, 0.0073, 0)
 
@@ -139,7 +139,7 @@ SWEP.Animations = {
 	base_melee_empty = "base_melee_bash_empty",
 	base_stab = "base_melee_end",
 	base_stab_empty = "base_melee_end_empty",
-	
+
 	gl_off_pickup = "gl_ready",
 	gl_off_draw = "gl_draw",
 	gl_off_draw_empty = "gl_draw_empty",
@@ -170,7 +170,7 @@ SWEP.Animations = {
 	gl_off_safe_empty_aim = "gl_iron_down_empty",
 	gl_off_crawl = "gl_crawl",
 	gl_off_crawl_empty = "gl_crawl_empty",
-	
+
 	gl_on_draw = "glsetup_draw",
 	gl_on_draw_empty = "glsetup_draw_empty",
 	gl_on_fire = "glsetup_firelast",
@@ -190,7 +190,7 @@ SWEP.Animations = {
 	gl_on_safe_empty_aim = "glsetup_iron_down_empty",
 	gl_on_crawl = "glsetup_crawl",
 	gl_on_crawl_empty = "glsetup_crawl_empty",
-	
+
 	gl_turn_on_full = "glsetup_in",
 	gl_turn_on = "glsetup_in_empty",
 	gl_turn_off = "glsetup_out",
@@ -283,14 +283,14 @@ SWEP.ReloadTimes = {
 	gl_reload_start_empty = {1.21, 1.21},
 	gl_reload_insert = {19/37.2, 0.99},
 	gl_reload_end = {1.41, 1.41},
-	
+
 	glsetup_reload = {5.4, 6.6},
-	
-	glsetup_in = {5.4, 6.6, KK_INS2_RIFLEGL_UNLOAD_ONE, 29/35.5}, 
-	glsetup_in_empty = {5.4, 6.6},	
+
+	glsetup_in = {5.4, 6.6, KK_INS2_RIFLEGL_UNLOAD_ONE, 29/35.5},
+	glsetup_in_empty = {5.4, 6.6},
 	glsetup_out = {2, 5},
 	glsetup_out_empty = {2.2, 2.2},
-	
+
 	base_melee_bash = {0.3, 0.9},
 	base_melee_bash_empty = {0.3, 0.9},
 }
@@ -298,7 +298,7 @@ SWEP.ReloadTimes = {
 if CLIENT then
 	function SWEP:updateStandardParts()
 		-- self:setElementActive("sleeve", self.ActiveAttachments.kk_ins2_scope_k98)
-		
+
 		self.AttachmentModelsVM.sleeve.nodraw =
 			self.ActiveAttachments.kk_ins2_gl_ggg or
 			self.ActiveAttachments.kk_ins2_scope_zf41

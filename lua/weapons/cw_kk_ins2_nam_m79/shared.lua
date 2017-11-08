@@ -11,19 +11,19 @@ if CLIENT then
 	SWEP.PrintName = "M79"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_m79")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_40mm"
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_m79_sling.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["muzzle"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(21.3825, 0.0088, -0.496), angle = Angle(0, 0, 0), size = Vector(0.01, 0.01, 0.01), attachment = "muzzle", bodygroups = {[1] = 1,}, active = true, nodraw = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-2.2518, -2, -1.4316)
 	SWEP.IronsightAng = Vector(7.531, 0.0067, 0)
 
@@ -138,7 +138,7 @@ if CLIENT then
 			muz.Ang = EyeAngles()
 			return muz
 		end
-		
+
 		muz.Pos = self.AttachmentModelsVM.muzzle.ent:GetPos()
 		muz.Ang = self.AttachmentModelsVM.muzzle.ent:GetAngles()
 		return muz

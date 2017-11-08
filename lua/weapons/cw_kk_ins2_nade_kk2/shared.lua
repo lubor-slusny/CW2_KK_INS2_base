@@ -8,18 +8,18 @@ include("sh_soundscript.lua")
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Flare"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/cw_kk_ins2_nade_kk")
-	
+
 	SWEP.AttachmentModelsVM = {
 		["fuze"] = {model = "models/weapons/v_cw_kk_ins2_m213.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		["nade"] = {model = "models/props_junk/flare.mdl", pos = Vector(0, 0, -0.4017), angle = Angle(0, -5.9132, 0), size = Vector(0.5, 0.5, 0.5), bone = "Weapon_M84", active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["flare_fuze"] = {model = "models/weapons/v_cw_kk_ins2_m213.mdl", pos = Vector(-23.0194, -3.093, -8.5511), angle = Angle(-0.0477, 5.0981, -102.3934), size = Vector(2, 2, 2), attachment = "fuse", active = true},
 	}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
@@ -33,13 +33,13 @@ SWEP.projectileClass = "kk_flare"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",

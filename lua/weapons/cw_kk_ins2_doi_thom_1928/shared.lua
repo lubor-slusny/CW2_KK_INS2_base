@@ -11,9 +11,9 @@ SWEP.magType = "smgMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "M1928A1 Thompson"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_thompson_m1928a1")
-	
+
 	SWEP.Shell = "KK_INS2_45apc"
 	SWEP.ShellDelay = 0.13
 
@@ -21,19 +21,19 @@ if CLIENT then
 		-- ["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_iron_thompson_s.mdl", pos = Vector(), angle = Angle(), size = Vector(0.5, 0.5, 0.5), merge = true, active = true},
 		-- ["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_iron_thompson_l.mdl", pos = Vector(), angle = Angle(), size = Vector(0.5, 0.5, 0.5), merge = true},
 		-- ["modbody"] = {model = "models/weapons/v_cw_kk_doi_1928.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true},
-		
+
 		-- ["kk_ins2_ww2_knife"] = {model = "models/weapons/v_brassknuckles.mdl", pos = Vector(-2.3145, -0.7286, 11.7285), angle = Angle(-49.8959, 22.8366, 26.1512), size = Vector(1, 1, 1), bone = "R Hand", nodraw = true},
-		
+
 		["handguard"] = {model = "models/weapons/upgrades/a_thompson_standard.mdl", pos = Vector(), angle = Angle(), size = Vector(0.5, 0.5, 0.5), merge = true, active = true},
 		["kk_ins2_mag_thom_20"] = {model = "models/weapons/upgrades/a_thompson_mag_20.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		
+
 		["kk_ins2_mag_thom_30"] = {model = "models/weapons/upgrades/a_thompson_mag_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_mag_thom_50"] = {model = "models/weapons/upgrades/a_thompson_mag_50.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
 		-- ["kk_ins2_suppressor_sec"] = {model = "models/weapons/upgrades/a_suppressor_sec.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/a_thompson_foregrip.mdl", pos = Vector(), angle = Angle(), size = Vector(0.5, 0.5, 0.5), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_thompson.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, material = CustomizableWeaponry_KK.ins2.nodrawMatPath},
 		["kk_ins2_ww2_sling"] = {models = {
 			-- {model = "models/weapons/upgrades/a_sling_thompson.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
@@ -42,30 +42,30 @@ if CLIENT then
 			{model = "models/weapons/upgrades/a_sling_thompson_m1928a1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		}},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["handguard"] = {model = "models/weapons/upgrades/w_thompson_standard.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_mag_thom_20"] = {model = "models/weapons/upgrades/w_thompson_mag_20.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
-		
+
 		["kk_ins2_mag_thom_30"] = {model = "models/weapons/upgrades/w_thompson_mag_30.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_mag_thom_50"] = {model = "models/weapons/upgrades/w_thompson_mag_50.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_vertgrip"] = {model = "models/weapons/upgrades/w_thompson_foregrip.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.ForegripOverridePos = {
 		none = {
 			["A_Optic"] = {pos = Vector(), angle = Angle()},
 		},
-		
+
 		bg_foldsight = {
 			["A_Optic"] = {pos = Vector(0), angle = Angle(0, 0, 90)},
 		}
 	}
-	
+
 	SWEP.ForegripParent = "none"
 	SWEP.ForegripOverride = true
-	
+
 	SWEP.IronsightPos = Vector(-2.2377, -2, 1.0456)
 	SWEP.IronsightAng = Vector(0.1611, 0.0052, 0)
 
@@ -132,10 +132,10 @@ SWEP.Animations = {
 	base_safe_empty_mm_aim = "iron_down_empty_drum",
 	base_crawl = "base_crawl",
 	base_crawl_empty_mm = "base_crawl_empty_drum",
-	
+
 	base_melee = "base_melee",
 	base_melee_empty_mm = "base_melee_empty_drum",
-	
+
 	foregrip_pickup = "foregrip_ready",
 	foregrip_draw = "foregrip_draw",
 	-- foregrip_draw_empty = "foregrip_draw_empty",
@@ -179,7 +179,7 @@ SWEP.Animations = {
 	foregrip_safe_empty_mm_aim = "foregrip_iron_down_empty_drum",
 	foregrip_crawl = "foregrip_crawl",
 	foregrip_crawl_empty_mm = "foregrip_crawl_empty_drum",
-	
+
 	foregrip_melee = "foregrip_melee",
 	foregrip_melee_empty_mm = "foregrip_melee_empty_drum",
 }
@@ -251,23 +251,23 @@ SWEP.ReloadTimes = {
 	base_reload_drum = {4.3, 5.48},
 	base_reloadempty_drum = {5.82, 6.92},
 	base_reload_null = {4, 4.3},
-	
+
 	foregrip_reload = {2.55, 3.33},
 	foregrip_reloadempty = {3.88, 4.76},
 	foregrip_reload_drum = {4.3, 5.48},
 	foregrip_reloadempty_drum = {5.82, 6.92},
-	
+
 	base_melee = {0.2, 0.9},
 	base_melee_empty_drum = {0.2, 0.9},
 	foregrip_melee = {0.2, 0.9},
 	foregrip_melee_empty_drum = {0.2, 0.9},
 }
 
-if CLIENT then 
+if CLIENT then
 	function SWEP:updateStandardParts()
 		self:setElementActive("handguard", !self.ActiveAttachments.kk_ins2_vertgrip)
 		self:setElementActive("kk_ins2_mag_thom_20", !(self.ActiveAttachments.kk_ins2_mag_thom_30 or self.ActiveAttachments.kk_ins2_mag_thom_50))
-		
+
 		-- self.AttachmentModelsVM.modbody.active = self.ActiveAttachments.bg_foldsight
 		self.ForegripParent = self.ActiveAttachments.bg_foldsight and "bg_foldsight" or "none"
 	end
@@ -285,10 +285,10 @@ function SWEP:overrideReloadAnim(prefix, suffix)
 	if !self.ActiveAttachments.kk_ins2_vertgrip and math.random(100) == 82 then
 		return "base_reload_lulz"
 	end
-	
+
 	if self:Clip1() > 0 then
 		return prefix .. "reload" .. suffix
 	end
-	
+
 	return prefix .. "reload_empty" .. suffix
 end

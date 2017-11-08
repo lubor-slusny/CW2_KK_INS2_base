@@ -10,17 +10,17 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "N.36 Frag. Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_no36")
-	
+
 	SWEP.IconLetter = "O"
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_mills.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
@@ -34,13 +34,13 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_frag"
 SWEP.Animations = {
 	pullpin = "pullbackhigh",
 	throw = "throw",
-	
+
 	pull_cook = "pullbackhighbake",
 	throw_cook = "bakethrow",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
 	base_idle = "base_idle",

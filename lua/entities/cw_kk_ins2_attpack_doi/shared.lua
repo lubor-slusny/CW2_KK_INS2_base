@@ -7,7 +7,7 @@ ENT.PackageText = "World War 2"
 ENT.Category = "CW 2.0 Attachments"
 ENT.Author = "Spy"
 ENT.Spawnable = true
-ENT.AdminSpawnable = true 
+ENT.AdminSpawnable = true
 
 ENT.attachments = {
 	"kk_ins2_scope_u8x",

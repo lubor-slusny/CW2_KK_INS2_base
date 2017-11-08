@@ -1,4 +1,4 @@
-	
+
 SWEP.Sounds = {
 	base_ready = {
 		{time = 0, sound = "CW_KK_INS2_UNIVERSAL_PISTOL_DRAW"},
@@ -60,7 +60,7 @@ SWEP.Sounds = {
 	iron_dryfire = {
 		{time = 0, sound = "CW_KK_INS2_M1911_EMPTY"},
 	},
-	
+
 	base_crawl = {
 		{time = 0/35, sound = "CW_KK_INS2_UNIVERSAL_LEFTCRAWL"},
 		{time = 22/35, sound = "CW_KK_INS2_UNIVERSAL_RIGHTCRAWL"},

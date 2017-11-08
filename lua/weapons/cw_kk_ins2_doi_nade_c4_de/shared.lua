@@ -10,19 +10,19 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "HE Charge DE"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_sprengbuchse")
-	
+
 	SWEP.AttachmentModelsVM = {
 		["fx_rag"] = {model = "models/maxofs2d/cube_tool.mdl", pos = Vector(), angle = Angle(0, 90, 0), size = Vector(0.01, 0.01, 0.01), attachment = "tail", bodygroups = {1}, active = true, nodraw = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.ViewModelMovementScale = 0.8
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.HUD_3D2DOffset = Vector(0, 0, 0)
 	SWEP.HUD_3D2DOffsetMenu = Vector(2.5, 2.5, 0)
 	SWEP.CustomizationMenuScale = 0.0055
@@ -35,16 +35,16 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_ww2_c4_de"
 
 SWEP.Animations = {
 	plant = "base_plant",
-	
+
 	pullpin = "base_pullback",
 	throw = "base_throw",
-	
+
 	pull_cook = "secondary_pullback",
 	throw_cook = "secondary_throw",
-	
+
 	pull_short = "low_pullback",
 	throw_short = "low_throw",
-	
+
 	base_pickup = "base_draw",
 	base_idle = "base_idle",
 	base_draw = "base_draw",
@@ -111,14 +111,14 @@ if CLIENT then
 			self.AttachmentModelsVM.fx_rag.ent:StopParticles()
 			-- self.AttachmentModelsVM.fx_rag.ent:StopLoopingSound(self._soundStop)
 			-- self.CW_VM:StopParticles()
-			
+
 			self._pcfStop = nil
-			
+
 			local sound = self.soundLoop
-			
+
 			if sound then
 				timer.Simple(self.spawnTime, function()
-					if sound then 
+					if sound then
 						sound:Stop()
 					end
 				end)
@@ -131,12 +131,12 @@ if CLIENT then
 			-- util.Effect("Sparks", ed)
 		end
 	end
-	
+
 	function SWEP:OnRemove()
 		self.AttachmentModelsVM.fx_rag.ent:StopParticles()
-		
+
 		local sound = self.soundLoop
-		
+
 		if sound then
 			sound:Stop()
 		end

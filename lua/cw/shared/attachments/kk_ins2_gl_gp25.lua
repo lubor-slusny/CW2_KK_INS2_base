@@ -21,9 +21,9 @@ if CLIENT then
 
 	local v0 = Vector(0.01, 0.01, 0.01)
 	local v1 = Vector(1, 1, 1)
-	
+
 	local nadeTypes = CustomizableWeaponry.grenadeTypes.registered
-	
+
 	-- att.AttachmentModelsVM = {
 		-- ["40mm_kk_1337"] = {model = "models/weapons/w_at4_projectile.mdl", bone = "GL_Round", pos = Vector(1.75,0,0), angle = Angle(0, 180, 0), size = Vector(0.85, 0.85, 0.85),
 			-- active = function(self)
@@ -48,16 +48,16 @@ if CLIENT then
 			-- end
 		-- },
 	-- }
-	
+
 	function att:elementRender()
 		att.CW_VM = self.AttachmentModelsVM[att.name].ent
-		
+
 		if self.Grenade40MM > 2 then
 			att.CW_VM:ManipulateBoneScale(att.CW_VM:LookupBone("GL_Round"), v0)
 		else
 			att.CW_VM:ManipulateBoneScale(att.CW_VM:LookupBone("GL_Round"), v1)
 		end
-		
+
 		if self.Grenade40MM == 2 then
 			att.CW_VM:SetSkin(1)
 		else
@@ -71,7 +71,7 @@ if CLIENT then
 		-- CustomizableWeaponry.cmodels:add(ent, self)
 		-- return ent
 	-- end
-	
+
 	-- function att:attachFunc()
 		-- att.CW_VM = self.AttachmentModelsVM[att.name].ent
 	-- end
@@ -80,5 +80,5 @@ end
 function att:detachFunc()
 	self.dt.INS2GLActive = false
 end
-	
+
 CustomizableWeaponry:registerAttachment(att)

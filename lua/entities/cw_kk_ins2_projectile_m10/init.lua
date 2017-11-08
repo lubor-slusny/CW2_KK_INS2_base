@@ -13,7 +13,7 @@ end
 
 function ENT:OnRemove()
 	return false
-end 
+end
 
 local vel, len
 
@@ -27,31 +27,31 @@ function ENT:PhysicsCollide(data, physobj)
 end
 
 function ENT:selfDestruct()
-	if self.ded then 
+	if self.ded then
 		return
 	end
-	
+
 	self.ded = true
-	
-	if self:WaterLevel() == 0 then 
+
+	if self:WaterLevel() == 0 then
 		local smokeScreen = ents.Create("cw_smokescreen_impact")
 		smokeScreen:SetPos(self:GetPos())
 		smokeScreen:Spawn()
-		
+
 		local fx = ents.Create("cw_kk_ins2_particles")
 		fx:processProjectile(self)
 		fx:Spawn()
-		
+
 		if self:WaterLevel() == 0 then
 			fx:Ignite(self.BurnDuration, self.ExplodeRadius)
-		
+
 			-- local bn = ents.Create("cw_kk_ins2_burn")
 			-- bn:processProjectile(self)
 			-- bn:Spawn()
 		end
-		
+
 		self:SetNoDraw(true)
 	end
-	
+
 	SafeRemoveEntityDelayed(self, 30)
 end

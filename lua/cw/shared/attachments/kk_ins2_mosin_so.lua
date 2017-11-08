@@ -23,14 +23,14 @@ att.origWM = "models/weapons/w_mosin.mdl"
 if CLIENT then
 	att.displayIcon = surface.GetTextureID("atts/" .. att.name)
 	att.description = {}
-	
+
 	att.SelectIconOverride = surface.GetTextureID("vgui/inventory/cw_kk_ins2_mosin_so")
 end
 
 function att:attachFunc()
 	self.ViewModel = att.activeVM
 	self.WorldModel = att.activeWM
-	
+
 	if CLIENT then
 		self.CW_VM:SetModel(self.ViewModel)
 		self.AttachmentModelsVM.cw_menu_muzzle._bone = 52
@@ -40,7 +40,7 @@ end
 function att:detachFunc()
 	self.ViewModel = att.origVM
 	self.WorldModel = att.origWM
-	
+
 	if CLIENT then
 		self.CW_VM:SetModel(self.ViewModel)
 		self.AttachmentModelsVM.cw_menu_muzzle._bone = 57

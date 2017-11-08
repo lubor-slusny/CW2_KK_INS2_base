@@ -1,29 +1,29 @@
 
 //-----------------------------------------------------------------------------
-// CW_KK_INS2_NWAA_single broadcasts most recent change of attachment active 
+// CW_KK_INS2_NWAA_single broadcasts most recent change of attachment active
 // state to all clients except weapon owner.
 //-----------------------------------------------------------------------------
 
 if SERVER then
 	util.AddNetworkString("CW_KK_INS2_NWAA_single")
-	
+
 	local function sendMessage(self, k, v)
 		net.Start("CW_KK_INS2_NWAA_single")
 		net.WriteEntity(self)
 		net.WriteString(k)
 		net.WriteBool(v)
-		
+
 		if IsValid(self.Owner) then
 			net.SendOmit(self.Owner)
 		else
 			net.Broadcast()
 		end
 	end
-	
+
 	function SWEP:_KK_INS2_NWAttach(att)
 		sendMessage(self, att.name, true)
 	end
-	
+
 	function SWEP:_KK_INS2_NWDetach(att)
 		sendMessage(self, att.name, false)
 	end
@@ -32,12 +32,12 @@ end
 if CLIENT then
 	local function receive()
 		local wep, k, v = net.ReadEntity(), net.ReadString(), net.ReadBool()
-		
+
 		if IsValid(wep) then
 			wep.ActiveAttachments[k] = v
 		end
 	end
-		
+
 	net.Receive("CW_KK_INS2_NWAA_single", receive)
 end
 
@@ -56,10 +56,10 @@ if CLIENT then
 		if self.AttachmentModelsVM and self.AttachmentModelsVM[k] then
 			self.AttachmentModelsVM[k].active = v
 		end
-		
+
 		if self.AttachmentModelsWM and self.AttachmentModelsWM[k] then
 			self.AttachmentModelsWM[k].active = v
-			
+
 			net.Start("CW_KK_INS2_NWWE_single")
 			net.WriteEntity(self)
 			net.WriteString(k)
@@ -71,13 +71,13 @@ end
 
 local function receive(len, ply)
 	local wep, k, v = net.ReadEntity(), net.ReadString(), net.ReadBool()
-	
+
 	if SERVER then
 		if IsValid(wep) then
 			wep.ActiveWElements = wep.ActiveWElements or {}
 			wep.ActiveWElements[k] = v
 		end
-		
+
 		net.Start("CW_KK_INS2_NWWE_single")
 		net.WriteEntity(wep)
 		net.WriteString(k)
@@ -89,7 +89,7 @@ local function receive(len, ply)
 		end
 	end
 end
-	
+
 net.Receive("CW_KK_INS2_NWWE_single", receive)
 
 //-----------------------------------------------------------------------------
@@ -112,9 +112,9 @@ end
 
 local function receive(len, ply)
 	local wep = net.ReadEntity()
-	
+
 	if IsValid(wep) then
-		if SERVER then		
+		if SERVER then
 			net.Start("CW_KK_INS2_NWAA_full")
 			net.WriteEntity(wep)
 			net.WriteTable(wep.ActiveAttachments)
@@ -124,7 +124,7 @@ local function receive(len, ply)
 		end
 	end
 end
-	
+
 net.Receive("CW_KK_INS2_NWAA_full", receive)
 
 //-----------------------------------------------------------------------------
@@ -145,13 +145,13 @@ end
 
 local function receive(len, ply)
 	local wep = net.ReadEntity()
-	
+
 	if IsValid(wep) then
 		if SERVER then
 			if not wep.ActiveWElements then
 				return
 			end
-			
+
 			net.Start("CW_KK_INS2_NWWE_full")
 			net.WriteEntity(wep)
 			net.WriteTable(wep.ActiveWElements)
@@ -159,7 +159,7 @@ local function receive(len, ply)
 		else
 			if wep.AttachmentModelsWM then
 				local tab = net.ReadTable()
-				for k,v in pairs(tab) do 
+				for k,v in pairs(tab) do
 					if wep.AttachmentModelsWM[k] then
 						wep.AttachmentModelsWM[k].active = v
 					end
@@ -168,5 +168,5 @@ local function receive(len, ply)
 		end
 	end
 end
-	
+
 net.Receive("CW_KK_INS2_NWWE_full", receive)

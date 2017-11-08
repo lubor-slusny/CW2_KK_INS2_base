@@ -13,17 +13,17 @@ if CLIENT then
 	SWEP.PrintName = "G-43"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_g43")
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.ShellDelay = 0.05
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_scope_zf4"] = {model = "models/weapons/upgrades/a_optic_zf4.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["sleeve"] = {model = "models/weapons/upgrades/a_clothwrap_g43.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_g43.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_g43.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_g43.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -31,17 +31,17 @@ if CLIENT then
 
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_scope_zf4"] = {model = "models/weapons/upgrades/w_scope_g43.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["sleeve"] = {model = "models/weapons/upgrades/w_clothwrap_g43.mdl", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.BackupSights = {
 		["kk_ins2_scope_zf4"] = {
 			Vector(-2.4423, -2, 0.8812),
 			Vector(0.0762, 0.0089, 0)
 		},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.4423, -2, 0.8812)
 	SWEP.IronsightAng = Vector(0.0762, 0.0089, 0)
 
@@ -142,7 +142,7 @@ SWEP.FirstDeployTime = 1.9
 SWEP.DeployTime = 1.2
 SWEP.HolsterTime = 0.85
 
-SWEP.RecoilToSpread = 0.8 
+SWEP.RecoilToSpread = 0.8
 
 SWEP.BipodDeployTime = 1.15
 SWEP.BipodUndeployTime = 1.15
@@ -158,7 +158,7 @@ SWEP.MuzzleVelocity = 776
 SWEP.ReloadTimes = {
 	base_reloadfull = {80/32, 3.3},
 	base_reloadempty = {80/31, 5.3},
-	
+
 	base_melee_bash = {0.3, 0.9},
 }
 

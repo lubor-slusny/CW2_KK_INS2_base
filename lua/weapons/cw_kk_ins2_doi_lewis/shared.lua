@@ -11,22 +11,22 @@ SWEP.magType = "arMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "Lewis gun"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_lewis")
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.ShellDelay = 0.1
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = -22}
 	SWEP.ShellWorldAngleAlign = {Forward = 0, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		-- ["ani_body"] = {model = "models/weapons/v_lewis.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_lewis.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.IronsightPos = Vector(-3.3295, -2, 2.1344)
 	SWEP.IronsightAng = Vector(-0.0648, 0.0265, 0)
 
@@ -67,7 +67,7 @@ SWEP.Animations = {
 	base_crawl_empty = "base_crawl_empty",
 	base_melee = "base_melee_bash",
 	base_melee_empty = "base_melee_bash",
-	
+
 	bipod_in = "deployed_in",
 	bipod_in_empty = "deployed_in",
 	bipod_fire = {"deployed_fire_1", "deployed_fire_2"},
@@ -145,9 +145,9 @@ SWEP.MuzzleVelocity = 740
 SWEP.ReloadTimes = {
 	base_reload = {170/34.5, 6.52},
 	base_reloadempty = {158/34.5, 7.42},
-	
+
 	deployed_reload = {170/35.5, 6.34},
 	deployed_reload_empty = {158/35.5, 7.21},
-	
+
 	base_melee_bash = {0.5, 1.7},
 }

@@ -11,40 +11,40 @@ SWEP.magType = "brMag"
 if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "FG-42"
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_fg42")
-	
+
 	SWEP.Shell = "KK_INS2_762x54"
 	SWEP.ShellDelay = 0.12
 	SWEP.ShellViewAngleAlign = {Forward = 0, Right = 0, Up = -20}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/a_iron_fg42_default.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_iron_fg42_down.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_zf4"] = {model = "models/weapons/upgrades/a_optic_fg42.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["knife_fold"] = {model = "models/weapons/upgrades/a_fg42_bayonet_default.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_fg42_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_fg42.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_fg42.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_fg42.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_optic_iron"] = {model = "models/weapons/upgrades/w_fg42_irons.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		-- ["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_iron_fg42_down.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_zf4"] = {model = "models/weapons/upgrades/w_fg42_scope.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["knife_fold"] = {model = "models/weapons/upgrades/w_fg42_bayonet_default.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/w_fg42_bayonet_deployed.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.5787, -4, 0.4627)
 	SWEP.IronsightAng = Vector(0.6831, 0.0034, 9)
-	
+
 	SWEP.IronsightPos = Vector(-2.5787, -4, 0.4627)
 	SWEP.IronsightAng = Vector(0.6845, 0.0387, 9)
 
@@ -99,7 +99,7 @@ SWEP.Animations = {
 	base_melee_empty = "base_melee_bash_empty",
 	base_stab = "base_melee_end",
 	base_stab_empty = "base_melee_end_empty",
-	
+
 	bipod_in = "deployed_in",
 	bipod_in_empty = "deployed_in_empty",
 	bipod_fire = {"deployed_fire_1","deployed_fire_2"},
@@ -188,10 +188,10 @@ SWEP.MuzzleVelocity = 740
 SWEP.ReloadTimes = {
 	base_reload = {118/31.8, 5.3},
 	base_reloadempty = {174/31.8, 7},
-	
+
 	deployed_reload = {112/30, 5.7},
 	deployed_reload_empty = {168/30, 7.5},
-	
+
 	base_melee_bash = {0.3, 1},
 	base_melee_bash_empty = {0.3, 1},
 }
@@ -199,20 +199,20 @@ SWEP.ReloadTimes = {
 if CLIENT then
 	function SWEP:updateStandardParts()
 		-- self.AttachmentModelsVM.slingpin.ent:SetBodygroup(1,self.ActiveAttachments.kk_ins2_ww2_sling and 1 or 0)
-	
+
 		self:setElementActive("knife_fold", !self.ActiveAttachments.kk_ins2_ww2_knife)
 	end
-	
+
 	CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_doi_fg42", "bipod")
-	
+
 	local pos = Vector(0,0,-0.5)
 	local ang = Vector(1,0,0)
-	
+
 	CustomizableWeaponry.callbacks:addNew("adjustViewmodelPosition", "KK_DOI_FG42", function(wep, TargetPos, TargetAng)
 		if wep:GetClass() != "cw_kk_ins2_doi_fg42" then return end
 		if wep.dt.BipodDeployed then
 			if wep:isAiming() then return end
-			
+
 			return TargetPos + pos, TargetAng + ang
 		end
 	end)

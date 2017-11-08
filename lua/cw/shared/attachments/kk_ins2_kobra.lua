@@ -18,18 +18,18 @@ if CLIENT then
 	att.description = {
 		[1] = {t = "Provides a bright reticle to ease aiming.", c = CustomizableWeaponry.textColors.POSITIVE}
 	}
-	
+
 	att.reticleCol = "cwkk/reticles/kobra_dot_col"
 	att.reticleTop = "cwkk/reticles/kobra_dot_top"
 	att._reticleCol = Material(att.reticleCol)
 	att._reticleTop = Material(att.reticleTop)
-	
+
 	att.reticle = att.reticleCol
 	att._reticleSize = 16
-	
+
 	-- att.reticle = "models/weapons/optics/kobra_dot"
 	-- att._reticleSize = 16
-	
+
 	function att:elementRender()
 		-- CustomizableWeaponry_KK.ins2.stencilSight:elementRender(self, att)
 		CustomizableWeaponry_KK.ins2.stencilSight:elementRenderColorable(self, att)

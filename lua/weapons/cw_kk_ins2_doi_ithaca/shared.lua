@@ -11,33 +11,33 @@ if CLIENT then
 	SWEP.PrintName = "Ithaca M37"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_ithaca")
-	
+
 	SWEP.NoShells = true
 	SWEP.Shell = "KK_INS2_12guage"
 	-- SWEP.ShellDelay = 13/30
-	
+
 	SWEP.ShellViewAngleAlign = {Forward = 90, Right = 0, Up = 0}
-	
+
 	SWEP.AttachmentModelsVM = {
 		["knife_fold"] = {model = "models/weapons/upgrades/a_iron_ithaca.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, active = true},
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_ithaca_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		-- ["ani_body"] = {model = "models/weapons/v_ithaca.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 		-- ["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_ithaca.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, rel = "ani_body"},
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_ithaca.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_scope_zf41"] = {model = "models/weapons/upgrades/a_optic_kk_zf41.mdl", rLight = true, pos = Vector(-0.0104, -5.7704, 0.655), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), bone = "Weapon"},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/w_ithaca_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.IronsightPos = Vector(-2.0952, -2.5, 1.2975)
 	SWEP.IronsightAng = Vector(0.2605, -0.0341, 0)
-	
+
 	SWEP.KKINS2ScopeZF41Pos = Vector(-2.028, 4, 0.8911)
 	SWEP.KKINS2ScopeZF41Ang = Vector(0, 0.0208, 0)
 
@@ -148,13 +148,13 @@ SWEP.ReloadTimes = {
 	base_fire_cock_2 = {7/35, 0.7},
 	iron_fire_cock_1 = {7/35, 0.7},
 	iron_fire_cock_2 = {7/35, 0.7},
-	
+
 	base_reload_start = {0.6, 0.6},
 	base_reload_start_empty = {1.9, 2.59, KK_INS2_SHOTGUN_LOAD_FIRST},
 	base_reload_insert = {15/42, 0.88},
 	base_reload_end = {0.66, 0.66},
 	base_reload_end_empty = {0.66, 0.66},
-	
+
 	base_melee_bash = {0.3, 1},
 }
 
@@ -163,5 +163,3 @@ if CLIENT then
 		self:setElementActive("knife_fold", !self.ActiveAttachments.kk_ins2_ww2_knife)
 	end
 end
-
-	

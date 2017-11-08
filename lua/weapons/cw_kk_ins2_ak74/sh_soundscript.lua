@@ -181,7 +181,7 @@ SWEP.Sounds = {
 		{time = 50/31, sound = "CW_KK_INS2_GP30_INSERTGRENADECLICK"},
 		{time = 70/31, sound = "CW_KK_INS2_AK74_RATTLE"},
 	},
-	
+
 	base_crawl = {
 		{time = 16/30, sound = "CW_KK_INS2_UNIVERSAL_LEFTCRAWL"},
 		{time = 37/30, sound = "CW_KK_INS2_UNIVERSAL_RIGHTCRAWL"},

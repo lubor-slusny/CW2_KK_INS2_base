@@ -15,34 +15,34 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "RPK"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.ViewModelMovementScale = 1.15
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_rpk")
-	
+
 	SWEP.Shell = "KK_INS2_762x39"
 	SWEP.ShellDelay = 0.06
-	
+
 	SWEP.AttachmentModelsVM = {
 		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/a_modkit_06.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_counter"] = {model = "models/weapons/stattrack.mdl", bone = "Weapon", pos = Vector(0.33, -3.289, -0.137), angle = Angle(0, -90, 0), size = Vector(1, 1, 1)},
 		["kk_counter_mag"] = {model = "models/weapons/stattrack.mdl", bone = "Magazine", pos = Vector(0.941, -1.086, 0.783), angle = Angle(-31.362, -9.11, -16.441), size = Vector(0.449, 0.449, 0.449)},
 
 		["kk_ins2_pbs1"] = {model = "models/weapons/upgrades/a_suppressor_ak.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/a_laser_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/a_flashlight_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_anpeq15"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_anpeq_band.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 
 		["kk_ins2_magnifier"] = {model = "models/weapons/upgrades/a_optic_aimp2x.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_aimpoint"] = {model = "models/weapons/upgrades/a_optic_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_elcan"] = {model = "models/weapons/upgrades/a_optic_elcan_m.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, retSizeMult = 0.85},
 		["kk_ins2_eotech"] = {model = "models/weapons/upgrades/a_optic_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_kobra"] = {model = "models/weapons/upgrades/a_optic_kobra_l.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, retSizeMult = 1.2},
 		["kk_ins2_po4"] = {model = "models/weapons/upgrades/a_optic_po4x24.mdl", rLight = true, pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-	
+
 		["kk_ins2_cstm_cmore"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_cmore.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_compm4s"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_compm4s.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_microt1"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_microt1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -50,23 +50,23 @@ if CLIENT then
 		["kk_ins2_cstm_barska"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_barska.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_eotechxps"] = {model = "models/weapons/attachments/v_cw_kk_ins2_cstm_eotechxps.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
-	
+
 	SWEP.AttachmentModelsWM = {
 		["kk_ins2_optic_rail"] = {model = "models/weapons/upgrades/w_modkit_6.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_pbs1"] = {model = "models/weapons/upgrades/w_sil_ins1.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_lam"] = {model = "models/weapons/upgrades/w_laser_ins.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_flashlight"] = {model = "models/weapons/upgrades/w_laser_ins.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-	
+
 		["kk_ins2_magnifier"] = {model = "models/weapons/upgrades/w_magaim.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_aimpoint"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_elcan"] = {model = "models/weapons/upgrades/w_elcan.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_eotech"] = {model = "models/weapons/upgrades/w_eotech.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_kobra"] = {model = "models/weapons/upgrades/w_kobra.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_po4"] = {model = "models/weapons/upgrades/w_po.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
-		
+
 		["kk_ins2_cstm_cmore"] = {model = "models/weapons/attachments/w_cw_kk_ins2_cstm_cmore.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_compm4s"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		["kk_ins2_cstm_microt1"] = {model = "models/weapons/upgrades/w_aimpoint.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
@@ -80,7 +80,7 @@ if CLIENT then
 
 	SWEP.KKINS2KobraPos = Vector(-2.3107, -2, -0.5233)
 	SWEP.KKINS2KobraAng = Vector()
-	
+
 	SWEP.KKINS2EoTechPos = Vector(-2.3099, -2, -0.4734)
 	SWEP.KKINS2EoTechAng = Vector()
 
@@ -197,7 +197,7 @@ SWEP.Animations = {
 	base_safe = "base_down",
 	base_safe_aim = "iron_down",
 	base_crawl = "base_crawl",
-	
+
 	bipod_in = "deployed_in",
 	bipod_fire = "deployed_fire",
 	bipod_fire_aim = {"deployed_iron_fire_1","deployed_iron_fire_2"},
@@ -274,14 +274,14 @@ SWEP.MuzzleVelocity = 745
 SWEP.ReloadTimes = {
 	base_reload = {3.4, 4.5},
 	base_reloadempty = {3.4, 6},
-	
+
 	deployed_reload = {116/30, 4.8},
 	deployed_reloadempty = {116/30, 6},
 }
 
 if CLIENT then
 	local att = CustomizableWeaponry.registeredAttachmentsSKey["kk_ins2_rpk_sopmod"]
-	
+
 	CustomizableWeaponry_KK.ins2.welementThink:add("cw_kk_ins2_rpk", function(wep, welement)
 		if wep.ActiveAttachments[att.name] then
 			if welement:GetModel() != att.activeWM then
@@ -292,19 +292,19 @@ if CLIENT then
 				welement:SetModel(att.origWM)
 			end
 		end
-		
+
 		welement:SetSequence(wep.dt.BipodDeployed and 1 or 0)
 	end)
 end
 
 if CLIENT then
 	local pos, ang
-	
+
 	CustomizableWeaponry.callbacks:addNew("adjustViewmodelPosition", "KK_INS2_RPK", function(wep, TargetPos, TargetAng)
 		if wep:GetClass() != "cw_kk_ins2_rpk" then return end
 		if !wep.ActiveAttachments.kk_ins2_rpk_sopmod then return end
 		if !wep:isAiming() then return end
-		
+
 		if wep._currentSecondarySight then
 			pos = wep._currentSecondarySight.aimPos[1]
 			ang = wep._currentSecondarySight.aimPos[2]
@@ -315,14 +315,14 @@ if CLIENT then
 			pos = "IronsightPos"
 			ang = "IronsightAng"
 		end
-		
+
 		return wep[pos .. "_sopmod"], wep[ang .. "_sopmod"]
 	end)
 end
 
 if CLIENT then
 	local counterExists = file.Exists("models/weapons/stattrack.mdl", "GAME")
-	
+
 	function SWEP:updateOtherParts()
 		if CustomizableWeaponry_KK.HOME then
 			local cycle = self.CW_VM:GetCycle()
@@ -334,13 +334,13 @@ if CLIENT then
 			else
 				ammo = self.Owner:GetAmmoCount(self.Primary.Ammo) + clip
 			end
-			
+
 			if self.Sequence:find("reload") and cycle > 0.3 and cycle < 1 then
 				self.AttachmentModelsVM.kk_counter_mag.ent._KKCSGONUM = ammo
 			else
 				self.AttachmentModelsVM.kk_counter_mag.ent._KKCSGONUM = clip
 			end
-			
+
 			self.AttachmentModelsVM.kk_counter_mag.active = counterExists
 		end
 	end

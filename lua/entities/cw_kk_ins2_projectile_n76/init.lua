@@ -11,7 +11,7 @@ ENT.Model = "models/weapons/w_eq_smokegrenade_thrown.mdl"
 local phys, ef
 
 function ENT:Initialize()
-	self:SetModel(self.Model) 
+	self:SetModel(self.Model)
 	self:PhysicsInit(SOLID_VPHYSICS)
 	self:SetMoveType(MOVETYPE_VPHYSICS)
 	self:SetSolid(SOLID_VPHYSICS)
@@ -22,7 +22,7 @@ function ENT:Initialize()
 	if phys and phys:IsValid() then
 		phys:Wake()
 	end
-	
+
 	self:GetPhysicsObject():SetBuoyancyRatio(0)
 end
 
@@ -32,7 +32,7 @@ end
 
 function ENT:OnRemove()
 	return false
-end 
+end
 
 local vel, len, CT
 
@@ -49,29 +49,29 @@ function ENT:Kaboomboom()
 	if self.wentBoomAlready then
 		return
 	end
-	
+
 	self.wentBoomAlready = true
-	
+
 	if self:WaterLevel() == 0 then
 		local hitPos = self:GetPos()
-		
+
 		local smokeScreen = ents.Create("cw_smokescreen_impact")
 		smokeScreen:SetPos(hitPos)
 		smokeScreen:Spawn()
-		
+
 		local fx = ents.Create("cw_kk_ins2_particles")
 		fx:processProjectile(self)
 		fx:Spawn()
-		
+
 		fx:Ignite(self.BurnDuration, self.ExplodeRadius)
-		
+
 		-- local bn = ents.Create("cw_kk_ins2_burn")
 		-- bn:processProjectile(self)
 		-- bn:Spawn()
 	end
-	
+
 	self:SetNoDraw(true)
-	
+
 	SafeRemoveEntityDelayed(self, 30)
 end
 

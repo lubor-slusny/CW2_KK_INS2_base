@@ -8,20 +8,20 @@ if CLIENT then
 	SWEP.DrawCrosshair = false
 	SWEP.PrintName = "RDG-1 Smoke Grenade"
 	SWEP.CSMuzzleFlashes = true
-	
+
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_nam_rdg1")
-	
+
 	SWEP.AttachmentModelsVM = {}
 	SWEP.AttachmentModelsWM = {}
-	
+
 	SWEP.MoveType = 2
 	SWEP.DisableSprintViewSimulation = true
-	
+
 	SWEP.HUD_3D2DOffset = Vector(0, 0, 0)
 	SWEP.CustomizationMenuScale = 0.006
-	
+
 	SWEP.ViewModelMovementScale = 0.8
-	
+
 	SWEP.HUD_3D2DBone = 54
 end
 
@@ -33,10 +33,10 @@ SWEP.projectileClass = "cw_kk_ins2_projectile_m18"
 SWEP.Animations = {
 	pull_cook = "pullbackhigh",
 	throw_cook = "throw",
-	
+
 	pull_short = "pullbacklow",
 	throw_short = "lowthrow",
-	
+
 	base_idle = "base_idle",
 	base_draw = "base_draw",
 	base_holster = "base_holster",
