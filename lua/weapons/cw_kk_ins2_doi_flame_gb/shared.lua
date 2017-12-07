@@ -6,8 +6,6 @@ AddCSLuaFile("sh_soundscript.lua")
 include("sh_sounds.lua")
 include("sh_soundscript.lua")
 
-if not CustomizableWeaponry_KK.HOME then return end
-
 SWEP.magType = "NONE"
 
 if CLIENT then
