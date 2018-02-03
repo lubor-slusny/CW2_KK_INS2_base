@@ -142,7 +142,7 @@ function CustomizableWeaponry_KK.ins2.stencilSight:elementRender(wep, att)
 		cam.IgnoreZ(false)
 	end
 
-	if wep:isNearWall() or wep:IsOwnerCrawling() then
+	if wep:isNearWall() or (wep.IsOwnerCrawling and wep:IsOwnerCrawling()) then
 		nearWallOutTime = CurTime() + 0.3
 	elseif not nearWallOutTime then
 		nearWallOutTime = CurTime()
