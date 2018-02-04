@@ -22,10 +22,13 @@ if CLIENT then
 
 	SWEP.AttachmentModelsVM = {
 		-- ["mk0"] = {model = "models/weapons/v_owen.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true},
-		["mk2"] = {model = "models/weapons/v_owen_mk2.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
+		-- ["mk2"] = {model = "models/weapons/v_owen_mk2.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true, hideVM = true, active = true},
 
-		-- ["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_enfield_bayonet.mdl", pos = Vector(-2.2399, 41.1901, 0), angle = Angle(0, -90, 0), size = Vector(1, 1, 1), merge = true},
+		-- ["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_enfield_bayonet.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 		-- ["kk_ins2_ww2_knife_fat"] = {model = "models/weapons/upgrades/a_enfield_bayonet_spike.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
+
+		["kk_ins2_ww2_knife"] = {model = "models/weapons/upgrades/a_enfield_bayonet.mdl", pos = Vector(-33.1778, -2.5579, 2.3027), angle = Angle(), size = Vector(1, 1, 1), attachment = "muzzle"},
+		["kk_ins2_ww2_knife_fat"] = {model = "models/weapons/upgrades/a_enfield_bayonet_spike.mdl", pos = Vector(-3.4993, -0.0013, -1.0586), angle = Angle(), size = Vector(1, 1, 1), attachment = "muzzle"},
 
 		["kk_ins2_ww2_sling"] = {model = "models/weapons/upgrades/a_sling_owen.mdl", pos = Vector(), angle = Angle(), size = Vector(1, 1, 1), merge = true},
 	}
@@ -44,6 +47,7 @@ SWEP.MuzzleEffect = "muzzleflash_sten_1p"
 SWEP.MuzzleEffectWorld = "muzzleflash_sten_3p"
 
 SWEP.Attachments = {
+	{header = "Barrel", offset = {-200, -200}, atts = {"kk_ins2_ww2_knife", "kk_ins2_ww2_knife_fat"}},
 	{header = "Stock", offset = {800, -200}, atts = {"kk_ins2_ww2_sling"}},
 	["+reload"] = {header = "Ammo", offset = {800, 300}, atts = {"am_magnum", "am_matchgrade"}}
 }
@@ -78,6 +82,8 @@ SWEP.Animations = {
 	base_crawl_empty = "base_crawl_empty",
 	base_melee = "base_melee_bash",
 	base_melee_empty = "base_melee_bash_empty",
+	base_stab = "base_melee_end",
+	base_stab_empty = "base_melee_end_empty",
 }
 
 SWEP.SpeedDec = 15
@@ -97,7 +103,8 @@ SWEP.Instructions	= ""
 
 SWEP.ViewModelFOV	= 70
 SWEP.ViewModelFlip	= false
-SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_owen.mdl"
+-- SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_owen.mdl"
+SWEP.ViewModel		= "models/weapons/cw_kk_doi_c054/v_owen_mk2.mdl"
 SWEP.WorldModel		= "models/weapons/w_owen.mdl"
 
 SWEP.WMPos = Vector(10, 1, -2.5)
