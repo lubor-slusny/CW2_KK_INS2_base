@@ -19,29 +19,52 @@ if CLIENT then
 	}
 
 	local rgb = {"r","g","b","a"}
-	local mode, laserAtt, lightAtt
 
 	function att:elementRender()
 		if not self.ActiveAttachments[att.name] then return end
 
-		-- mode = self.dt.INS2LAMMode
-		mode = self:GetNWInt("INS2LAMMode")
+		local laserAtts, lightAtts = {}, {}
+		local mode = self:GetNWInt("INS2LAMMode")
+		local element = self.AttachmentModelsVM[att.name]
 
-		if self.AttachmentModelsVM[att.name] then
-			laserAtt = self.AttachmentModelsVM[att.name].ent:GetAttachment(1)
-			lightAtt = self.AttachmentModelsVM[att.name].ent:GetAttachment(2)
+		if element then
+			if IsValid(element.ent) then
+				table.insert(laserAtts, element.ent:GetAttachment(element.laserAtt or 1))
+				table.insert(lightAtts, element.ent:GetAttachment(element.lightAtt or 2))
+			end
+
+			if element.models then
+				for _,element in pairs(element.models) do
+					if IsValid(element.ent) then
+						table.insert(laserAtts, element.ent:GetAttachment(element.laserAtt or 1) or nil)
+						table.insert(lightAtts, element.ent:GetAttachment(element.lightAtt or 2) or nil)
+					end
+				end
+			end
 		else
-			laserAtt = self.AttachmentModelsVM["kk_ins2_lam"].ent:GetAttachment(1)
-			lightAtt = self.AttachmentModelsVM["kk_ins2_flashlight"].ent:GetAttachment(1)
+			element = self.AttachmentModelsVM["kk_ins2_lam"]
+			if element != nil and IsValid(element.ent) then
+				table.insert(laserAtts, element.ent:GetAttachment(element.laserAtt or 1))
+			end
+
+			element = self.AttachmentModelsVM["kk_ins2_flashlight"]
+			if element != nil and IsValid(element.ent) then
+				table.insert(lightAtts, element.ent:GetAttachment(element.lightAtt or 1))
+			end
 		end
 
 		if (mode % 2) == 1 then
-			CustomizableWeaponry.registeredAttachmentsSKey["kk_ins2_lam"]._elementRender(self, laserAtt)
+			for _,laserAtt in pairs(laserAtts) do
+				self.lastLaserPos = nil // TODO: fix/forget/w/e
+				CustomizableWeaponry.registeredAttachmentsSKey["kk_ins2_lam"]._elementRender(self, laserAtt)
+			end
 		else
 			self.lastLaserPos = nil
 		end
 
-		CustomizableWeaponry_KK.ins2.flashlight.v6.elementRender(self, lightAtt)
+		for _,lightAtt in pairs(lightAtts) do
+			CustomizableWeaponry_KK.ins2.flashlight.v6.elementRender(self, lightAtt)
+		end
 	end
 
 	// for V6 LEM, true - ON, false - OFF
@@ -74,3 +97,6 @@ function att:detachFunc()
 end
 
 CustomizableWeaponry:registerAttachment(att)
+
+-- table.insert({}, nil)
+-- print("penis")
