@@ -108,20 +108,33 @@ if CLIENT then
 	function att:elementRender()
 		if not self.ActiveAttachments[att.name] then return end
 
-		-- if (self.dt.INS2LAMMode % 2) == 1 then
+		-- if (self.dt.INS2LAMMode % 2) == 1 then // TODO: forget
 		if (self:GetNWInt("INS2LAMMode") % 2) == 1 then
-			local model, beamAtt
+			local beamAtts = {}
+			local element = self.AttachmentModelsVM[att.name]
 
-			if self.AttachmentModelsVM[att.name] then
-				model = self.AttachmentModelsVM[att.name].ent
-				beamAtt = model:GetAttachment(1)
-				if beamAtt == nil then
-					model = self.CW_VM
-					beamAtt = model:GetAttachment(1)
+			if element and IsValid(element.ent) then
+				local attId = element.laserAtt or 1
+				table.insert(beamAtts, element.ent:GetAttachment(1))
+			end
+
+			if element and element.models then
+				for _,subElement in pairs(element.models) do
+					if IsValid(subElement.ent) then
+						local attId = subElement.laserAtt or 1
+						table.insert(beamAtts, subElement.ent:GetAttachment(attId))
+					end
 				end
 			end
 
-			att._elementRender(self, beamAtt)
+			if table.Count(beamAtts) < 1 then
+				table.insert(beamAtts, self.CW_VM:GetAttachment(1))
+			end
+
+			for _,beamAtt in pairs(beamAtts) do
+				self.lastLaserPos = nil // TODO: fix?
+				att._elementRender(self, beamAtt)
+			end
 		else
 			self.lastLaserPos = nil
 		end
@@ -133,7 +146,6 @@ if CLIENT then
 end
 
 function att:attachFunc()
-	-- self.dt.INS2LAMMode = 0
 	self:SetNWInt("INS2LAMMode", 0)
 end
 

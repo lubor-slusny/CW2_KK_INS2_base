@@ -1,7 +1,7 @@
 local att = {}
-att.name = "kk_ins2_m6x"
-att.displayName = "M6X Tactical Laser Illuminator"
-att.displayNameShort = "M6X"
+att.name = "kk_ins2_fl_kombo"
+att.displayName = "Flashlight + Laser Combo"
+att.displayNameShort = "LAM+LEM"
 
 att.statModifiers = {
 	VelocitySensitivityMult = -0.2,

@@ -26,11 +26,11 @@
 		CustomizableWeaponry.textColors.NEGATIVE,
 
 		function(weapon, attachmentData)
-			weapon.WeaponLength = weapon.WeaponLength + attachmentData.WeaponLength
+			weapon.WeaponLength = (weapon.WeaponLength or 0) + attachmentData.WeaponLength
 		end,
 
 		function(weapon, attachmentData)
-			weapon.WeaponLength = weapon.WeaponLength - attachmentData.WeaponLength
+			weapon.WeaponLength = (weapon.WeaponLength or 0) - attachmentData.WeaponLength
 		end,
 
 		function(attachmentData, value, varData)

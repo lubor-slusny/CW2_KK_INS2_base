@@ -8,6 +8,7 @@ CustomizableWeaponry_KK.ins2.flashlight.__index = CustomizableWeaponry_KK.ins2.f
 CustomizableWeaponry_KK.ins2.flashlight.atts = {
 	["kk_ins2_anpeq15"] = 2,
 	["kk_ins2_m6x"] = 2,
+	["kk_ins2_fl_kombo"] = 3,
 	["kk_ins2_flashlight"] = 1,
 	["kk_ins2_lam"] = 1,
 }

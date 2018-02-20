@@ -655,13 +655,32 @@ td.mins = mins
 td.maxs = maxs
 
 function SWEP:isNearWall()
+	if not self.NearWallEnabled then
+		-- return false
+	end
+
 	td.start = self.Owner:GetShootPos()
 	td.endpos = td.start + self.Owner:EyeAngles():Forward() * (self.WeaponLength + 10)
 	td.filter = self.Owner
 
 	local tr = util.TraceLine(td)
+	local ent = tr.Entity
 
-	if tr.Hit or (IsValid(tr.Entity) and not tr.Entity:IsPlayer()) then
+	if tr.Hit then
+		if IsValid(ent) then
+			if ent:IsPlayer() then
+				return false
+			end
+
+			if ent:IsNPC() then
+				return false
+			end
+
+			if ent:GetOwner() == self.Owner then
+				return false
+			end
+		end
+
 		return true, tr
 	end
 
