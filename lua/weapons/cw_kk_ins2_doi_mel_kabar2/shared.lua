@@ -18,7 +18,7 @@ end
 SWEP.Animations = {
 	base_pickup = "draw",
 	base_draw = "draw",
-	base_fire = {"slash_1","slash_2"},
+	base_fire = {"hitcenter1", "hitcenter2"},
 	base_idle = "idle",
 	base_holster = "holster",
 	base_sprint = "sprint",
@@ -38,7 +38,8 @@ SWEP.Instructions	= ""
 
 SWEP.ViewModelFOV	= 70
 SWEP.ViewModelFlip	= false
-SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_marinebayonet.mdl"
+-- SWEP.ViewModel		= "models/weapons/cw_kk_doi/v_marinebayonet.mdl"
+SWEP.ViewModel		= "models/weapons/cw_kk_doi_c054/v_gravityknife.mdl"
 SWEP.WorldModel		= "models/weapons/w_gravityknife.mdl"
 
 SWEP.WMPos = Vector(3.812, 1.544, -2.83)
@@ -57,6 +58,10 @@ SWEP.AttackSound = "CW_KK_INS2_DOI_KNIFE"
 SWEP.HitFleshSound = "CW_KK_INS2_DOI_KNIFE_HITPLY"
 SWEP.HitWorldSound = "CW_KK_INS2_DOI_KNIFE_HITWORLD"
 
+CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_GRAVITY_ARMMOVEMENT", "weapons/gravityknife/handling/armmovement.wav")
+CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_GRAVITY_BLADEDEPLOY", "weapons/gravityknife/handling/bladedeploy.wav")
+CustomizableWeaponry:addRegularSound("CW_KK_INS2_DOI_GRAVITY_BLADERETRACT", "weapons/gravityknife/handling/bladeretract.wav")
+
 SWEP.Sounds = {
 	-- hitcenter1 = {
 		-- // { event 1338 7 ""},
@@ -67,11 +72,13 @@ SWEP.Sounds = {
 	-- },
 
 	draw = {
-		{time = 0/34, sound = "CW_KK_INS2_DOI_BAYONET_DRAW"},
+		{time = 0/34, sound = "CW_KK_INS2_DOI_GRAVITY_ARMMOVEMENT"},
+		{time = 15/34, sound = "CW_KK_INS2_DOI_GRAVITY_BLADEDEPLOY"},
+		{time = 18/34, sound = "CW_KK_INS2_DOI_GRAVITY_ARMMOVEMENT"},
 	},
 
 	holster = {
-		{time = 10/32, sound = "CW_KK_INS2_DOI_BAYONET_HOLSTER"},
+		{time = 14/32, sound = "CW_KK_INS2_DOI_GRAVITY_BLADERETRACT"},
 	},
 
 	crawl = {

@@ -96,20 +96,30 @@ SWEP.HolsterTime = 0.5
 SWEP.SpeedDec = 0
 SWEP.WeaponLength = 40
 
+SWEP.canCook = true			// enable cooking
+SWEP.mustCook = false		// cooking only (overrides SWEP.canCook)
+SWEP.canPlant = false		// can stick to "wall" when "near-wall"
+SWEP.mustPlant = false		// ^^ only
+SWEP.canShort = false		// enable low/short throws
+
 SWEP.fuseTime = 3			// grenade fuse time
 
 SWEP.timeToThrow = 0.8		// minimal allowed length of pinpull animation
+SWEP.maxVelDelay = 1.35		// delay between start of pinpull animation and full throw velocity being available (full length of pinpull animation)
 SWEP.spawnTime = 0.2		// delay between start of throw animation and creation of grenade ent
 SWEP.swapTime = 0.7			// minimal allowed length of throw animation
 
 SWEP.spoonTime = 23/30		// delay between start of pinpull_cook animation and start of fuse timer
 SWEP.timeToThrowCook = 0.8	// minimal allowed length of pinpull_cook animation
+SWEP.maxVelDelayCook = 1.7	// delay between start of pinpull_cook animation and full throw velocity being available (full length of pinpull_cook animation)
 SWEP.spawnTimeCook = 0.2	// delay between start of throw_cook animation and creation of grenade ent
 SWEP.swapTimeCook = 0.7		// minimal allowed length of throw_cook animation
 
-SWEP.canCook = true			// enable cooking
-SWEP.mustCook = false		// cooking only (overrides SWEP.canCook)
-SWEP.canPlant = false		// can stick to "wall" when "near-wall"
+SWEP.spoonTimeShort = 23/30		// delay between start of pinpull_short animation and start of fuse timer - for on mustCook sweps
+SWEP.timeToThrowShort = 0.8		// minimal allowed length of pinpull_short animation
+SWEP.maxVelDelayShort = 1.35	// delay between start of pinpull_short animation and full throw velocity being available (full length of pinpull_short animation)
+SWEP.spawnTimeShort = 0.2		// delay between start of throw_short animation and creation of grenade ent
+SWEP.swapTimeShort = 0.7		// minimal allowed length of throw_short animation
 
 SWEP.spoonTimePlant = 1		// delay between start of plant animation and start of fuse timer
 SWEP.spawnTimePlant = 1.17	// delay between start of plant animation and creation of grenade ent
@@ -117,15 +127,6 @@ SWEP.swapTimePlant = 1.7	// minimal allowed length of plant animation
 
 SWEP.PlantPos = Vector()	// position offset for planted entities (tr.HitPos-relative)
 SWEP.PlantAng = Angle()		// angle tweak for planted entities
-
-SWEP.maxVelDelay = 1.35		// delay between start of pinpull animation and full throw velocity being available (full length of pinpull animation)
-SWEP.maxVelDelayCook = 1.7	// delay between start of pinpull_cook animation and full throw velocity being available (full length of pinpull_cook animation)
-
-SWEP.spoonTimeShort = 23/30		// delay between start of pinpull_short animation and start of fuse timer - for on mustCook sweps
-SWEP.timeToThrowShort = 0.8		// minimal allowed length of pinpull_short animation
-SWEP.spawnTimeShort = 0.2		// delay between start of throw_short animation and creation of grenade ent
-SWEP.swapTimeShort = 0.7		// minimal allowed length of throw_short animation
-SWEP.maxVelDelayShort = 1.35	// delay between start of pinpull_short animation and full throw velocity being available (full length of pinpull_short animation)
 
 SWEP.spawnOffsetShort = Vector(0, -5, 0)
 
@@ -499,6 +500,7 @@ function SWEP:_attack(key)
 	CT = CurTime()
 
 	local nw, tr = self:isNearWall()
+	local goShort = self.canShort and self.Owner:KeyDown(IN_USE)
 	self.plantTime = nil
 	self._doingShortThrow = false
 
@@ -516,8 +518,10 @@ function SWEP:_attack(key)
 
 		self:SetNextPrimaryFire(self._curSwapTime)
 		self:SetNextSecondaryFire(self._curSwapTime)
+	elseif self.mustPlant then
+		return
 	elseif self.mustCook or (self.canCook and key == self:getControlls()) then 	// if wep allows it and pressed key is cooking key then cook
-		if self.mustCook and self.Owner:KeyDown(IN_USE) then	// either both keys cook - then accept short mod
+		if self.mustCook and goShort then	// either both keys cook - then accept short mod
 			self:sendWeaponAnim("pull_short")
 			self._curThrowAnim = "throw_short"
 			self._doingShortThrow = true
@@ -530,7 +534,7 @@ function SWEP:_attack(key)
 
 			self._maxVelocityTime = CT + self.maxVelDelayShort
 		else													// otherwise u shud have used the other key
-			if self.Owner:KeyDown(IN_USE) then
+			if goShort then
 				return
 			end
 
@@ -546,7 +550,7 @@ function SWEP:_attack(key)
 			self._maxVelocityTime = CT + self.maxVelDelayCook
 		end
 	else													// else hold your spoon
-		if self.Owner:KeyDown(IN_USE) then
+		if goShort then
 			self:sendWeaponAnim("pull_short")
 			self._curThrowAnim = "throw_short"
 			self._doingShortThrow = true

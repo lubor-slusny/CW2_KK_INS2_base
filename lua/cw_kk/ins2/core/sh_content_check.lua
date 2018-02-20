@@ -117,7 +117,7 @@ local function init()
 		end,
 
 		["cw_kk_ins2_arse"] = function()
-			return (baseGameContentOK and arseModContentOK and CWKK.HOME)
+			return (baseGameContentOK and arseModContentOK and CustomizableWeaponry_KK.HOME)
 		end,
 
 		// shortcuts

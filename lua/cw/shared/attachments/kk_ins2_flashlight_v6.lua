@@ -22,23 +22,46 @@ if CLIENT then
 	function att:elementRender()
 		if not self.ActiveAttachments[att.name] then return end
 
-		beamAtt = nil
+		beamAtts = {}
+		-- beamAtt = nil
 
 		if self.KK_INS2_FL_SRC_OVERRIDE then
-			beamAtt = self:KK_INS2_FL_SRC_OVERRIDE()
+			table.insert(beamAtts, self:KK_INS2_FL_SRC_OVERRIDE())
+			-- beamAtt = self:KK_INS2_FL_SRC_OVERRIDE()
 		end
 
-		if beamAtt == nil and self.AttachmentModelsVM[att.name] then
-			model = self.AttachmentModelsVM[att.name].ent
-			beamAtt = model:GetAttachment(1)
+		-- if beamAtt == nil and self.AttachmentModelsVM[att.name] then
+			-- model = self.AttachmentModelsVM[att.name].ent
+			-- beamAtt = model:GetAttachment(1)
+		-- end
+
+		-- if beamAtt == nil then
+			-- model = self.CW_VM
+			-- beamAtt = model:GetAttachment(1)
+		-- end
+
+		local element = self.AttachmentModelsVM[att.name]
+
+		if element and IsValid(element.ent) then
+			table.insert(beamAtts, element.ent:GetAttachment(1))
 		end
 
-		if beamAtt == nil then
-			model = self.CW_VM
-			beamAtt = model:GetAttachment(1)
+		if element and element.models then
+			for _,subElement in pairs(element.models) do
+				if IsValid(subElement.ent) then
+					table.insert(beamAtts, subElement.ent:GetAttachment(1))
+				end
+			end
 		end
 
-		CustomizableWeaponry_KK.ins2.flashlight.v6.elementRender(self, beamAtt)
+		if table.Count(beamAtts) < 1 then
+			table.insert(beamAtts, self.CW_VM:GetAttachment(1))
+		end
+
+		-- CustomizableWeaponry_KK.ins2.flashlight.v6.elementRender(self, beamAtt)
+		for _,beamAtt in pairs(beamAtts) do
+			CustomizableWeaponry_KK.ins2.flashlight.v6.elementRender(self, beamAtt)
+		end
 	end
 
 	// for V6 LEM, true - ON, false - OFF

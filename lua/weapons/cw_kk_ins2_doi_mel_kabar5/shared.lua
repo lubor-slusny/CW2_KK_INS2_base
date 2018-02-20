@@ -7,7 +7,7 @@ if CLIENT then
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_hatchet")
 
 	SWEP.AttachmentModelsVM = {
-		["ani_body"] = {model = "models/weapons/v_cw_kk_doi_hatchet_redux.mdl", pos = Vector(0, 0, 1), angle = Angle(0, -70, 0), size = Vector(1, 1, 1), bone = "Weapon", hideVM = true, active = true},
+		-- ["ani_body"] = {model = "models/weapons/v_cw_kk_doi_hatchet_redux.mdl", pos = Vector(0, 0, 1), angle = Angle(0, -70, 0), size = Vector(1, 1, 1), bone = "Weapon", hideVM = true, active = true},
 	}
 
 	SWEP.HUD_3D2DBone = 39
@@ -16,7 +16,7 @@ end
 SWEP.Animations = {
 	base_pickup = "base_draw",
 	base_draw = "base_draw",
-	base_fire = {"base_attack_1", "base_attack_2", "base_attack_3", "base_attack_kill"},
+	base_fire = {"base_swing_1", "base_swing_2"},
 	base_idle = "base_idle",
 	base_holster = "base_holster",
 	base_sprint = "base_sprint",
@@ -36,7 +36,8 @@ SWEP.Instructions	= ""
 
 SWEP.ViewModelFOV	= 70
 SWEP.ViewModelFlip	= false
-SWEP.ViewModel		= "models/weapons/kk_doi/v_etool_brit.mdl"
+-- SWEP.ViewModel		= "models/weapons/kk_doi/v_etool_brit.mdl"
+SWEP.ViewModel		= "models/weapons/cw_kk_doi_c054/v_hatchet.mdl"
 SWEP.WorldModel		= "models/weapons/w_hatchet.mdl"
 
 SWEP.WMPos = Vector(5, 1.544, -9.83)
@@ -74,10 +75,10 @@ SWEP.Sounds = {
 		-- // { event 1338 14 ""},
 	-- },
 
-	base_attack_kill = {
-		{time = 7/30, sound = "CW_KK_INS2_DOI_MELEE"},
-		{time = 38/30, sound = "CW_KK_INS2_DOI_MELEE"},
-	},
+	-- base_attack_kill = {
+		-- {time = 7/30, sound = "CW_KK_INS2_DOI_MELEE"},
+		-- {time = 38/30, sound = "CW_KK_INS2_DOI_MELEE"},
+	-- },
 
 	base_draw = {
 		{time = 0/31, sound = "CW_KK_INS2_UNIVERSAL_DRAW"},
