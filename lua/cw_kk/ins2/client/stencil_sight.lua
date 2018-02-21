@@ -104,11 +104,10 @@ function CustomizableWeaponry_KK.ins2.stencilSight:elementRender(wep, att)
 
 	for _,element in pairs(elements) do
 		attachmEnt = element.ent
-		retAtt = attachmEnt:GetAttachment(1)
+		retAtt = attachmEnt:GetAttachment(element.reticleAtt or 1)
 
 		if not retAtt then
-			self:_SpamErrors(wep, att)
-			return
+			continue
 		end
 
 		retSize = att._reticleSize * (element.retSizeMult or 1)
@@ -205,11 +204,10 @@ function CustomizableWeaponry_KK.ins2.stencilSight:elementRenderColorable(wep, a
 
 	for _,element in pairs(elements) do
 		attachmEnt = element.ent
-		retAtt = attachmEnt:GetAttachment(1)
+		retAtt = attachmEnt:GetAttachment(element.reticleAtt or 1)
 
 		if not retAtt then
-			self:_SpamErrors(wep, att)
-			return
+			continue
 		end
 
 		retSize = att._reticleSize * (element.retSizeMult or 1)
