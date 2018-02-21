@@ -15,8 +15,10 @@ local strNoDraw = "models/weapons/attachments/cw_kk_ins2_shared/nodraw"
 CustomizableWeaponry_KK.ins2.stencilSight.lenses[strStencil] = true
 CustomizableWeaponry_KK.ins2.stencilSight.lenses[strNoDraw] = false
 
-function CustomizableWeaponry_KK.ins2.stencilSight:_drawStencilEnt(wep, att)
-	local v = wep.AttachmentModelsVM[att.name]
+function CustomizableWeaponry_KK.ins2.stencilSight:_drawStencilEnt(wep, v)
+	if not v then
+		return
+	end
 
 	if not v.stencilEnt then
 		v.stencilEnt = wep:createManagedCModel(v.ent:GetModel(), RENDERGROUP_BOTH)
@@ -97,81 +99,86 @@ function CustomizableWeaponry_KK.ins2.stencilSight:elementRender(wep, att)
 
 	if wep.ActiveAttachments.kk_ins2_magnifier then return end
 
-	attachmEnt = wep.AttachmentModelsVM[att.name].ent
-	retAtt = attachmEnt:GetAttachment(1)
+	local element = wep.AttachmentModelsVM[att.name]
+	local elements = element.models or {element}
 
-	if not retAtt then
-		self:_SpamErrors(wep, att)
-		return
-	end
+	for _,element in pairs(elements) do
+		attachmEnt = element.ent
+		retAtt = attachmEnt:GetAttachment(element.reticleAtt or 1)
 
-	retSize = att._reticleSize * (wep.AttachmentModelsVM[att.name].retSizeMult or 1)
-
-	render.ClearStencil()
-	render.SetStencilEnable(true)
-	render.SetStencilWriteMask(1)
-	render.SetStencilTestMask(1)
-	render.SetStencilReferenceValue(1)
-	render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_ALWAYS)
-	render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
-	render.SetStencilFailOperation(STENCILOPERATION_KEEP)
-	render.SetStencilZFailOperation(STENCILOPERATION_KEEP)
-
-	self:_drawStencilEnt(wep, att)
-
-	render.SetStencilWriteMask(2)
-	render.SetStencilTestMask(2)
-	render.SetStencilReferenceValue(2)
-	render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_EQUAL)
-	render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
-	render.SetStencilWriteMask(1)
-	render.SetStencilTestMask(1)
-	render.SetStencilReferenceValue(1)
-
-	retDist = (retAtt.Pos:Distance(EyePos())) * 50
-	retPos = retAtt.Pos + retAtt.Ang:Forward() * retDist
-
-	render.SetMaterial(iMatDot)
-
-	if cvFreeze:GetInt() == 1 then
-		cam.IgnoreZ(true)
-			render.DrawSprite(retPos, retSize/2, retSize/2, colBlue)
-			render.DrawSprite(retPos, retSize/2, retSize/2, colBlue)
-			render.DrawSprite(retPos, retSize/6, retSize/6, colWhite)
-			render.DrawSprite(retPos, retSize/6, retSize/6, colWhite)
-		cam.IgnoreZ(false)
-	end
-
-	if wep:isNearWall() or (wep.IsOwnerCrawling and wep:IsOwnerCrawling()) then
-		nearWallOutTime = CurTime() + 0.3
-	elseif not nearWallOutTime then
-		nearWallOutTime = CurTime()
-	end
-
-	if (cvAnimated:GetInt() != 1 or cvFreeze:GetInt() == 1) or (!wep:isAiming() and wep.dt.BipodDeployed) then
-		if wep:isReticleActive() and nearWallOutTime < CurTime() then //
-			EA = wep:getReticleAngles()
-			retPos = EyePos() + EA:Forward() * retDist
+		if not retAtt then
+			continue
 		end
+
+		retSize = att._reticleSize * (element.retSizeMult or 1)
+
+		render.ClearStencil()
+		render.SetStencilEnable(true)
+		render.SetStencilWriteMask(1)
+		render.SetStencilTestMask(1)
+		render.SetStencilReferenceValue(1)
+		render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_ALWAYS)
+		render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
+		render.SetStencilFailOperation(STENCILOPERATION_KEEP)
+		render.SetStencilZFailOperation(STENCILOPERATION_KEEP)
+
+		self:_drawStencilEnt(wep, element)
+
+		render.SetStencilWriteMask(2)
+		render.SetStencilTestMask(2)
+		render.SetStencilReferenceValue(2)
+		render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_EQUAL)
+		render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
+		render.SetStencilWriteMask(1)
+		render.SetStencilTestMask(1)
+		render.SetStencilReferenceValue(1)
+
+		retDist = (retAtt.Pos:Distance(EyePos())) * 50
+		retPos = retAtt.Pos + retAtt.Ang:Forward() * retDist
+
+		render.SetMaterial(iMatDot)
+
+		if cvFreeze:GetInt() == 1 then
+			cam.IgnoreZ(true)
+				render.DrawSprite(retPos, retSize/2, retSize/2, colBlue)
+				render.DrawSprite(retPos, retSize/2, retSize/2, colBlue)
+				render.DrawSprite(retPos, retSize/6, retSize/6, colWhite)
+				render.DrawSprite(retPos, retSize/6, retSize/6, colWhite)
+			cam.IgnoreZ(false)
+		end
+
+		if wep:isNearWall() or (wep.IsOwnerCrawling and wep:IsOwnerCrawling()) then
+			nearWallOutTime = CurTime() + 0.3
+		elseif not nearWallOutTime then
+			nearWallOutTime = CurTime()
+		end
+
+		if (cvAnimated:GetInt() != 1 or cvFreeze:GetInt() == 1) or (!wep:isAiming() and wep.dt.BipodDeployed) then
+			if wep:isReticleActive() and nearWallOutTime < CurTime() then //
+				EA = wep:getReticleAngles()
+				retPos = EyePos() + EA:Forward() * retDist
+			end
+		end
+
+		retNorm = retAtt.Ang:Forward()
+		retAng = 90 + retAtt.Ang.z
+
+		render.SetMaterial(att._reticle)
+
+		cam.IgnoreZ(true)
+			render.CullMode(MATERIAL_CULLMODE_CW)
+				render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colWhite, retAng)
+				render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colWhiteTr, retAng)
+			render.CullMode(MATERIAL_CULLMODE_CCW)
+		cam.IgnoreZ(false)
+
+		render.SetStencilEnable(false)
 	end
-
-	retNorm = retAtt.Ang:Forward()
-	retAng = 90 + retAtt.Ang.z
-
-	render.SetMaterial(att._reticle)
-
-	cam.IgnoreZ(true)
-		render.CullMode(MATERIAL_CULLMODE_CW)
-			render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colWhite, retAng)
-			render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colWhiteTr, retAng)
-		render.CullMode(MATERIAL_CULLMODE_CCW)
-	cam.IgnoreZ(false)
-
-	render.SetStencilEnable(false)
 end
 
 local colMainReticle = Color(255,255,255,255)
 local colTopReticle = Color(255,255,255,255)
+local colFallback = Color(255,0,255,255)
 
 local rc
 
@@ -192,91 +199,95 @@ function CustomizableWeaponry_KK.ins2.stencilSight:elementRenderColorable(wep, a
 
 	if wep.ActiveAttachments.kk_ins2_magnifier then return end
 
-	attachmEnt = wep.AttachmentModelsVM[att.name].ent
-	retAtt = attachmEnt:GetAttachment(1)
+	local element = wep.AttachmentModelsVM[att.name]
+	local elements = element.models or {element}
 
-	if not retAtt then
-		self:_SpamErrors(wep, att)
-		return
-	end
+	for _,element in pairs(elements) do
+		attachmEnt = element.ent
+		retAtt = attachmEnt:GetAttachment(element.reticleAtt or 1)
 
-	retSize = att._reticleSize * (wep.AttachmentModelsVM[att.name].retSizeMult or 1)
-
-	render.ClearStencil()
-	render.SetStencilEnable(true)
-	render.SetStencilWriteMask(1)
-	render.SetStencilTestMask(1)
-	render.SetStencilReferenceValue(1)
-	render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_ALWAYS)
-	render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
-	render.SetStencilFailOperation(STENCILOPERATION_KEEP)
-	render.SetStencilZFailOperation(STENCILOPERATION_KEEP)
-
-	self:_drawStencilEnt(wep, att)
-
-	render.SetStencilWriteMask(2)
-	render.SetStencilTestMask(2)
-	render.SetStencilReferenceValue(2)
-	render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_EQUAL)
-	render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
-	render.SetStencilWriteMask(1)
-	render.SetStencilTestMask(1)
-	render.SetStencilReferenceValue(1)
-
-	retDist = (retAtt.Pos:Distance(EyePos())) * 50
-	retPos = retAtt.Pos + retAtt.Ang:Forward() * retDist
-
-	render.SetMaterial(iMatDot)
-
-	if cvFreeze:GetInt() == 1 then
-		cam.IgnoreZ(true)
-			render.DrawSprite(retPos, retSize/2, retSize/2, colBlue)
-			render.DrawSprite(retPos, retSize/2, retSize/2, colBlue)
-			render.DrawSprite(retPos, retSize/6, retSize/6, colWhite)
-			render.DrawSprite(retPos, retSize/6, retSize/6, colWhite)
-		cam.IgnoreZ(false)
-	end
-
-	if wep:isNearWall() or wep:IsOwnerCrawling() then
-		nearWallOutTime = CurTime() + 0.3
-	elseif not nearWallOutTime then
-		nearWallOutTime = CurTime()
-	end
-
-	if (cvAnimated:GetInt() != 1 or cvFreeze:GetInt() == 1) or (!wep:isAiming() and wep.dt.BipodDeployed) then
-		if wep:isReticleActive() and nearWallOutTime < CurTime() then
-			EA = wep:getReticleAngles()
-			retPos = EyePos() + EA:Forward() * retDist
+		if not retAtt then
+			continue
 		end
+
+		retSize = att._reticleSize * (element.retSizeMult or 1)
+
+		render.ClearStencil()
+		render.SetStencilEnable(true)
+		render.SetStencilWriteMask(1)
+		render.SetStencilTestMask(1)
+		render.SetStencilReferenceValue(1)
+		render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_ALWAYS)
+		render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
+		render.SetStencilFailOperation(STENCILOPERATION_KEEP)
+		render.SetStencilZFailOperation(STENCILOPERATION_KEEP)
+
+		self:_drawStencilEnt(wep, element)
+
+		render.SetStencilWriteMask(2)
+		render.SetStencilTestMask(2)
+		render.SetStencilReferenceValue(2)
+		render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_EQUAL)
+		render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
+		render.SetStencilWriteMask(1)
+		render.SetStencilTestMask(1)
+		render.SetStencilReferenceValue(1)
+
+		retDist = (retAtt.Pos:Distance(EyePos())) * 50
+		retPos = retAtt.Pos + retAtt.Ang:Forward() * retDist
+
+		render.SetMaterial(iMatDot)
+
+		if cvFreeze:GetInt() == 1 then
+			cam.IgnoreZ(true)
+				render.DrawSprite(retPos, retSize/2, retSize/2, colBlue)
+				render.DrawSprite(retPos, retSize/2, retSize/2, colBlue)
+				render.DrawSprite(retPos, retSize/6, retSize/6, colWhite)
+				render.DrawSprite(retPos, retSize/6, retSize/6, colWhite)
+			cam.IgnoreZ(false)
+		end
+
+		if wep:isNearWall() or (wep.IsOwnerCrawling and wep:IsOwnerCrawling()) then
+			nearWallOutTime = CurTime() + 0.3
+		elseif not nearWallOutTime then
+			nearWallOutTime = CurTime()
+		end
+
+		if (cvAnimated:GetInt() != 1 or cvFreeze:GetInt() == 1) or (!wep:isAiming() and wep.dt.BipodDeployed) then
+			if wep:isReticleActive() and nearWallOutTime < CurTime() then
+				EA = wep:getReticleAngles()
+				retPos = EyePos() + EA:Forward() * retDist
+			end
+		end
+
+		retNorm = retAtt.Ang:Forward()
+		retAng = 90 + retAtt.Ang.z
+
+		cam.IgnoreZ(true)
+			render.CullMode(MATERIAL_CULLMODE_CW)
+
+				rc = wep:getSightColor(att.name) or colFallback
+				colMainReticle.r = rc.r
+				colMainReticle.g = rc.g
+				colMainReticle.b = rc.b
+
+				render.SetMaterial(att._reticleCol or att._reticle)
+				render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colMainReticle, retAng)
+
+				-- local m = math.sqrt(rc.r * rc.r + rc.g * rc.g + rc.b * rc.b)
+
+				colTopReticle.r = math.sqrt(rc.r) + 150
+				colTopReticle.g = math.sqrt(rc.g) + 150
+				colTopReticle.b = math.sqrt(rc.b) + 150
+
+				render.SetMaterial(att._reticleTop)
+				render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colTopReticle, retAng)
+
+			render.CullMode(MATERIAL_CULLMODE_CCW)
+		cam.IgnoreZ(false)
+
+		render.SetStencilEnable(false)
 	end
-
-	retNorm = retAtt.Ang:Forward()
-	retAng = 90 + retAtt.Ang.z
-
-	cam.IgnoreZ(true)
-		render.CullMode(MATERIAL_CULLMODE_CW)
-
-			rc = wep:getSightColor(att.name)
-			colMainReticle.r = rc.r
-			colMainReticle.g = rc.g
-			colMainReticle.b = rc.b
-
-			render.SetMaterial(att._reticleCol)
-			render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colMainReticle, retAng)
-
-			-- local m = math.sqrt(rc.r * rc.r + rc.g * rc.g + rc.b * rc.b)
-
-			colTopReticle.r = math.sqrt(rc.r) + 150
-			colTopReticle.g = math.sqrt(rc.g) + 150
-			colTopReticle.b = math.sqrt(rc.b) + 150
-
-			render.SetMaterial(att._reticleTop)
-			render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colTopReticle, retAng)
-
-		render.CullMode(MATERIAL_CULLMODE_CCW)
-	cam.IgnoreZ(false)
-
-	render.SetStencilEnable(false)
 end
 
 local nobrain = "657241323"
