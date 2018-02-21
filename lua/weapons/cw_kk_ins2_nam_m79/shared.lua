@@ -37,6 +37,7 @@ SWEP.MuzzleEffectWorld = "ins_weapon_m203"
 
 SWEP.Attachments = {
 	{header = "Stock", offset = {600, 0}, atts = {"kk_ins2_ww2_sling"}},
+	-- {header = "Ammo", offset = {-100, 0}, atts = {"kk_ins2_gp25_ammo"}},
 }
 
 SWEP.Animations = {

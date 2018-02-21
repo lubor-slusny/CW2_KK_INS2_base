@@ -100,7 +100,7 @@ SWEP.canCook = true			// enable cooking
 SWEP.mustCook = false		// cooking only (overrides SWEP.canCook)
 SWEP.canPlant = false		// can stick to "wall" when "near-wall"
 SWEP.mustPlant = false		// ^^ only
-SWEP.canShort = false		// enable low/short throws
+SWEP.canShort = true		// enable low/short throws
 
 SWEP.fuseTime = 3			// grenade fuse time
 

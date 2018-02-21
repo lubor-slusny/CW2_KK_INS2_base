@@ -32,6 +32,8 @@ if CLIENT then
 		["kk_ins2_g19_skin"] = {model = "models/weapons/v_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/blacker/glock"},
 		["kk_ins2_g19_skin2"] = {model = "models/weapons/v_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/tt/glock"},
 		["kk_ins2_g19_skin3"] = {model = "models/weapons/v_cw_kk_ins2_cstm_g19.mdl", pos = Vector(), angle = Angle(), size = Vector(1), merge = true, hideVM = true, material = "models/weapons/glock/ss/glock"},
+
+		["kk_ins2_cstm_leupold_dpp"] = {model = "models/weapons/attachments/kk_leupold_dpp.mdl", pos = Vector(-0.0936, -2.5031, 0.0545), angle = Angle(), size = Vector(1, 1, 1), bone = "Slide"},
 	}
 
 	SWEP.AttachmentModelsWM = {
@@ -52,6 +54,9 @@ if CLIENT then
 	SWEP.IronsightPos = Vector(-1.9772, 0, 0.3214)
 	SWEP.IronsightAng = Vector(0.4361, 0.0414, 0)
 
+	SWEP.KKINS2CSTMLDPPPos = Vector(-1.9882, 0, -0.0882)
+	SWEP.KKINS2CSTMLDPPAng = Vector(0.0025, 0.0072, 0)
+
 	SWEP.CustomizationMenuScale = 0.01
 	SWEP.ReloadViewBobEnabled = false
 	SWEP.DisableSprintViewSimulation = true
@@ -60,13 +65,24 @@ end
 SWEP.MuzzleEffect = "muzzleflash_m9_1p_core"
 SWEP.MuzzleEffectWorld = "muzzleflash_m9_3rd"
 
-SWEP.Attachments = {
-	{header = "Texture", offset = {500, -400}, atts = {"kk_ins2_g19_skin", "kk_ins2_g19_skin2", "kk_ins2_g19_skin3"}},
-	{header = "Barrel", offset = {-500, -400}, atts = {"kk_ins2_suppressor_pistol"}},
-	{header = "Lasers", offset = {-500, 150}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
-	{header = "Magazine", offset = {500, 150}, atts = {"kk_ins2_mag_g19_22"}},
-	["+reload"] = {header = "Ammo", offset = {500, 500}, atts = {"am_magnum", "am_matchgrade"}}
-}
+if CustomizableWeaponry_KK.HOME then
+	SWEP.Attachments = {
+		{header = "Sight", offset = {800, -400}, atts = {"kk_ins2_cstm_leupold_dpp"}},
+		{header = "Barrel", offset = {100, -400}, atts = {"kk_ins2_suppressor_pistol"}},
+		{header = "Lasers", offset = {-800, -400}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
+		{header = "Magazine", offset = {-700, 150}, atts = {"kk_ins2_mag_g19_22"}},
+		{header = "Texture", offset = {100, 150}, atts = {"kk_ins2_g19_skin", "kk_ins2_g19_skin2", "kk_ins2_g19_skin3"}},
+		["+reload"] = {header = "Ammo", offset = {800, 150}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+else
+	SWEP.Attachments = {
+		{header = "Texture", offset = {500, -400}, atts = {"kk_ins2_g19_skin", "kk_ins2_g19_skin2", "kk_ins2_g19_skin3"}},
+		{header = "Barrel", offset = {-500, -400}, atts = {"kk_ins2_suppressor_pistol"}},
+		{header = "Lasers", offset = {-500, 150}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
+		{header = "Magazine", offset = {500, 150}, atts = {"kk_ins2_mag_g19_22"}},
+		["+reload"] = {header = "Ammo", offset = {500, 500}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+end
 
 SWEP.Animations = {
 	base_pickup = "base_ready",
