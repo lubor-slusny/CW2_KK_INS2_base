@@ -35,6 +35,8 @@ if CLIENT then
 		},
 
 		["kk_counter"] = {model = "models/weapons/stattrack_cut.mdl", bone = "Slide", pos = Vector(0.451, 0, 0.028), angle = Angle(0, -90, 0), size = Vector(0.8, 0.8, 0.8), adjustment = {axis = "y", min = 0, max = 1.6, inverse = false, inverseOffsetCalc = false}},
+
+		["kk_ins2_cstm_leupold_dpp"] = {model = "models/weapons/attachments/kk_leupold_dpp.mdl", pos = Vector(0.0002, -2.7375, 0.2121), angle = Angle(), size = Vector(0.9, 0.9, 0.9), bone = "Slide"},
 	}
 
 	SWEP.AttachmentModelsWM = {
@@ -49,6 +51,9 @@ if CLIENT then
 	SWEP.IronsightPos = Vector(-1.859, 0, 0.3468)
 	SWEP.IronsightAng = Vector(0.3062, -0.0054, 0)
 
+	SWEP.KKINS2CSTMLDPPPos = Vector(-1.8543, 0, 0)
+	SWEP.KKINS2CSTMLDPPAng = Vector()
+
 	SWEP.CustomizationMenuScale = 0.01
 	SWEP.ReloadViewBobEnabled = false
 	SWEP.DisableSprintViewSimulation = true
@@ -57,12 +62,22 @@ end
 SWEP.MuzzleEffect = "muzzleflash_m9_1p_core"
 SWEP.MuzzleEffectWorld = "muzzleflash_m9_3rd"
 
-SWEP.Attachments = {
-	{header = "Lasers", offset = {500, -400}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
-	{header = "Barrel", offset = {-500, -400}, atts = {"kk_ins2_suppressor_pistol"}},
-	{header = "Magazine", offset = {-500, 150}, atts = {"kk_ins2_mag_m45_15"}},
-	["+reload"] = {header = "Ammo", offset = {500, 150}, atts = {"am_magnum", "am_matchgrade"}}
-}
+if CustomizableWeaponry_KK.HOME then
+	SWEP.Attachments = {
+		{header = "Sight", offset = {400, -400}, atts = {"kk_ins2_cstm_leupold_dpp"}},
+		{header = "Barrel", offset = {-400, -400}, atts = {"kk_ins2_suppressor_pistol"}},
+		{header = "Lasers", offset = {-600, 150}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
+		{header = "Magazine", offset = {100, 300}, atts = {"kk_ins2_mag_m45_15"}},
+		["+reload"] = {header = "Ammo", offset = {800, 150}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+else
+	SWEP.Attachments = {
+		{header = "Lasers", offset = {500, -400}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
+		{header = "Barrel", offset = {-500, -400}, atts = {"kk_ins2_suppressor_pistol"}},
+		{header = "Magazine", offset = {-500, 150}, atts = {"kk_ins2_mag_m45_15"}},
+		["+reload"] = {header = "Ammo", offset = {500, 150}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+end
 
 if CustomizableWeaponry_KK.HOME then
 	table.insert(SWEP.Attachments, {header = "CSGO", offset = {1500, -400}, atts = {"kk_counter"}})

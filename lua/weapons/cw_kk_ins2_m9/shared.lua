@@ -30,6 +30,8 @@ if CLIENT then
 		["kk_ins2_m6x_rail"] = {model = "models/cw2/attachments/lowerpistolrail.mdl", bone = "Weapon", pos = Vector(0, 1.171, -0.594), angle = Angle(0, 90, 0), size = Vector(0.109, 0.109, 0.109),
 			material = "models/weapons/attachments/cw_kk_ins2_cstm_m6x/rail_bk",
 		},
+
+		["kk_ins2_cstm_leupold_dpp"] = {model = "models/weapons/attachments/kk_leupold_dpp.mdl", pos = Vector(0.0002, -2.2122, 0.1508), angle = Angle(), size = Vector(0.9, 0.9, 0.9), bone = "Slide"},
 	}
 
 	SWEP.AttachmentModelsWM = {
@@ -42,6 +44,9 @@ if CLIENT then
 	SWEP.IronsightPos = Vector(-1.8521, 0, 0.4934)
 	SWEP.IronsightAng = Vector(0, 0.07, 0)
 
+	SWEP.KKINS2CSTMLDPPPos = Vector(-1.8547, 0, 0.0458)
+	SWEP.KKINS2CSTMLDPPAng = Vector()
+
 	SWEP.CustomizationMenuScale = 0.01
 	SWEP.ReloadViewBobEnabled = false
 	SWEP.DisableSprintViewSimulation = true
@@ -50,11 +55,20 @@ end
 SWEP.MuzzleEffect = "muzzleflash_m9_1p_core"
 SWEP.MuzzleEffectWorld = "muzzleflash_m9_3rd"
 
-SWEP.Attachments = {
-	{header = "Lasers", offset = {500, -400}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
-	{header = "Barrel", offset = {-500, -400}, atts = {"kk_ins2_suppressor_pistol"}},
-	["+reload"] = {header = "Ammo", offset = {500, 150}, atts = {"am_magnum", "am_matchgrade"}}
-}
+if CustomizableWeaponry_KK.HOME then
+	SWEP.Attachments = {
+		{header = "Sight", offset = {500, -400}, atts = {"kk_ins2_cstm_leupold_dpp"}},
+		{header = "Barrel", offset = {-500, -400}, atts = {"kk_ins2_suppressor_pistol"}},
+		{header = "Lasers", offset = {-500, 150}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
+		["+reload"] = {header = "Ammo", offset = {500, 150}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+else
+	SWEP.Attachments = {
+		{header = "Lasers", offset = {500, -400}, atts = {"kk_ins2_lam", "kk_ins2_flashlight", "kk_ins2_m6x"}},
+		{header = "Barrel", offset = {-500, -400}, atts = {"kk_ins2_suppressor_pistol"}},
+		["+reload"] = {header = "Ammo", offset = {500, 150}, atts = {"am_magnum", "am_matchgrade"}}
+	}
+end
 
 SWEP.Animations = {
 	base_pickup = "base_ready",
