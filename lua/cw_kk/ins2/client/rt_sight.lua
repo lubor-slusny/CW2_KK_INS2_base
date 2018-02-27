@@ -74,7 +74,6 @@ function CustomizableWeaponry_KK.ins2.rtSight:renderTarget(wep, att)
 	mdlAttFront = attachmEnt:GetAttachment(2)
 
 	if not (mdlAttRear and mdlAttFront) then
-		CustomizableWeaponry_KK.ins2.stencilSight:_SpamErrors(wep, att)
 		return
 	end
 
