@@ -30,7 +30,6 @@ if CLIENT then
 
 	function att:_elementRender(beamAtt)
 		if not beamAtt then return end
-		if (self.hasInstalledStencilSight and self:hasInstalledStencilSight() and self._KK_INS2_stencilsDisableLaser) then return end
 
 		pos = beamAtt.Pos
 		ang = beamAtt.Ang
@@ -48,6 +47,8 @@ if CLIENT then
 		td.filter = self.Owner
 
 		local tr = util.TraceLine(td)
+
+		-- tr.HitPos = tr.HitPos and (tr.HitPos - 2 * fw) or nil
 
 		if not self.lastLaserPos then
 			self.lastLaserPos = tr.HitPos
@@ -105,38 +106,38 @@ if CLIENT then
 		end
 	end
 
+	local lastLaserPos = {}
+
 	function att:elementRender()
 		if not self.ActiveAttachments[att.name] then return end
 
-		-- if (self.dt.INS2LAMMode % 2) == 1 then // TODO: forget
 		if (self:GetNWInt("INS2LAMMode") % 2) == 1 then
 			local beamAtts = {}
 			local element = self.AttachmentModelsVM[att.name]
 
 			if element and IsValid(element.ent) then
-				local attId = element.laserAtt or 1
-				table.insert(beamAtts, element.ent:GetAttachment(1))
+				beamAtts[element.ent] = element.ent:GetAttachment(element.laserAtt or 1)
 			end
 
 			if element and element.models then
 				for _,subElement in pairs(element.models) do
 					if IsValid(subElement.ent) then
-						local attId = subElement.laserAtt or 1
-						table.insert(beamAtts, subElement.ent:GetAttachment(attId))
+						beamAtts[subElement.ent] = subElement.ent:GetAttachment(subElement.laserAtt or 1)
 					end
 				end
 			end
 
 			if table.Count(beamAtts) < 1 then
-				table.insert(beamAtts, self.CW_VM:GetAttachment(1))
+				beamAtts[self.CW_VM] = self.CW_VM:GetAttachment(1)
 			end
 
-			for _,beamAtt in pairs(beamAtts) do
-				self.lastLaserPos = nil // TODO: fix?
-				att._elementRender(self, beamAtt)
+			for ent,beamAtt in pairs(beamAtts) do
+				self.lastLaserPos = lastLaserPos[ent]
+				CustomizableWeaponry.registeredAttachmentsSKey["kk_ins2_lam"]._elementRender(self, beamAtt)
+				lastLaserPos[ent] = self.lastLaserPos
 			end
 		else
-			self.lastLaserPos = nil
+			lastLaserPos = {}
 		end
 	end
 

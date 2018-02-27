@@ -18,21 +18,22 @@ if CLIENT then
 		[2] = {t = "Uses LAM/LEM colors.", c = CustomizableWeaponry.textColors.REGULAR},
 	}
 
-	local rgb = {"r","g","b","a"}
-	local mode, laserAtt, lightAtt
+	local laserAtt, lightAtt
 
 	function att:elementRender()
 		if not self.ActiveAttachments[att.name] then return end
 
-		-- mode = self.dt.INS2LAMMode
-		mode = self:GetNWInt("INS2LAMMode")
+		local mode = self:GetNWInt("INS2LAMMode")
+		local element = self.AttachmentModelsVM[att.name]
 
-		if self.AttachmentModelsVM[att.name] then
-			laserAtt = self.AttachmentModelsVM[att.name].ent:GetAttachment(1)
-			lightAtt = self.AttachmentModelsVM[att.name].ent:GetAttachment(2)
+		if element then
+			laserAtt = element.ent:GetAttachment(element.laserAtt or 1) or nil
+			lightAtt = element.ent:GetAttachment(element.lightAtt or 2) or nil
+			lightEnt = element.ent
 		else
 			laserAtt = self.AttachmentModelsVM["kk_ins2_lam"].ent:GetAttachment(1)
 			lightAtt = self.AttachmentModelsVM["kk_ins2_flashlight"].ent:GetAttachment(1)
+			lightEnt = self.AttachmentModelsVM["kk_ins2_flashlight"].ent
 		end
 
 		if (mode % 2) == 1 then
@@ -41,23 +42,17 @@ if CLIENT then
 			self.lastLaserPos = nil
 		end
 
-		-- if mode > 1 then
-			-- CustomizableWeaponry_KK.ins2.flashlight.v2.elementRender(self, lightAtt)
-		-- end
-
-		CustomizableWeaponry_KK.ins2.flashlight.v6.elementRender(self, lightAtt)
+		CustomizableWeaponry_KK.ins2.flashlight.v7.elementRender(self, lightAtt, lightEnt)
 	end
 
 	// for V6 LEM, true - ON, false - OFF
 	function att:getLEMState()
-		-- return (self.dt.INS2LAMMode > 1)
 		return (self:GetNWInt("INS2LAMMode") > 1)
 	end
 end
 
 function att:attachFunc()
-	-- CustomizableWeaponry_KK.ins2.flashlight.v2.attach(self)
-	CustomizableWeaponry_KK.ins2.flashlight.v6.attach(self, att)
+	CustomizableWeaponry_KK.ins2.flashlight.v7.attach(self, att)
 
 	if CLIENT then
 		if not self.AttachmentModelsVM[att.name] then
@@ -68,8 +63,7 @@ function att:attachFunc()
 end
 
 function att:detachFunc()
-	-- CustomizableWeaponry_KK.ins2.flashlight.v2.detach(self)
-	CustomizableWeaponry_KK.ins2.flashlight.v6.detach(self, att)
+	CustomizableWeaponry_KK.ins2.flashlight.v7.detach(self, att)
 
 	if CLIENT then
 		if not self.AttachmentModelsVM[att.name] then

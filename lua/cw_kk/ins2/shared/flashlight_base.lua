@@ -42,20 +42,6 @@ if CLIENT then
 		if !hasFL then return end
 		local max = self.atts[hasFL]
 
-		-- if wep.Owner:KeyDown(IN_USE) then
-			-- wep._KK_INS2_LAM_MODE = wep._KK_INS2_LAM_MODE - 1
-		-- else
-			-- wep._KK_INS2_LAM_MODE = wep._KK_INS2_LAM_MODE + 1
-		-- end
-
-		-- if wep._KK_INS2_LAM_MODE > max then
-			-- wep._KK_INS2_LAM_MODE = 0
-		-- elseif wep._KK_INS2_LAM_MODE < 0 then
-			-- wep._KK_INS2_LAM_MODE = max
-		-- end
-
-		-- wep:EmitSound("CW_KK_INS2_UMP45_FIRESELECT")
-
 		if wep.Owner:KeyDown(IN_USE) then
 			ply:ConCommand("_cw_kk_cyclelam r")
 		else
