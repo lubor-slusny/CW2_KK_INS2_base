@@ -72,32 +72,18 @@ local cvFreeze = CustomizableWeaponry_KK.ins2.conVars.other["cw_kk_freeze_reticl
 local cvAnimated = CustomizableWeaponry_KK.ins2.conVars.main["cw_kk_ins2_animate_reticle"]
 
 local CW2ATTS = CustomizableWeaponry.registeredAttachmentsSKey
-local tblLams = {
-	"kk_ins2_lam",
-	"kk_ins2_m6x",
-	"kk_ins2_anpeq15"
-}
 
 local attachmEnt, retAtt
 local retSize, retDist, retPos, retNorm, retAng
 local EA, nearWallOutTime
 
 function CustomizableWeaponry_KK.ins2.stencilSight:elementRender(wep, att)
+	if not wep then return end
 	if not att then return end
 	if not wep.ActiveAttachments[att.name] then return end
 
 	if not wep.AttachmentModelsVM then return end
 	if not wep.AttachmentModelsVM[att.name] then return end
-
-	wep._KK_INS2_stencilsDisableLaser = false // this got little NASTY
-		for _,lam in pairs(tblLams) do
-			if wep.ActiveAttachments[lam] then
-				CW2ATTS[lam].elementRender(wep)
-			end
-		end
-	wep._KK_INS2_stencilsDisableLaser = true
-
-	if wep.ActiveAttachments.kk_ins2_magnifier then return end
 
 	local element = wep.AttachmentModelsVM[att.name]
 	local elements = element.models or {element}
@@ -163,10 +149,9 @@ function CustomizableWeaponry_KK.ins2.stencilSight:elementRender(wep, att)
 		retNorm = retAtt.Ang:Forward()
 		retAng = 90 + retAtt.Ang.z
 
-		render.SetMaterial(att._reticle)
-
 		cam.IgnoreZ(true)
 			render.CullMode(MATERIAL_CULLMODE_CW)
+				render.SetMaterial(att._reticle)
 				render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colWhite, retAng)
 				render.DrawQuadEasy(retPos, retNorm, retSize, retSize, colWhiteTr, retAng)
 			render.CullMode(MATERIAL_CULLMODE_CCW)
@@ -183,21 +168,16 @@ local colFallback = Color(255,0,255,255)
 local rc
 
 function CustomizableWeaponry_KK.ins2.stencilSight:elementRenderColorable(wep, att)
+	if true then
+		self:elementRender(wep, att)
+	end
+
+	if not wep then return end
 	if not att then return end
 	if not wep.ActiveAttachments[att.name] then return end
 
 	if not wep.AttachmentModelsVM then return end
 	if not wep.AttachmentModelsVM[att.name] then return end
-
-	wep._KK_INS2_stencilsDisableLaser = false // this got little NASTY
-		for _,lam in pairs(tblLams) do
-			if wep.ActiveAttachments[lam] then
-				CW2ATTS[lam].elementRender(wep)
-			end
-		end
-	wep._KK_INS2_stencilsDisableLaser = true
-
-	if wep.ActiveAttachments.kk_ins2_magnifier then return end
 
 	local element = wep.AttachmentModelsVM[att.name]
 	local elements = element.models or {element}
@@ -288,55 +268,4 @@ function CustomizableWeaponry_KK.ins2.stencilSight:elementRenderColorable(wep, a
 
 		render.SetStencilEnable(false)
 	end
-end
-
-local nobrain = "657241323"
-
-// u wanted it, u got it
-function CustomizableWeaponry_KK.ins2.stencilSight:_SpamErrors(wep, att)
-	if self._nextError and self._nextError > CurTime() then return end
-
-	self._nextError = CurTime() + 2
-
-	local id = wep:GetClass() .. "|" .. att.name
-	local mdl = wep.AttachmentModelsVM[att.name].model
-
-	if not id or not mdl then return end
-
-	if not self._errors then
-		self._errors = {}
-	end
-
-	if not self._errors[id] then
-		local target = ""
-
-		for _,addon in pairs(engine.GetAddons()) do
-			if addon.models == 0 then continue end
-			if !addon.mounted then continue end
-			if addon.wsid == nobrain then continue end
-
-			local found = file.Find(mdl, addon.title)
-
-			if table.Count(found) > 0 then
-				target = "[" .. addon.title .. "] http://steamcommunity.com/sharedfiles/filedetails/" .. addon.wsid .. "\n"
-			end
-		end
-
-		self._errors[id] = target
-	end
-
-	local msg
-
-	if self._errors[id] != "" then
-		msg = "Invalid model \"" .. mdl .. "\", loaded from:\n	\n	" .. self._errors[id]
-	else
-		if file.Exists(mdl, "GAME") then
-			msg = "Invalid model \"" .. mdl .. "\". Browse your LEGACY addons for conflicting file.\n"
-		else
-			msg = "Invalid model \"" .. mdl .. "\". Model not found in mounted content.\n"
-		end
-	end
-
-	print("	\n[CW 2.0 KK INS2 SWEPs] " .. msg)
-	-- error(msg)
 end
