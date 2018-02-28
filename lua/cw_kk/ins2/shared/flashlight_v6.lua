@@ -37,11 +37,10 @@ if CLIENT then
 					return
 				end
 
-				// im outta variable identifiers here
-				local carrier = self:getFL(wep)
+				local cwAtt = self:getFL(wep)
 
 				// SetNearZ - ON/OFF
-				local wepOK = carrier and wep.ActiveAttachments[carrier.name] and carrier.getLEMState(wep)
+				local wepOK = cwAtt and wep.ActiveAttachments[cwAtt.name] and cwAtt.getLEMState(wep)
 				local ownOK = !IsValid(wep.Owner) or (IsValid(wep.Owner) and wep.Owner:GetActiveWeapon() == wep)
 
 				if wepOK and ownOK then
@@ -50,12 +49,11 @@ if CLIENT then
 					pt:SetNearZ(0)
 				end
 
-				// if dropped or in 3rd person, update pos
-				local nowner = !IsValid(wep.Owner) // dropped
-				local fowner = wep.Owner != LocalPlayer()
-				local lowner = wep.Owner == LocalPlayer() and wep.Owner:ShouldDrawLocalPlayer() // local player owns but in 3rd person
+				local wepDropped = !IsValid(wep.Owner)
+				local wepOwnedByOther = wep.Owner != LocalPlayer()
+				local wepOwnedByLocalThird = wep.Owner == LocalPlayer() and wep.Owner:ShouldDrawLocalPlayer()
 
-				if nowner or fowner or lowner then
+				if wepDropped or wepOwnedByOther or wepOwnedByLocalThird then
 					local att = wep.WMEnt:GetAttachment(1)
 
 					if att then
