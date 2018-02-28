@@ -9,6 +9,8 @@ if CLIENT then
 	CustomizableWeaponry_KK.ins2.flashlight.v6.texture = "effects/flashlight001"
 
 	function CustomizableWeaponry_KK.ins2.flashlight.v6:Think()
+		if true then return end
+
 		for _,wep in pairs(ents.GetAll()) do
 			if not wep.CW20Weapon then
 				continue
