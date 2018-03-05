@@ -24,16 +24,17 @@ if CLIENT then
 		if not self.ActiveAttachments[att.name] then return end
 
 		local mode = self:GetNWInt("INS2LAMMode")
-		local element = self.AttachmentModelsVM[att.name]
+		local elements = self.AttachmentModelsVM
+		local element = elements[att.name]
 
 		if element then
 			laserAtt = element.ent:GetAttachment(element.laserAtt or 1) or nil
 			lightAtt = element.ent:GetAttachment(element.lightAtt or 2) or nil
 			lightEnt = element.ent
 		else
-			laserAtt = self.AttachmentModelsVM["kk_ins2_lam"].ent:GetAttachment(1)
-			lightAtt = self.AttachmentModelsVM["kk_ins2_flashlight"].ent:GetAttachment(1)
-			lightEnt = self.AttachmentModelsVM["kk_ins2_flashlight"].ent
+			laserAtt = elements["kk_ins2_lam"] and elements["kk_ins2_lam"].ent:GetAttachment(1)
+			lightAtt = elements["kk_ins2_flashlight"] and elements["kk_ins2_flashlight"].ent:GetAttachment(1)
+			lightEnt = elements["kk_ins2_flashlight"] and elements["kk_ins2_flashlight"].ent
 		end
 
 		if (mode % 2) == 1 then
