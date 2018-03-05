@@ -31,19 +31,19 @@ if CLIENT then
 		local element = self.AttachmentModelsVM[att.name]
 
 		if element and IsValid(element.ent) then
-			beamAtts[element.ent] = element.ent:GetAttachment(1)
+			beamAtts[element.ent] = element.ent:GetAttachment(element.lightAtt or 1)
 		end
 
 		if element and element.models then
 			for _,subElement in pairs(element.models) do
 				if IsValid(subElement.ent) then
-					beamAtts[subElement.ent] = subElement.ent:GetAttachment(1)
+					beamAtts[subElement.ent] = subElement.ent:GetAttachment(subElement.lightAtt or 1)
 				end
 			end
 		end
 
 		if table.Count(beamAtts) < 1 then
-			beamAtts[self.CW_VM] = self.CW_VM:GetAttachment(1)
+			beamAtts[self.CW_VM] = self.CW_VM:GetAttachment(self.lightAtt or 1)
 		end
 
 		for ent,beamAtt in pairs(beamAtts) do
