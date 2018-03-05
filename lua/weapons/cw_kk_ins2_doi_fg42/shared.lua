@@ -10,7 +10,7 @@ SWEP.magType = "brMag"
 
 if CLIENT then
 	SWEP.DrawCrosshair = false
-	SWEP.PrintName = "FG-42"
+	SWEP.PrintName = "FG-42 Ausf. E"
 
 	SWEP.SelectIcon = surface.GetTextureID("vgui/inventory/weapon_fg42")
 
