@@ -53,6 +53,14 @@ if CLIENT then
 			end
 		end
 
+		if table.Count(laserAtts) < 1 then
+			laserAtts[self.CW_VM] = self.CW_VM:GetAttachment(self.laserAtt or 1)
+		end
+
+		if table.Count(lightAtts) < 1 then
+			lightAtts[self.CW_VM] = self.CW_VM:GetAttachment(self.lightAtt or 1)
+		end
+
 		if (mode % 2) == 1 then
 			for ent,laserAtt in pairs(laserAtts) do
 				self.lastLaserPos = lastLaserPos[ent]
@@ -76,24 +84,10 @@ end
 
 function att:attachFunc()
 	CustomizableWeaponry_KK.ins2.flashlight.v7.attach(self, att)
-
-	if CLIENT then
-		if not self.AttachmentModelsVM[att.name] then
-			self.AttachmentModelsVM["kk_ins2_flashlight"].active = true
-			self.AttachmentModelsVM["kk_ins2_lam"].active = true
-		end
-	end
 end
 
 function att:detachFunc()
 	CustomizableWeaponry_KK.ins2.flashlight.v7.detach(self, att)
-
-	if CLIENT then
-		if not self.AttachmentModelsVM[att.name] then
-			self.AttachmentModelsVM["kk_ins2_flashlight"].active = false
-			self.AttachmentModelsVM["kk_ins2_lam"].active = false
-		end
-	end
 end
 
 CustomizableWeaponry:registerAttachment(att)

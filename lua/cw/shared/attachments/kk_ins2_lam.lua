@@ -128,7 +128,7 @@ if CLIENT then
 			end
 
 			if table.Count(beamAtts) < 1 then
-				beamAtts[self.CW_VM] = self.CW_VM:GetAttachment(1)
+				beamAtts[self.CW_VM] = self.CW_VM:GetAttachment(self.laserAtt or 1)
 			end
 
 			for ent,beamAtt in pairs(beamAtts) do
