@@ -228,7 +228,7 @@ function CustomizableWeaponry_KK.ins2.quickKnife:attack(wep)
 
 	local category
 
-	if wep.ActiveAttachments.kk_ins2_ww2_knife or wep.ActiveAttachments.kk_ins2_ww2_knife_fat then
+	if wep:hasInstalledBayonet() then
 		if CLIENT then
 			wep:bayonetAnimFunc()
 		end

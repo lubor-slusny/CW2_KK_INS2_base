@@ -207,6 +207,16 @@ function SWEP:hasInstalledGL()
 end
 
 //-----------------------------------------------------------------------------
+// hasInstalledBayonet returns true if weapon has attached bayonet
+//-----------------------------------------------------------------------------
+
+function SWEP:hasInstalledBayonet()
+	return
+		self.ActiveAttachments.kk_ins2_ww2_knife or
+		self.ActiveAttachments.kk_ins2_ww2_knife_fat
+end
+
+//-----------------------------------------------------------------------------
 // getForegripMode returns active anim prefix
 //-----------------------------------------------------------------------------
 
