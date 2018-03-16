@@ -150,7 +150,7 @@ if CLIENT then
 			end
 		end
 
-		if self.hasInstalledBayonet() then
+		if self:hasInstalledBayonet() then
 			anim = "sprint_knife"
 			rate = 1
 			cycle = 0
