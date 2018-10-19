@@ -2,28 +2,8 @@ if not CustomizableWeaponry then return end
 
 AddCSLuaFile()
 
--- // particles // if u know how 2 convert, CONVERT, NOT REMAKE, CONVERT them to good old gmod shitengine lemme know
-
--- game.AddParticles("particles/ammo_cache_ins.pcf")
--- game.AddParticles("particles/explosion_fx_ins.pcf")
--- game.AddParticles("particles/explosion_fx_ins_b.pcf")
--- game.AddParticles("particles/impact_fx_ins.pcf")
--- game.AddParticles("particles/light_fx.pcf")
--- game.AddParticles("particles/screen_fx.pcf")
--- game.AddParticles("particles/fire_01_ins.pcf")
--- game.AddParticles("particles/world_fx_ins.pcf")
--- game.AddParticles("particles/blood_fx.pcf")
--- game.AddParticles("particles/footstep_fx.pcf")
--- game.AddParticles("particles/weapon_fx_tracers.pcf")
--- game.AddParticles("particles/flashlight.pcf")
--- game.AddParticles("particles/ins_light_fx.pcf")
--- game.AddParticles("particles/ins_rockettrail.pcf")
--- game.AddParticles("particles/ins_smokegrenade.pcf")
--- game.AddParticles("particles/jonny_light_rigs.pcf")
--- game.AddParticles("!particles/menu.pcf")
-
 // SHARED SOUNDS
-
+do
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_UNIVERSAL_DRAW", {"weapons/universal/uni_weapon_draw_01.wav", "weapons/universal/uni_weapon_draw_02.wav", "weapons/universal/uni_weapon_draw_03.wav"})
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_UNIVERSAL_HOLSTER", "weapons/universal/uni_weapon_holster.wav")
 
@@ -66,7 +46,7 @@ AddCSLuaFile()
 	CustomizableWeaponry:addReloadSound("CW_KK_INS2_GP30_SELECT", "weapons/gp30/handling/gp30_select.wav")
 
 	CustomizableWeaponry:addReloadSound("CW_KK_INS2_SHELL_SPLASH", "cw_kk_ins2/bms/water_foot_exit1.wav")
-
+end
 // SHELLS
 do
 	CustomizableWeaponry:addRegularSound("CW_KK_INS2_SHELL_38", {"weapons/bullets/shells/concrete/38_shell_concrete_01.wav", "weapons/bullets/shells/concrete/38_shell_concrete_02.wav", "weapons/bullets/shells/concrete/38_shell_concrete_03.wav", "weapons/bullets/shells/concrete/38_shell_concrete_04.wav", "weapons/bullets/shells/concrete/38_shell_concrete_05.wav", "weapons/bullets/shells/concrete/38_shell_concrete_06.wav"}, 65)
@@ -79,7 +59,7 @@ do
 	if CLIENT then
 		local convertedSounds = {}
 		local allMaterials = ""
-
+/*
 		hook.Add("InitPostEntity", "CW_KK_INS2_INIT_PHYSMAT", function()
 			print("initializing physmats:", allMaterials)
 			physenv.AddSurfaceData(allMaterials)
@@ -113,7 +93,7 @@ do
 				bbmax = BBoxMaxs
 			}
 		end
-
+*/
 		CustomizableWeaponry.shells:addNew_KKINS2("KK_INS2_12guage", "models/weapons/shells/12guage.mdl", "CW_KK_INS2_SHELL_12G", Vector(-0.4, -1.2, -0.4), Vector(0.4, 1.2, 0.4))
 		CustomizableWeaponry.shells:addNew_KKINS2("KK_INS2_40mm", "models/weapons/shells/40mm.mdl", "CW_KK_INS2_SHELL_M203", Vector(-0.8, -0.8, 0), Vector(0.8, 0.8, 2))
 		CustomizableWeaponry.shells:addNew_KKINS2("KK_INS2_45apc", "models/weapons/shells/45apc.mdl", "CW_KK_INS2_SHELL_38", Vector(-0.25, -0.5, -0.25), Vector(0.25, 0.5, 0.25))
@@ -132,14 +112,13 @@ do
 		CustomizableWeaponry.shells:addNew_KKINS2("KK_INS2_REVOLVER", "models/weapons/upgrades/a_speedloader_rev.mdl", "CW_KK_INS2_SHELL_12G", Vector(-0.8, -0.55, -0.55), Vector(0.25, 0.55, 0.55))
 
 		// models/weapons/w_at4.mdl Vector(-33, -3, -1), Vector(9.5, 3, 5)
-		//
 
 		CustomizableWeaponry:addRegularSound("CW_KK_CSS_SHELL_M72", "weapons/cw_kk_css_m72/law_shell.wav", 65)
 		CustomizableWeaponry.shells:addNew_KKINS2("KK_CSS_M72", "models/weapons/w_cw_kk_css_m72.mdl", "CW_KK_CSS_SHELL_M72", Vector(-18.5, -1.7, -0.2), Vector(18, 1, 2.5))
 	end
 end
 // AMMO
-
+do
 	CustomizableWeaponry:registerAmmo(".30 Carbine", ".30 Carbine Rounds", 7.62, 32.76)
 	CustomizableWeaponry:registerAmmo(".38 Special", ".38 Special Rounds", 9.1, 29.3)
 	CustomizableWeaponry:registerAmmo(".357 Magnum", ".357 Magnum Rounds", 9.1, 33)
@@ -170,14 +149,13 @@ end
 	CustomizableWeaponry:registerAmmo("IED", "Improvised explosives", 0, 0)
 	CustomizableWeaponry:registerAmmo("Incendiary", "Incendiary explosives", 0, 0)
 	CustomizableWeaponry:registerAmmo("M213 Flare", "Emergency Flares", 0, 0)
-
+end
 // FIREMODES
-
+do
 	CustomizableWeaponry.firemodes:registerFiremode("single", "SINGLE-SHOT", true, 1, 1)
 	-- CustomizableWeaponry.firemodes:registerFiremode("throw", "THROWABLE", true, 1, 1)
-
+end
 // KILLS
-
 if CLIENT then
 	local killCol = Color(255, 80, 0, 150)
 	local white = Color(255, 255, 255, 150)
@@ -356,7 +334,6 @@ if CLIENT then
 end
 
 // STATS
-
 if CLIENT then
 	CustomizableWeaponry_KK.ins2.statDisplay = CustomizableWeaponry_KK.ins2.statDisplay or {}
 	CustomizableWeaponry_KK.ins2.statDisplay.tabs = CustomizableWeaponry_KK.ins2.statDisplay.tabs or {}
@@ -461,14 +438,12 @@ if CLIENT then
 	CustomizableWeaponry_KK.ins2.statDisplay.tabs.HolsterTime = stat
 end
 
-
 if CLIENT then
 	// maximum overkill
 	CustomizableWeaponry_KK.ins2.statDisplay:add()
 end
 
 // MAG SYSTEM
-
 if CustomizableWeaponry.magSystem then
 	CustomizableWeaponry.magSystem:registerMagType("lmgBox", " LMG belt", 2)
 	CustomizableWeaponry.magSystem:registerMagType("revLoader", " Loader/Stripper clip", 6)

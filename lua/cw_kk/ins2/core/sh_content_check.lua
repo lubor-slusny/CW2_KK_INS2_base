@@ -89,6 +89,16 @@ for _,f in pairs({
 	doiNamModContentOK = doiNamModContentOK and file.Exists(f, "GAME")
 end
 
+local doiWW1ModContentOK = true
+for _,f in pairs({
+		"models/weapons/w_wex_ww1.phy",
+		"models/weapons/w_trenchclub_legacy.phy",
+		"models/weapons/upgrades/w_ww1_g98_riflenade.vvd",
+	}) do
+
+	doiWW1ModContentOK = doiWW1ModContentOK and file.Exists(f, "GAME")
+end
+
 local subs
 
 local function init()
@@ -120,6 +130,11 @@ local function init()
 			return (baseGameContentOK and arseModContentOK and CustomizableWeaponry_KK.HOME)
 		end,
 
+		["cw_kk_ins2_doi_ww1"] = function()
+			return
+				(doiGameContentOK or ins.REPACK_DOI == REPACK_COUNT_DOI) and doiWW1ModContentOK
+		end,
+
 		// shortcuts
 		["baseGameContentOK"] = function()
 			return baseGameContentOK
@@ -147,6 +162,10 @@ local function init()
 
 		["doiNamModContentOK"] = function()
 			return doiNamModContentOK
+		end,
+
+		["doiWW1ModContentOK"] = function()
+			return doiWW1ModContentOK
 		end,
 	}
 end

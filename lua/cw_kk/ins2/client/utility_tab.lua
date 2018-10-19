@@ -19,6 +19,7 @@ function CCSectionBuilder:_packLabelDockMargin(panel)
 	panel:DockMargin(8,0,8,0)
 end
 
+// content packs
 function CCSectionBuilder:_addLineBaseGame(panel)
 	local ok = self.icm({Folder = "weapons/baseGameContentOK"})
 	local label = panel:AddControl("Label", {Text =
@@ -76,6 +77,18 @@ function CCSectionBuilder:_addLineEXTPack(panel)
 	label:SetTextColor(ok and self.colOk or self.colNOk)
 end
 
+function CCSectionBuilder:_addLineDOIWW1Mod(panel)
+	local ok = self.icm({Folder = "weapons/doiWW1ModContentOK"})
+	local label = panel:AddControl("Label", {Text =
+		(ok and "[OK]" or "[MISSING]") ..
+		" SS content"
+	})
+
+	self:_individualLabelDockMargin(label)
+	label:SetTextColor(ok and self.colOk or self.colNOk)
+end
+
+// weapon packs
 function CCSectionBuilder:_addSectionBase(panel)
 	local backgroundPanel = vgui.Create("DPanel", panel)
 	self:_packLabelDockMargin(backgroundPanel)
@@ -244,6 +257,40 @@ function CCSectionBuilder:_addSectionExt(panel)
 	backgroundPanel:SizeToContents()
 end
 
+function CCSectionBuilder:_addSectionDOIWW1(panel)
+	local backgroundPanel = vgui.Create("DPanel", panel)
+	self:_packLabelDockMargin(backgroundPanel)
+	panel:AddItem(backgroundPanel)
+
+		local icon
+		icon = vgui.Create("DImage", backgroundPanel)
+		icon:SetPos(5,2)
+		icon:SetSize(16,16)
+
+		if self.icm({Folder = "weapons/cw_kk_ins2_doi_ww1"}) then
+			icon:SetImage(self.iconOk)
+		else
+			icon:SetImage(self.iconNOk)
+
+			self:_addLineDOIGame(panel)
+			self:_addLineDOIWW1Mod(panel)
+		end
+
+		local label
+		label = vgui.Create("DLabel", backgroundPanel)
+		label:SetText("Screaming Steal")
+		label:SetDark(true)
+		label:Dock(LEFT)
+		label:SizeToContents()
+
+	backgroundPanel:Dock(TOP)
+	backgroundPanel:DockPadding(26,0,8,0)
+	backgroundPanel:SetSize(200,20)
+	backgroundPanel:SetPaintBackground(true)
+	backgroundPanel:SizeToContents()
+end
+
+// weapon pack order
 function CCSectionBuilder:_updatePanel()
 	local panel = self._panel
 
@@ -256,6 +303,7 @@ function CCSectionBuilder:_updatePanel()
 	self:_addSectionDOI(panel)
 	self:_addSectionNam(panel)
 	self:_addSectionAO5(panel)
+	self:_addSectionDOIWW1(panel)
 end
 
 function CCSectionBuilder:SetPanel(panel)

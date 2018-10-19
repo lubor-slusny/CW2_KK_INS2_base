@@ -52,3 +52,10 @@ if CustomizableWeaponry_KK.ins2.isContentMounted4({Folder = "weapons/namModConte
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_short_us_black.mdl", "[B2K] US2 Short"})
 	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_nva.mdl", "[B2K] NVA Short"})
 end
+
+if CustomizableWeaponry_KK.ins2.isContentMounted4({Folder = "weapons/doiWW1ModContentOK"}) then
+	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_ww1_ger.mdl", "[WW1] DE"})
+	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_ww1_ger_gloves.mdl", "[WW1] DE Gloved"})
+	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_ww1_brit.mdl", "[WW1] GB"})
+	CustomizableWeaponry_KK.ins2.hands:addModel({"models/weapons/v_hands_ww1_brit_gloves.mdl", "[WW1] GB Gloved"})
+end
