@@ -1,22 +1,23 @@
 {
-	"title"		:	"[CW 2.0] KK INS2 SWEPs", 
-	"type"		:	"weapon", 
+	"title"		:	"[CW 2.0] KK INS2 SWEPs",
+	"type"		:	"weapon",
 	"tags"		:	[
 		"fun",
 		"realism"
-	], 
+	],
 	"ignore"	:	[
 		"*.git*",
 		"*.svn*",
 		"*_src*",
 		"*_cof*",
 		"*cw_kk/sck*",
-		
+
 		"*.jpg",
 		"*.dds",
 		"*.tga",
 		"*.txt",
 		"*.ini",
+		"*.lnk",
 		"*.md"
 	]
 }
