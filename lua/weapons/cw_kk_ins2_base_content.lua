@@ -64,9 +64,9 @@ do
 			print("initializing physmats:", allMaterials)
 			physenv.AddSurfaceData(allMaterials)
 		end)
-
+*/
 		function CustomizableWeaponry.shells:addNew_KKINS2(name, model, sound, BBoxMins, BBoxMaxs)
-			if not convertedSounds[sound] then
+/*			if not convertedSounds[sound] then
 
 				allMaterials = [[
 "]] .. sound .. [["
@@ -85,7 +85,7 @@ do
 
 				convertedSounds[sound] = true
 			end
-
+*/
 			self.cache[name] = {
 				m = model,
 				s = sound,
@@ -93,7 +93,7 @@ do
 				bbmax = BBoxMaxs
 			}
 		end
-*/
+
 		CustomizableWeaponry.shells:addNew_KKINS2("KK_INS2_12guage", "models/weapons/shells/12guage.mdl", "CW_KK_INS2_SHELL_12G", Vector(-0.4, -1.2, -0.4), Vector(0.4, 1.2, 0.4))
 		CustomizableWeaponry.shells:addNew_KKINS2("KK_INS2_40mm", "models/weapons/shells/40mm.mdl", "CW_KK_INS2_SHELL_M203", Vector(-0.8, -0.8, 0), Vector(0.8, 0.8, 2))
 		CustomizableWeaponry.shells:addNew_KKINS2("KK_INS2_45apc", "models/weapons/shells/45apc.mdl", "CW_KK_INS2_SHELL_38", Vector(-0.25, -0.5, -0.25), Vector(0.25, 0.5, 0.25))
