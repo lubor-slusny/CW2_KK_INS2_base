@@ -11,6 +11,8 @@
 		"*_src*",
 		"*_cof*",
 		"*cw_kk/sck*",
+		"*.vs*",
+		"*python*",
 
 		"*.jpg",
 		"*.dds",
