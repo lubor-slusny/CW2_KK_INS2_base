@@ -809,6 +809,7 @@ end
 //-----------------------------------------------------------------------------
 
 function SWEP:Initialize()
+	self:precacheSounds()
 	self:updateReloadTimes()
 
 	if CLIENT then

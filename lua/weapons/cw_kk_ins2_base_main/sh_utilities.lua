@@ -319,3 +319,36 @@ end
 function SWEP:IndividualReloadCheck()
 	return true
 end
+
+//-----------------------------------------------------------------------------
+// precacheSounds
+// - does just that, again
+//-----------------------------------------------------------------------------
+
+function SWEP:precacheSounds()
+	local usedSounds = {}
+
+	if self.Sounds and table.Count(self.Sounds) > 0 then
+		for _,tblEvents in pairs(self.Sounds) do
+			if tblEvents and table.Count(tblEvents) > 0 then
+				for _,event in pairs(tblEvents) do
+					if event.sound then
+						usedSounds[event.sound] = 1
+					end
+				end
+			end
+		end
+	end
+
+	if self.FireSound then
+		usedSounds[self.FireSound] = 1
+	end
+
+	if self.FireSoundSuppressed then
+		usedSounds[self.FireSoundSuppressed] = 1
+	end
+
+	for snd,_ in pairs(usedSounds) do
+		util.PrecacheSound(snd)
+	end
+end
