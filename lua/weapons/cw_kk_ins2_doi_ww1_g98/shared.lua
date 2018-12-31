@@ -8,7 +8,7 @@ include("sh_soundscript.lua")
 
 if CLIENT then
 	SWEP.DrawCrosshair = false
-	SWEP.PrintName = "Kar-98k"
+	SWEP.PrintName = "HK G98"
 	SWEP.CSMuzzleFlashes = true
 	SWEP.ViewModelMovementScale = 1.15
 
@@ -84,7 +84,7 @@ SWEP.Attachments = {
 	{header = "Sight", offset = {600, -500}, atts = {"kk_ins2_scope_zf4"}},
 	{header = "Barrel", offset = {-200, -500}, atts = {"kk_ins2_ww2_knife", "kk_ins2_gl_ggg"}},
 	{header = "Stock", offset = {1000, 0}, atts = {"kk_ins2_ww2_sling"}},
-	{header = "Clip", offset = {300, 0}, atts = {"kk_ins2_ww2_stripper"}, exclusions = {["kk_ins2_scope_k98"] = true, ["kk_ins2_scope_zf4"] = true}},
+	{header = "Clip", offset = {300, 0}, atts = {"kk_ins2_ww2_stripper"}},
 	{header = "Inside", offset = {-400, 0}, atts = {"kk_ins2_ww2_bolt"}},
 	{header = "Flavor", offset = {0, 500}, atts = {"kk_ins2_bs"}},
 	["+reload"] = {header = "Ammo", offset = {900, 500}, atts = {"am_magnum", "am_matchgrade"}}
