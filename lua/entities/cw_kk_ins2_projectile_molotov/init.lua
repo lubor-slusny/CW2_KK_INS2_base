@@ -22,9 +22,8 @@ function ENT:Initialize()
 
 	if phys and phys:IsValid() then
 		phys:Wake()
+		phys:SetBuoyancyRatio(0)
 	end
-
-	self:GetPhysicsObject():SetBuoyancyRatio(0)
 end
 
 function ENT:Use(activator, caller)
